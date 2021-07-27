@@ -8,24 +8,30 @@
     <link rel="stylesheet" href="scss/styles.scss">
     <!-- JavaScript -->
     <script defer src="js/script.js"></script>
+    <script defer src="js/dynamicLink.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
-    <title>Cole Caccamise</title>
+    <title>Cole Caccamise - Links</title>
 </head>
 <body>
     
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-          <div class="container navbar__container">
-            <div class="navbar__logo"><a href="/">cole caccamise.</a></div>
-              <ul class="navbar__menu">
-                <li><a href="/#about">About</a></li>
-                <li><a href="links">Links</a></li>
-                <li><a href="portfolio">Portfolio</a></li>
-                <li><a href="contact" class="btn btn--primary">Contact</a></li>
-              </ul>
-            </div>
-        </nav>
+     <!-- Navbar -->
+     <header>
+      <nav class="navbar">
+      <div class="container navbar__container">
+        <div class="navbar__top-section">
+          <a class='hamburger'><i class="fas fa-bars"></i></a>
+          <div class="navbar__logo"><a href="/">cole caccamise.</a></div>
+        </div>
+      
+          <ul class="navbar__menu">
+            <li><a href="/#about">About</a></li>
+            <li><a href="links">Links</a></li>
+            <li><a href="portfolio">Portfolio</a></li>
+            <li><a href="contact" class="btn btn--primary">Contact</a></li>
+          </ul>
+        </div>
+    </nav>
+
       </header>
 
       <main>
@@ -37,52 +43,53 @@
                 <h1 class='links__heading'>Cole Caccamise</h1>
                 <p>Content Creator</p>
                 <div class="links__card">
-                  <div class="link">
+                <div class="link">
+                  <a class='video-link' href="/">
                   <h3>My Latest Video</h3>
                 
                   <div class="vid-container">
                     <!-- Latest Video -->
-                    <iframe src="https://www.youtube.com/embed/3OsQe_CJcso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
                   </div>
+                  </a>
                 </div>
 
-                    <div class="link">
-                      <a href="https://youtube.com/c/colecaccamise" target="_blank">
+                  <div class="link">
+                    <a href="https://youtube.com/c/colecaccamise">
                       <h3>YouTube</h3>
                       <p>Tech videos</p>
-                  </a>
-                  </div> 
+                    </a>
+                    </div> 
 
                   <div class="link">
-                    <a href="http://kit.co/colecaccamise" target="_blank">
+                    <a href="https://kit.co/colecaccamise">
                     <h3>Gear Links</h3>
                     <p>All of the products I use</p>
                 </a>
                 </div>
 
                 <div class="link">
-                  <a href="wallpapers" target="_blank">
+                  <a href="wallpapers">
                   <h3>Wallpapers</h3>
                   <p>A collection of wallpapers I designed</p>
               </a>
               </div>
 
                     <div class="link">
-                        <a href="https://instagram.com/cole.caccamise" target="_blank">
+                        <a href="https://instagram.com/cole.caccamise">
                         <h3>Instagram</h3>
                         <p>Tech photography</p>
                     </a>
                     </div>
 
                     <div class="link">
-                        <a href="https://twitter.com/colecaccamise" target="_blank">
+                        <a href="https://twitter.com/colecaccamise">
                         <h3>Twitter</h3>
                         <p>Documenting my journey</p>
                     </a>
                     </div>
 
                     <div class="link">
-                      <a href="https://blog.colecaccamise.com" target="_blank">
+                      <a href="https://blog.colecaccamise.com">
                       <h3>Medium</h3>
                       <p>I write occasionaly about tech, productivity, and more</p>
                   </a>
@@ -102,25 +109,7 @@
       <!-- Footer -->
       <footer class="footer">
         <div class="container footer__container">
-            <div class="line"></div>
-            <div class='footer__content'>
-                <div>
-                    <p class='copyright'>&copy; <span id="year"></span> <a href="/"><span class="footer-name">Cole Caccamise</span></a></p>
-                </div>
-                <div>
-                    <a href="" class="footer__icon">
-                        <i class="fab fa-youtube"></i>
-                      </a>
-        
-                      <a href="" class="footer__icon">
-                        <i class="fab fa-twitter"></i>
-                      </a>
-    
-                      <a href="" class="footer__icon">
-                        <i class="fab fa-instagram"></i>
-                      </a>
-                </div>
-            </div>
+            
         </div>
       </footer>
     

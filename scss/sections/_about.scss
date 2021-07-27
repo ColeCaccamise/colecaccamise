@@ -1,0 +1,34 @@
+// About
+#about {
+  .about {
+    &__container {
+      text-align: center;
+    }
+
+    &__heading {
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 2.8rem;
+    }
+
+    &__subheading {
+      font-size: 2rem;
+      color: gray;
+      line-height: 1;
+    }
+
+    &__text {
+      margin: 2rem 0;
+
+      p {
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  #about {
+    padding: 3rem 0;
+  }
+}

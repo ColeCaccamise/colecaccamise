@@ -1,0 +1,154 @@
+// cards
+.cards {
+  display: flex;
+
+  .card {
+    background-color: white;
+    margin: 0 1.1rem;
+    padding: 3rem;
+    text-align: left;
+    border-radius: $radius;
+    width: 33%;
+
+    &__img {
+      img {
+        width: 100%;
+      }
+    }
+
+    h3 {
+      color: black;
+      font-size: 2.2rem;
+    }
+
+    &__description {
+      color: black;
+      margin-bottom: 2rem;
+    }
+
+    & .underline {
+      color: black;
+
+      &:hover {
+        color: $hover-color-black;
+      }
+    }
+
+    &__cta {
+      font-size: 1.5rem;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+        color: gray;
+      }
+    }
+
+    &__icons {
+      display: flex;
+      margin-bottom: 1.5rem;
+    }
+
+    &__icon {
+      font-size: 3.8rem;
+      margin-right: 1.5rem;
+
+      i {
+        color: gray;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+
+    &__subheading {
+      color: black;
+      font-size: 1.7rem;
+    }
+
+    &__list {
+      &-container {
+        display: flex;
+        justify-content: space-between;
+      }
+      list-style: disc;
+      padding-left: 1.7rem;
+      margin-bottom: 2rem;
+      li {
+        color: black;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .card__list-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1090px) {
+  .cards {
+    flex-direction: column;
+
+    .card {
+      width: 100%;
+      margin: 1rem 0;
+      text-align: center;
+
+      &__list li {
+        list-style: none;
+      }
+
+      &__icons {
+        justify-content: center;
+      }
+
+      &__list {
+        padding-left: 0;
+        &-container {
+          flex-direction: row;
+          justify-content: center;
+          div {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            width: 20rem;
+
+            li {
+              list-style: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    .card {
+      padding: 2.5rem;
+      &__description {
+        margin-bottom: 1rem;
+      }
+
+      &__list-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .cards {
+    .card {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

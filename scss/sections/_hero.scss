@@ -1,0 +1,167 @@
+// Hero section
+h1 {
+  font-weight: 600;
+  font-size: 6rem;
+  line-height: 6rem;
+}
+
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $hero-gap;
+}
+
+.hero__copy {
+  width: 42rem;
+  line-height: 1.5;
+
+  p {
+    font-size: 1.9rem;
+    line-height: 3.5rem;
+    letter-spacing: 0.7;
+  }
+}
+
+.hero__cta-buttons {
+  margin: 10px 0;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(1rem);
+  }
+}
+
+.chevron-container {
+  display: block;
+  text-align: center;
+  animation: updown infinite alternate 1.5s ease-in-out;
+
+  i {
+    font-size: 15px;
+  }
+}
+
+.hero__img {
+  width: 35rem;
+}
+
+.img--round {
+  border-radius: 50%;
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    &__img {
+      width: 30rem;
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .hero {
+    &__container {
+      flex-direction: column-reverse;
+    }
+
+    // &__main {
+    //   padding-top: 4rem;
+    // }
+
+    &__img {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  #hero {
+    padding: 1rem 0 4.5rem 0;
+  }
+
+  .hero {
+    &__text-wrapper {
+      gap: 1rem;
+    }
+
+    &__cta-buttons {
+      margin-bottom: 0;
+    }
+
+    &__img {
+      width: 30rem;
+      margin-bottom: 3rem;
+    }
+
+    &__copy {
+      width: 100%;
+      p {
+        font-size: 1.7rem;
+        line-height: 3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .hero {
+    &__copy {
+      font-size: 1.6rem;
+    }
+    &__img {
+      width: 18rem;
+      margin-bottom: 0.5rem;
+    }
+    &__cta-buttons {
+      .btn--primary {
+        margin-bottom: 1.5rem;
+      }
+    }
+    // &__container {
+    //   .hero__text-wrapper {
+    //     h1 {
+    //       font-size: 3rem;
+    //       line-height: 1.5;
+    //     }
+    //   }
+    // }
+
+    &__cta-buttons {
+      .btn {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    &__img {
+      width: 25rem;
+    }
+    &__text-wrapper {
+      h1 {
+        font-size: 3.3rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    &__img {
+      display: none;
+    }
+  }
+}
