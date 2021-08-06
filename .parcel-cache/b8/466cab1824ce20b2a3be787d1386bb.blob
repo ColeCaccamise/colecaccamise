@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="fe0630be2255c1a661a7ac721f1fa26a">
+    <!-- JavaScript -->
+    <script defer="" src="975e265b33951e1ac01c372087a2794e"></script>
+    <link href="3aa015f983647c8da842b2bae947c768" rel="stylesheet">
+    <title>Page Not Found</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="8f1d31acb6003f365faa415b3b50999f"></script>
+<script data-parcel-key="b324ac4ccd293b10ab369e8b06abc1e3">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G8MGP60VRN');
+</script>
+</head>
+<body>
+    
+ <!-- Navbar -->
+ <header>
+  <nav class="navbar">
+  <div class="container navbar__container">
+    <div class="navbar__top-section">
+      <a class="hamburger"><i class="fas fa-bars"></i></a>
+      <div class="navbar__logo"><a href="/">cole caccamise.</a></div>
+    </div>
+  
+      <ul class="navbar__menu">
+        <li><a href="/#about">About</a></li>
+        <li><a href="links">Links</a></li>
+        <li><a href="portfolio">Portfolio</a></li>
+        <li><a href="contact" class="btn btn--primary">Contact</a></li>
+      </ul>
+    </div>
+</nav>
+
+  </header>
+
+      <main>
+
+        <section class="error" id="error">
+            <div class="container container-center success__container">
+                <i class="fas fa-frown-open"></i>
+                    
+                <h1>Uh oh..</h1>
+                <p>The page you're looking for doesn't exist</p>
+
+                <a href="/" class="btn btn--primary">Go back to site <i class="fas fa-undo-alt icon-return"></i></a>
+            </div>
+        </section>
+
+          
+        <p></p>
+
+          
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__container">
+            
+        </div>
+      </footer>
+</body>
+</html>

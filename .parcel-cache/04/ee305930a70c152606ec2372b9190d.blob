@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <script src="b969c9ee7308e99330c1aea2002e06a9"></script>
+    <script src="86b7c9e48f6f2c505f8d75c76fab27e0"></script>
+    <script src="837e8dfbedd2e6387f2e3367d740f488"></script>
+</head>
+<body>
+    <pre>{{ "%+010d"|sprintf:-123 }}</pre>
+    <pre>{{ "%+010d"|vsprintf:[-123] }}</pre>
+    <pre>{{ "%+010d"|fmt:-123 }}</pre>
+    <pre>{{ "%+010d"|vfmt:[-123] }}</pre>
+    <pre>{{ "I've got %2$d apples and %1$d oranges."|fmt:4:2 }}</pre>
+    <pre>{{ "I've got %(apples)d apples and %(oranges)d oranges."|fmt:{apples: 2, oranges: 4} }}</pre>
+
+    <script data-parcel-key="901d0aad40bedaedd9e295f5aa504688">
+        angular.module("app", ["sprintf"])
+    </script>
+</body>
+</html>

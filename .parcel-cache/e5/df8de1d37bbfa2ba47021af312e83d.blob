@@ -1,0 +1,1 @@
+document.getElementById('ans').innerHTML = require('crypto').createHash('sha1').update('abc').digest('hex')

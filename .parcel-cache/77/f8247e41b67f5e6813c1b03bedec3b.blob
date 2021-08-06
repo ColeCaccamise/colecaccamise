@@ -1,0 +1,5 @@
+module.exports = require("./loaders/browser/js-loader")(require('./bundle-url').getBundleURL() + "https-browserify.HASH_REF_9c3b358fa7fc66d85a4c951eea4c360a.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('5cL8c')
+);

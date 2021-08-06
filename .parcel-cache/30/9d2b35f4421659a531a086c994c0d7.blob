@@ -1,0 +1,8 @@
+<html>
+  <head>
+    <script src="1139d8e2eab52bbb9274eabd8c4710b1"></script>
+  </head>
+  <body>
+    result = <span id="res"></span>
+  </body>
+</html>

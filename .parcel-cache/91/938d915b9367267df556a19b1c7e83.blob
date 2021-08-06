@@ -1,0 +1,6 @@
+window.dataLayer = window.dataLayer || [];
+function $7c0985c4c0566ba62e608935f8fab614$var$gtag() {
+    dataLayer.push(arguments);
+}
+$7c0985c4c0566ba62e608935f8fab614$var$gtag('js', new Date());
+$7c0985c4c0566ba62e608935f8fab614$var$gtag('config', 'G-G8MGP60VRN');

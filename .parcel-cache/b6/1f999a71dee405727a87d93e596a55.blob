@@ -1,0 +1,214 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics placeholder -->
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="203281d6580cb49c8fd1a8f71892c8fa">
+    <!-- JavaScript -->
+    <script defer="" src="bae3346e9cdc293b13f0bd9f60962ced"></script>
+    <link href="7343c166c659cf24142027043fe80a67" rel="stylesheet">
+    <title>Cole Caccamise</title>
+</head>
+<body class="overlay">
+    
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+      <div class="container navbar__container">
+        <div class="navbar__top-section">
+          <i class="fas fa-bars hamburger"></i>
+          <div class="navbar__logo"><a href="/">cole caccamise.</a></div>
+        </div>
+      
+          <ul class="navbar__menu">
+            <li><a href="/#about">About</a></li>
+            <li><a href="links">Links</a></li>
+            <li><a href="portfolio">Portfolio</a></li>
+            <li><a href="contact" class="btn btn--primary">Contact</a></li>
+          </ul>
+        </div>
+    </nav>
+
+        <!-- <nav class="navbar">
+          <div class="container navbar__container">
+            <div class='navbar__main'>
+                <i class="fas fa-bars"></i>
+                <div class="navbar__logo"><a href="/">cole caccamise.</a></div>
+                <ul class="navbar__menu">
+                  <li><a href="/#about">About</a></li>
+                  <li><a href="/links">Links</a></li>
+                  <li><a href="portfolio">Portfolio</a></li>
+                  <li><a href="contact" class="btn btn--primary">Contact</a></li>
+                </ul>
+              </div>
+
+              
+
+              <ul class="navbar__menu navbar__menu--mobile">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/links">Links</a></li>
+                <li><a href="portfolio">Portfolio</a></li>
+                <li><a href="contact" class="btn btn--primary">Contact</a></li>
+              </ul>
+            </div>
+        </nav> -->
+      </header>
+
+      <main>
+          <!-- main elements here -->
+
+          <!-- Hero -->
+          <section id="hero">
+              <div class="container hero__container">
+
+                <div class="hero__text-wrapper">
+                  <div class="hero__heading">
+                    <h1><span class="break">Tech</span> <span class="break"></span>Content Creator.</h1>
+                    
+                  </div>
+                    <div class="hero__copy">
+                    <p>Sharing my thoughts on the latest tech through the internet. I also enjoy coding and designing websites.</p>
+                  </div>
+                  
+                    <div class="hero__cta-buttons">
+                        <a href="contact" class="btn btn--primary">Get in touch ></a>
+                        <a href="#about" class="btn btn--secondary">Learn more</a>
+                    </div>
+                </div>
+              
+                <div class="hero__img-wrapper">
+                    <img class="hero__img img--round" src="516902d3134f716cf9b6da66fa5b22a6" alt="cole caccamise">
+                </div>
+                
+              </div>
+            
+          </section>
+
+                <!-- animated chevron placeholder -->
+                <a href="#about" class="chevron-container">
+                  <i class="fas fa-chevron-down"></i>
+                </a>
+
+          <!-- About -->
+          <section id="about">
+            <div class="container about__container">
+            <div class="about__summary">
+              <h2 class="about__heading">About Me.</h2>
+              <h3 class="about__subheading">Passionate creator, dev, & designer</h3>
+          </div>
+
+          <div class="about__text"><p>I'm a 17 year old content creator from <span class="bold-white">Buffalo, NY</span>. I enjoy making videos about my favorite tech products, sharing my honest thoughts in an entertaining and straightforward way. I also like to build and design websites on the side. I'm mostly interested in the front-end but plan on diving deeper in the future.</p></div>
+            
+
+            <!-- about cards -->
+            <div class="cards">
+
+              <div class="card">
+                <div class="card__icons">
+                  <a href="a4c6f2d435359ec501cdc747e1aac21f" class="card__icon">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                  <a href="c8fff66c0a943a5687eea45bbc8c7634" class="card__icon">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                  <a href="2de9737cb20717f9943a55a2f1c8b7b7" class="card__icon">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  
+                  <a href="ec6f7af55fa8be59cb95ba8a5dc9bd62" class="card__icon">
+                  <i class="fab fa-twitch"></i>
+                    </a>
+
+                </div>
+
+                <h3>Content Creator</h3>
+                <p class="card__description">
+                  I make videos and take photos of tech produtcts I love using.
+                </p>
+                <p class="card__description">
+                 I go for a cinematic sort of style, and am always improving the quality of what I put out.
+                </p>
+                <p class="card__description">
+                  Follow me to watch my journey
+                 </p>
+                <a href="dc8a29c6e21ad338a31b77687307af2d" class="card__cta">My Gear & Equipment -></a>
+              </div>
+              
+              <div class="card">
+                <div class="card__icons">
+                  <a href="a54f262cdeb3ce9bc14af7f849536d4a" class="card__icon">
+                    <i class="fab fa-github"></i>
+                    </a>
+                    <a href="portfolio" class="card__icon">              
+                      <i class="fas fa-laptop-code"></i>
+                      </a>
+                </div>
+
+
+                <h3>Web Developer</h3>
+                  <p class="card__description">
+                    I'm a self-taught web developer. I enjoy working on the front-end most, and recently I've been brushing up on my skills in JavaScript and CSS.
+                  </p>
+
+                  <div class="card__list-container">
+                    <div>
+                      <h4 class="card__subheading">Languages</h4>
+                  <ul class="card__list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Shopify Liquid</li>
+                  </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 class="card__subheading">Tools & Frameworks</h4>
+                      <ul class="card__list">
+                        <li>Visual Studio Code</li>
+                        <li>GitHub</li>
+                        <li>NPM</li>
+                        <li>Parcel</li>
+                        <li>Sass / SCSS</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <a href="portfolio" class="card__cta">See my projects -></a>
+              </div>
+
+              <div class="card">
+                <div class="card__icons">
+                  <a href="b6986caf77ace3890a0ce7a703d8f126" class="card__icon">
+                    <i class="fab fa-dribbble"></i>
+                  </a>
+                  <a href="2e5cde029ea121bb3956f404cf6d1fda" class="card__icon">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+
+                <h3>Designer</h3>
+                <p class="card__description">
+                  I enjoy designing minimal interfaces for web and mobile apps. I'm sharing some of my work online.
+                </p>
+
+                <p class="card__description">On top of this, I also like to design <a class="underline " href="/wallpapers">wallpapers</a>.</p>
+                <a href="portfolio" class="card__cta">See my work -></a>
+              </div>
+
+
+            </div>
+          </div>
+          </section>
+
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__container">
+            
+        </div>
+      </footer>
+    
+</body>
+</html>

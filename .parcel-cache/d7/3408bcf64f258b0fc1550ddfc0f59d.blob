@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+body {
+  background-color: #212121;
+  color: #a6a5a3;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #f9f9fb;
+}
+a {
+  text-decoration: none;
+  color: #888888;
+}
+.container {
+  max-width: 1190px;
+  margin: 25px auto;
+}
+section {
+  padding: 50px 0;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-container a {
+  color: #888888;
+  font-size: 16px;
+}
+.menu {
+  display: flex;
+}
+.menu li {
+  padding: 10px;
+}
+.menu a {
+  font-weight: 600;
+}
+.menu a:hover {
+  border-bottom: 1px solid black;
+  color: rgba(255, 255, 255, 0.6);
+}
+.logo {
+  cursor: pointer;
+  font-weight: 700;
+  color: #f9f9fb;
+  text-align: center;
+}
+.logo a {
+  color: #f9f9fb;
+  font-size: 30px;
+}
+.logo a:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+h1 {
+  font-weight: 600;
+  font-size: 50px;
+}
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+}
+.hero-text-wrapper {
+  width: 100%;
+}
+.hero-heading {
+  width: 12rem;
+}
+.hero-img {
+  width: 350px;
+}
+.round-img {
+  border-radius: 50%;
+}
+/*# sourceMappingURL=index.HASH_REF_ef2a966742bcf778872ace2bdaa66939.css.map */

@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics placeholder -->
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="/index.HASH_REF_ef2a966742bcf778872ace2bdaa66939.css">
+    <!-- JavaScript -->
+    <script src="/index.HASH_REF_afb742f2e085b5374b064e171dd7fb88.js" defer=""></script>
+    <title>Cole Caccamise</title>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+          <div class="container navbar-container">
+            <div class="logo"><a href="/">cole caccamise.</a></div>
+            <div class="nav-links">
+              <ul class="menu">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/links">Links</a></li>
+                <li><a href="portfolio">Portfolio</a></li>
+                <li><a href="contact" class="btn btn-primary">Contact</a></li>
+              </ul>
+            </div>
+        </div>
+        </nav>
+      </header>
+
+      <main>
+          <!-- main elements here -->
+
+          <!-- Hero -->
+          <section id="hero">
+              <div class="container hero-container">
+
+                <div class="hero-text-wrapper">
+                  <div class="hero-heading">
+                    <h1>Tech <br> Content Creator.</h1>
+                  </div>
+                    <div class="hero-copy">
+                    <p>I talk about the tech I’m passionate about, but also like to design and code on the side.</p>
+                  </div>
+                  
+                    <div class="hero-cta-buttons">
+                        <a href="" class="btn btn-primary">Get in touch ></a>
+                        <a href="#about" class="btn btn-secondary">Learn more ></a>
+                    </div>
+                </div>
+              
+                <div class="hero-img-wrapper">
+                    <img class="hero-img round-img" src="/profile.HASH_REF_ec3354f8aef439e238c376fd955d8531.jpg" alt="cole caccamise">
+                </div>
+
+                <!-- animated chevron placeholder -->
+              </div>
+            
+          </section>
+
+          <!-- About -->
+          <section id="about">
+            <div class="container about-container">
+              <div class="about-summary">
+            <h2>About Me.</h2>
+            <h3 class="about-subheading">Passionate creator,dev, designer</h3>
+            <p>I'm a 17 year old content creator from <span class="bold">Buffalo, NY</span>. I enjoy making videos about my favorite tech products and share my honest thoughs in an entertaining yet straight-forward way. I also like to build and design websites on the side. I'm mostly a front-end guy but want to dive deeper in the future.</p>
+          </div>
+            
+
+            <!-- about cards -->
+            <div class="cards">
+
+              <div class="card">
+                <div class="card-icons"></div>
+
+                <h4>Content Creator</h4>
+                <p class="card-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est incidunt animi repellat!
+                </p>
+                <a href="#" class="cta">My Gear & Equipment -></a>
+              </div>
+              
+              <div class="card">
+                <div class="card-icons"></div>
+
+                <h4>Web Developer</h4>
+                  <p class="card-description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est incidunt animi repellat!
+                  </p>
+                  <a href="#" class="cta">See my projects -></a>
+              </div>
+
+              <div class="card">
+                <div class="card-icons"></div>
+
+                <h4>Designer</h4>
+                <p class="card-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est incidunt animi repellat!
+                </p>
+                <a href="#" class="cta">See my work -></a>
+              </div>
+
+
+            </div>
+          </div>
+          </section>
+
+          <!-- Contact CTA section -->
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container footer-container">
+
+          <div class="footer-left">
+            <div class="footer-name">
+              <img src="/index.html" alt=""> <h4>Cole Caccamise</h4>
+            </div>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quibusdam nemo sapiente ut, quis inventore enim doloribus quidem nam ea. Et possimus inventore minima.</p>
+
+            <ul class="footer-socials"></ul>
+          </div>
+
+          <div class="footer-right">
+            <h5>Quick Links</h5>
+            <ul class="footer-links">
+              <a href="/">Home</a>
+              <a href="#about">About</a>
+              <a href="portfolio">Portfolio</a>
+              <a href="https://blog.colecaccamise.com">Blog</a>
+              <a href="contact">Contact</a>
+            </ul>
+          </div>
+
+            <p>&copy; <span id="year"></span> <a href="/"><span class="bold">Cole Caccamise</span></a></p>
+        </div>
+      </footer>
+    
+</body>
+</html>

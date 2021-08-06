@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics placeholder -->
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="6c855b0387ee4451619e29506a8cfd46">
+    <!-- JavaScript -->
+    <script defer="" src="532db7eb851e010873761fee8b11159c"></script>
+    <link href="833380f8ba069e466aad342dbe21a433" rel="stylesheet">
+    <title>Cole Caccamise - Portfolio</title>
+</head>
+<body>
+    
+ <!-- Navbar -->
+ <header>
+  <nav class="navbar">
+  <div class="container navbar__container">
+    <div class="navbar__top-section">
+      <a class="hamburger"><i class="fas fa-bars"></i></a>
+      <div class="navbar__logo"><a href="/">cole caccamise.</a></div>
+    </div>
+  
+      <ul class="navbar__menu">
+        <li><a href="/#about">About</a></li>
+        <li><a href="links">Links</a></li>
+        <li><a href="portfolio">Portfolio</a></li>
+        <li><a href="contact" class="btn btn--primary">Contact</a></li>
+      </ul>
+    </div>
+</nav>
+
+  </header>
+
+      <main>
+
+        <section class="portfolio" id="portfolio">
+            <div class="container portfolio__container">
+                <h1>Portfolio.</h1>
+                <p>Check out what I've worked on in the past</p>
+
+                <div class="cards">
+                    <div class="card">
+                      <div class="card__img">
+                      <img src="56e0689ffa99a7f8c41603758c13f969" alt="">
+                      </div>
+                        <div class="card__info">
+                            <h3>Portfolio site</h3>
+                            <a class="tag nohover">Web Development</a>     
+                        </div>            
+                        <p class="card__description">The website you're looking at right now. Showcases my skills and what I'm up to.</p>
+                        <h4 class="card__subheading">Tech stack</h4>
+                        <ul class="card__list">
+                            <li>HTML</li>
+                            <li>SCSS</li>
+                            <li>JavaScript</li>
+                            <li>Parcel (Dev tool)</li>
+                          </ul>
+                        <div class="card__buttons">
+                            <a href="/" class="btn btn--black">View live site</a>
+                        <a class="btn btn--black" href="825532d045198ff7964764a2183844df"><i class="fab fa-github"></i></a>
+                        </div>
+                        
+                    </div>
+
+                <div class="card">
+                  <div class="card__img">
+                    <img src="9842550f5c33f4b996f871a67c15ac62" alt="">
+                  </div>
+                    <div class="card__info">
+                        <h3>Guessing Game!</h3>
+                        <a class="tag nohover">Web Development</a>     
+                    </div>   
+                    <p class="card__description">Generates a random number, then tells you if your guess is too high or low</p>
+                    <h4 class="card__subheading">Tech stack</h4>
+                    <ul class="card__list">
+                        <li>HTML</li>
+                        <li>SCSS</li>
+                        <li>JavaScript</li>
+                      </ul>
+
+                      <div class="card__buttons">
+                        <a href="6e41e504f77698306cc3377aeae2403c" class="btn btn--black">View live site</a>
+                    <a href="53111e2be97b1728d07a21d4407d011a" class="btn btn--black"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                  <div class="card__img">
+                    <img class="img-ui" src="58aa1e0689a35f7294c45b4aff44263c" alt="">
+                  </div>
+                    <div class="card__info">
+                        <h3>Reading List App</h3>
+                        <a class="tag nohover">UI Design</a>     
+                    </div>   
+                    <p class="card__description">A UI I designed for a concept iOS app. Allows you to keep track of books you're reading and find new ones.</p>
+                    <h4 class="card__subheading">Tools used</h4>
+                    <ul class="card__list">
+                        <li>Mockup (wireframing)</li>
+                        <li>Sketch</li>
+                      </ul>
+
+                      <div class="card__buttons">
+                        <a href="a1c39e7f21d96eb6fa36b83e7c6296da" class="btn btn--black"><i class="fab fa-instagram"></i></a>
+                    <a href="3abbdb23fc03245189afd8debe97167d" class="btn btn--black"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+                
+            </div>
+        </section>          
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container footer__container">
+            
+        </div>
+      </footer>
+    
+</main></body>
+</html>

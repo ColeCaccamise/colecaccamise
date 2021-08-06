@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics placeholder -->
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="4727a1287a954949471530e05222a433">
+    <!-- JavaScript -->
+    <script defer="" src="7b582747e7ed9b890117a8a54e8f40f6"></script>
+    <link href="1553d71b087053f15f9de754f329ea70" rel="stylesheet">
+    <title>Cole Caccamise - Contact</title>
+</head>
+<body>
+    
+ <!-- Navbar -->
+ <header>
+  <nav class="navbar">
+  <div class="container navbar__container">
+    <div class="navbar__top-section">
+      <a class="hamburger"><i class="fas fa-bars"></i></a>
+      <div class="navbar__logo"><a href="/">cole caccamise.</a></div>
+    </div>
+  
+      <ul class="navbar__menu">
+        <li><a href="/#about">About</a></li>
+        <li><a href="links">Links</a></li>
+        <li><a href="portfolio">Portfolio</a></li>
+        <li><a href="contact" class="btn btn--primary">Contact</a></li>
+      </ul>
+    </div>
+</nav>
+
+  </header>
+
+      <main>
+
+        <section class="contact" id="contact">
+            <div class="container container-center contact__container">
+                <h1>Get in touch.</h1>
+                <p>Feel free to contact me for brand collaborations and other inquires.
+
+                    </p><form class="contact__form">
+                        <p class="hidden">
+                            <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+                          </p>
+                          <input class="name" type="text" name="name" placeholder="Name" required="">
+                          <input class="email" type="email" name="email" placeholder="Email" required="">
+                          <textarea id="textarea" name="textarea" placeholder="I'd like to chat about..." required=""></textarea>
+                          <button onclick="shake()" type="submit" class="btn btn--primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+
+                    <p class="">if you'd like, you can also email me directly at <a href="5c76a8663badb36c651a7b6ac8f51fee" class="underline underline-white">contact@colecaccamise.com</a></p>
+            </div>
+        </section>
+
+          
+      </main>
+
+          
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container footer__container">
+            
+        </div>
+      </footer>
+    
+</body>
+</html>

@@ -1,0 +1,5 @@
+"use strict";
+const dynamicYear = document.querySelector('#year');
+dynamicYear.innerHTML = new Date().getFullYear();
+// don't have to reload page
+if (module.hot) module.hot.accept();

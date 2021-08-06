@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics placeholder -->
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="3c88ea9cec57e5c4d15287fd5ee6eed4">
+    <!-- JavaScript -->
+    <script defer="" src="2137813665afb94b36d60aae451f116c"></script>
+    <link href="41739e2e9139291fc6e28b1fc90454ba" rel="stylesheet">
+    <title>Cole Caccamise - Wallpapers</title>
+</head>
+<body>
+    
+ <!-- Navbar -->
+ <header>
+  <nav class="navbar">
+  <div class="container navbar__container">
+    <div class="navbar__top-section">
+      <a class="hamburger"><i class="fas fa-bars"></i></a>
+      <div class="navbar__logo"><a href="/">cole caccamise.</a></div>
+    </div>
+  
+      <ul class="navbar__menu">
+        <li><a href="/#about">About</a></li>
+        <li><a href="links">Links</a></li>
+        <li><a href="portfolio">Portfolio</a></li>
+        <li><a href="contact" class="btn btn--primary">Contact</a></li>
+      </ul>
+    </div>
+</nav>
+
+  </header>
+
+      <main>
+
+        <section class="wallpapers" id="wallpapers">
+            <div class="container wallpapers__container">
+                <h1>Wallpapers.</h1>
+                <p>A collection of wallpapers I designed and use. Feel free to download for <span class="bold-white">personal</span> use</p>
+
+                <div class="wallpaper">
+                    <h2 class="wallpapers__heading">just create.</h2>
+                    <div class="wallpapers__img">
+                        <img src="8aec220f142d24098dafe8ea14163520" alt="">
+                    </div>
+                    <div class="wallpapers__buttons">
+                        <a href="" class="btn btn--primary">Download zip</a>
+                        <p class="disclaimer">*this file contains all resolutions</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="footer">
+          <div class="container footer__container">
+              
+          </div>
+        </footer>
+
+        
+</main></body>
+</html>

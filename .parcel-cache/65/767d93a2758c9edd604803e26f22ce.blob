@@ -1,0 +1,36 @@
+body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      .title-heading {
+        font-size: 2rem;
+        background-color: #fe0140;
+        color: #ffffff;
+        margin: 0 0 20px 0;
+        padding: 10px;
+      }
+
+      .error-message {
+        font-size: 1.2rem;
+        color: #000000;
+        margin: 10px 5px;
+      }
+
+      .error-hints-container {
+        margin: 5px 0 20px 0;
+      }
+
+      .error-hint {
+        color: #282c33;
+        font-size: 1rem;
+        padding: 0 0 0 5px;
+      }
+
+      .error-stack-trace {
+        padding: 20px 0;
+        background-color: #282c33;
+        color: #c5ccdb;
+        font-family: monospace;
+        white-space: pre;
+      }

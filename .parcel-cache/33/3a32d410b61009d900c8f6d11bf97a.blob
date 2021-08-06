@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics placeholder -->
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="4942febbd8001dc6faea571d48a98730">
+    <!-- JavaScript -->
+    <script defer="" src="72845068a8ced3b30e4995ca03e0c1e5"></script>
+    <script defer="" src="f444281ba36e890a18593a5ec3f0a07f"></script>
+    <link href="6a3c729aca4130bff215e5acabd2ca70" rel="stylesheet">
+    <title>Cole Caccamise - Links</title>
+</head>
+<body>
+    
+     <!-- Navbar -->
+     <header>
+      <nav class="navbar">
+      <div class="container navbar__container">
+        <div class="navbar__top-section">
+          <a class="hamburger"><i class="fas fa-bars"></i></a>
+          <div class="navbar__logo"><a href="/">cole caccamise.</a></div>
+        </div>
+      
+          <ul class="navbar__menu">
+            <li><a href="/#about">About</a></li>
+            <li><a href="links">Links</a></li>
+            <li><a href="portfolio">Portfolio</a></li>
+            <li><a href="contact" class="btn btn--primary">Contact</a></li>
+          </ul>
+        </div>
+    </nav>
+
+      </header>
+
+      <main>
+          <!-- main elements here -->
+
+          <section class="links" id="links">
+            <div class="container links__container">
+                <img class="links__img" src="4beb1c93d4ee0927f68aed10dc512d77" alt="Cole Caccamise">
+                <h1 class="links__heading">Cole Caccamise</h1>
+                <p>Content Creator</p>
+                <div class="links__card">
+                <div class="link">
+                  <a class="video-link" href="/">
+                  <h3>My Latest Video</h3>
+                
+                  <div class="vid-container">
+                    <!-- Latest Video -->
+                  </div>
+                  </a>
+                </div>
+
+                  <div class="link">
+                    <a href="f46c1041960074238f171a5cf7c8bbc3">
+                      <h3>YouTube</h3>
+                      <p>Tech videos</p>
+                    </a>
+                    </div> 
+
+                  <div class="link">
+                    <a href="7ef9b55a191e4ad9d0688751b4c608e2">
+                    <h3>Gear Links</h3>
+                    <p>All of the products I use</p>
+                </a>
+                </div>
+
+                <div class="link">
+                  <a href="wallpapers">
+                  <h3>Wallpapers</h3>
+                  <p>A collection of wallpapers I designed</p>
+              </a>
+              </div>
+
+                    <div class="link">
+                        <a href="7989ce837408cf6ee5dc88027e5b8c10">
+                        <h3>Instagram</h3>
+                        <p>Tech photography</p>
+                    </a>
+                    </div>
+
+                    <div class="link">
+                        <a href="ce31d45e7920751afee963a05c5f4b69">
+                        <h3>Twitter</h3>
+                        <p>Documenting my journey</p>
+                    </a>
+                    </div>
+
+                    <div class="link">
+                      <a href="8ce811072e1cc427868e83ddd4010b1d">
+                      <h3>Medium</h3>
+                      <p>I write occasionaly about tech, productivity, and more</p>
+                  </a>
+                  </div>
+
+                    <div class="link">
+                        <a href="2114616026bfdfbdab29ca78b2f368c5">
+                        <h3>GitHub</h3>
+                        <p>Check out what I'm working on</p>
+                    </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container footer__container">
+            
+        </div>
+      </footer>
+    
+</main></body>
+</html>
