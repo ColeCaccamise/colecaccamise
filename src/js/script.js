@@ -29,19 +29,19 @@ let footer = `
               <p class='copyright'>&copy; <span id="year">${dynamicYear}</span> <a href="/"><span class="footer-name">Cole Caccamise</span></a></p>
           </div>
           <div>
-              <a href="https://youtube.com/c/colecaccamise" class="footer__icon">
+              <a href="https://youtube.com/c/colecaccamise" class="footer__icon" aria-label="YouTube">
                   <i class="fab fa-youtube"></i>
                 </a>
   
-                <a href="https://twitter.com/colecaccamise" class="footer__icon">
+                <a href="https://twitter.com/colecaccamise" class="footer__icon" aria-label="Twitter">
                   <i class="fab fa-twitter"></i>
                 </a>
 
-                <a href="https://instagram.com/cole.caccamise" class="footer__icon">
+                <a href="https://instagram.com/cole.caccamise" class="footer__icon" aria-label="Instagram">
                   <i class="fab fa-instagram"></i>
                 </a>
 
-                <a href="https://twitch.tv/colecaccamise" class="footer__icon">
+                <a href="https://twitch.tv/colecaccamise" class="footer__icon" aria-label="Twitch">
                   <i class="fab fa-twitch"></i>
                 </a>
           </div>
