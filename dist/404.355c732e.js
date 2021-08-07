@@ -391,7 +391,7 @@ window.onscroll = ()=>{
     else navbar.classList.remove("box-shadow");
 };
 let dynamicYear = new Date().getFullYear();
-let footer = `\n<div class="line"></div>\n      \n      <div class='footer__content'>\n      \n          <div>\n              <p class='copyright'>&copy; <span id="year">${dynamicYear}</span> <a href="/"><span class="footer-name">Cole Caccamise</span></a></p>\n          </div>\n          <div>\n              <a href="https://youtube.com/c/colecaccamise" class="footer__icon">\n                  <i class="fab fa-youtube"></i>\n                </a>\n  \n                <a href="https://twitter.com/colecaccamise" class="footer__icon">\n                  <i class="fab fa-twitter"></i>\n                </a>\n\n                <a href="https://instagram.com/cole.caccamise" class="footer__icon">\n                  <i class="fab fa-instagram"></i>\n                </a>\n\n                <a href="https://twitch.tv/colecaccamise" class="footer__icon">\n                  <i class="fab fa-twitch"></i>\n                </a>\n          </div>\n      </div>\n`;
+let footer = `\n<div class="line"></div>\n      \n      <div class='footer__content'>\n      \n          <div>\n              <p class='copyright'>&copy; <span id="year">${dynamicYear}</span> <a href="/"><span class="footer-name">Cole Caccamise</span></a></p>\n          </div>\n          <div>\n              <a href="https://youtube.com/c/colecaccamise" class="footer__icon" aria-label="YouTube">\n                  <i class="fab fa-youtube"></i>\n                </a>\n  \n                <a href="https://twitter.com/colecaccamise" class="footer__icon" aria-label="Twitter">\n                  <i class="fab fa-twitter"></i>\n                </a>\n\n                <a href="https://instagram.com/cole.caccamise" class="footer__icon" aria-label="Instagram">\n                  <i class="fab fa-instagram"></i>\n                </a>\n\n                <a href="https://twitch.tv/colecaccamise" class="footer__icon" aria-label="Twitch">\n                  <i class="fab fa-twitch"></i>\n                </a>\n          </div>\n      </div>\n`;
 document.querySelector('.footer__container').innerHTML = footer;
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.navbar__menu');
@@ -402,4 +402,4 @@ if (hamburger) hamburger.addEventListener('click', toggleMenu);
 
 },{}]},["23Vuq","3GZMZ"], "3GZMZ", "parcelRequire3803")
 
-//# sourceMappingURL=index.355c732e.js.map
+//# sourceMappingURL=404.355c732e.js.map
