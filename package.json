@@ -5,7 +5,7 @@
   "main": "./dist/index.html",
 
   "scripts": {
-    "start": "parcel ./src/**/*.html",
+    "start": "parcel /src/**/*.html",
     "build": "parcel build ./src/index.html --dist-dir ./dist"
   },
   "repository": {
