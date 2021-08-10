@@ -17,6 +17,21 @@ h1 {
   gap: $hero-gap;
 }
 
+.hero__heading {
+  margin: 0 0 2rem 0;
+}
+
+.hero__intro {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: $link-color;
+
+  .bold {
+    color: $white-color;
+    opacity: 0.9;
+  }
+}
+
 .hero__copy {
   width: 42rem;
   line-height: 1.5;

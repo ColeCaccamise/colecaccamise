@@ -284,6 +284,17 @@ h1 {
   flex-direction: column;
   gap: 2rem; }
 
+.hero__heading {
+  margin: 0 0 2rem 0; }
+
+.hero__intro {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #888888; }
+  .hero__intro .bold {
+    color: #f9f9fb;
+    opacity: 0.9; }
+
 .hero__copy {
   width: 42rem;
   line-height: 1.5; }
@@ -373,7 +384,7 @@ h1 {
 #about .about__subheading {
   font-size: 2rem;
   color: gray;
-  line-height: 1; }
+  line-height: 1.4; }
 
 #about .about__text {
   margin: 2rem 0; }
