@@ -127,7 +127,7 @@ var getLink = function getLink(link) {
 }; // Cole - Enter new video link here
 
 
-getLink('https://youtu.be/ZK0ITdQ-wXo'); // const addLink = function(url, title, desc) {
+getLink('https://youtu.be/dX8WYBA5Qho'); // const addLink = function(url, title, desc) {
 //     let markup = `
 //     <div class="link">
 //         <a href="${url}">
@@ -168,7 +168,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59393" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60241" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

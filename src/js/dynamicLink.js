@@ -1,4 +1,4 @@
-const getLink = function(link) {
+const getLink = function (link) {
     document.querySelector('.video-link').href = link;
     let videoURL = link.slice(-11);
 
@@ -11,7 +11,7 @@ const getLink = function(link) {
 }
 
 // Cole - Enter new video link here
-getLink('https://youtu.be/ZK0ITdQ-wXo');
+getLink('https://youtu.be/dX8WYBA5Qho');
 
 // const addLink = function(url, title, desc) {
 //     let markup = `
