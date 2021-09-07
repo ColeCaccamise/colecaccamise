@@ -11,7 +11,7 @@ const getLink = function (link) {
 }
 
 // Cole - Enter new video link here
-getLink('https://youtu.be/dX8WYBA5Qho');
+getLink('https://youtu.be/qTtztYPJMkc');
 
 // const addLink = function(url, title, desc) {
 //     let markup = `
