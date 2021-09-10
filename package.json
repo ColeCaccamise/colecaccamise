@@ -2,7 +2,6 @@
   "name": "colecaccamise-new",
   "version": "1.0.0",
   "description": "portfolio site for cole caccamise",
-  "main": "./dist/index.html",
   "scripts": {
     "start": "parcel /src/**/*.html",
     "build": "parcel build ./src/index.html --dist-dir ./dist"
@@ -18,6 +17,7 @@
   },
   "homepage": "https://github.com/ColeCaccamise/colecaccamise#readme",
   "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
     "parcel": "^2.0.0-rc.0"
   },
   "dependencies": {
