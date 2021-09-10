@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "portfolio site for cole caccamise",
   "main": "./dist/index.html",
-
   "scripts": {
     "start": "parcel /src/**/*.html",
     "build": "parcel build ./src/index.html --dist-dir ./dist"
@@ -19,10 +18,10 @@
   },
   "homepage": "https://github.com/ColeCaccamise/colecaccamise#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.3.1",
-    "parcel": "^2.0.0-beta.3.1"
+    "parcel": "^2.0.0-rc.0"
   },
   "dependencies": {
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
     "compile-sass": "^1.1.3"
   }
 }

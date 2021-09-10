@@ -11,7 +11,7 @@ export default function _applyDecoratedDescriptor(target, property, decorators, 
   }
 
   desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-    return decorator(target, property, desc) || desc;
+    return decorator ? (decorator(target, property, desc) || desc) : desc;
   }, desc);
 
   if (context && desc.initializer !== void 0) {
