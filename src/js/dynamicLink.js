@@ -11,22 +11,4 @@ const getLink = function (link) {
 }
 
 // Cole - Enter new video link here
-getLink('https://youtu.be/qTtztYPJMkc');
-
-// const addLink = function(url, title, desc) {
-//     let markup = `
-//     <div class="link">
-//         <a href="${url}">
-//             <h3>${title}</h3>
-//             <p>${desc}</p>
-//         </a>
-//     </div> 
-//     `;
-
-//     document.querySelector('.links__card').innerHTML += markup;
-// }
-
-// // Cole - add new links here
-
-// addLink('https://youtube.com/c/colecaccamise', 'YouTube', 'Tech videos');
-
+getLink('https://youtu.be/CQCTHO00xW8');

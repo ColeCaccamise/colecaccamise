@@ -127,19 +127,7 @@ var getLink = function getLink(link) {
 }; // Cole - Enter new video link here
 
 
-getLink('https://youtu.be/qTtztYPJMkc'); // const addLink = function(url, title, desc) {
-//     let markup = `
-//     <div class="link">
-//         <a href="${url}">
-//             <h3>${title}</h3>
-//             <p>${desc}</p>
-//         </a>
-//     </div> 
-//     `;
-//     document.querySelector('.links__card').innerHTML += markup;
-// }
-// // Cole - add new links here
-// addLink('https://youtube.com/c/colecaccamise', 'YouTube', 'Tech videos');
+getLink('https://youtu.be/CQCTHO00xW8');
 },{}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -168,7 +156,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57656" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59390" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
