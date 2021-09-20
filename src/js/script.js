@@ -2,9 +2,9 @@
 
 
 // don't have to reload page
-if(module.hot) {
-    module.hot.accept()
-}
+// if(module.hot) {
+//     module.hot.accept()
+// }
 
 const navbar = document.querySelector(".navbar");
 
