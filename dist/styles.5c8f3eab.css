@@ -282,7 +282,7 @@ h1 {
 .hero__text-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 2rem; }
+  gap: 1rem; }
 
 .hero__heading {
   margin: 0 0 2rem 0; }
@@ -290,7 +290,8 @@ h1 {
 .hero__intro {
   font-size: 1.5rem;
   font-weight: 400;
-  color: #888888; }
+  color: #888888;
+  line-height: 2.5; }
   .hero__intro .bold {
     color: #f9f9fb;
     opacity: 0.9; }

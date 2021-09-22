@@ -45,7 +45,7 @@ gtag('config', 'UA-185051636-1');</script>
     <script defer="" src="/script.d573be0b.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="icon" href="/favicon.df682a99.ico">
-    <title>Cole Caccamise - Contact</title>
+    <title>Cole Caccamise - Newsletter</title>
 
 <script src="/styles.5c8f3eab.js"></script></head>
 <body>
@@ -75,25 +75,30 @@ gtag('config', 'UA-185051636-1');</script>
 
       <main>
 
-        <section class="contact" id="contact">
-            <div class="container container-center contact__container">
-                <h1>Get in touch.</h1>
-                <p>Think we'd work well together? Feel free to shoot me a message.</p>
-                <!-- <p>Please read my <a href="/collabs" class='underline underline-white'>collaboration guidelines</a>  before reaching out</p> -->
-                
+        <section class="newsletter" id="newsletter">
+            <div class="container container-center newsletter__container">
+                <h1>My newsletter</h1>
+                <p>
+                    Sharing my thoughts on the latest tech, showing behind the scenes of my work, and more!
+                </p>
 
-                    <form class="contact__form">
-                        <p class="hidden">
-                            <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
-                          </p>
-                          <input class="name" type="text" name="name" placeholder="Name" required="">
-                          <input class="email" type="email" name="email" placeholder="Email" required="">
-                          <textarea id="textarea" name="textarea" placeholder="I'd like to chat about..." required=""></textarea>
-                          <button onclick="shake()" type="submit" class="btn btn--primary">Send Message <i class="fas fa-paper-plane"></i></button>
-                    </form>
-
+                <div id="revue-embed">
+                    <form action="http://newsletter.colecaccamise.com/add_subscriber" method="post" id="revue-form" name="revue-form" target="_blank">
+                <div class="revue-form-group">
+                    <label for="member_first_name">First name</label>
+                    <input class="revue-form-field" placeholder="First name" type="text" name="member[first_name]" id="member_first_name">
+                    </div>
+                    <div class="revue-form-group">
+                      <label for="member_email">Email address</label>
+                      <input class="revue-form-field" placeholder="Your email address..." type="email" name="member[email]" id="member_email">
+                    </div>
                     
-                    <p class="">If you'd prefer, you can email me directly at <a href="mailto:contact@colecaccamise.com" class=" underline-white">contact@colecaccamise.com</a></p>
+                    <div class="revue-form-actions">
+                      <input type="submit" value="Subscribe" name="member[subscribe]" id="member_submit" class="btn btn--white">
+                    </div>
+                    <div class="revue-form-footer">By subscribing, you agree with Revue’s <a target="_blank" href="https://www.getrevue.co/terms">Terms of Service</a> and <a target="_blank" href="https://www.getrevue.co/privacy">Privacy Policy</a>.</div>
+                    </form>
+                  </div>
             </div>
         </section>
 

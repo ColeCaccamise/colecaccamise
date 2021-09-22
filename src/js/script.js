@@ -40,10 +40,6 @@ let footer = `
                 <a href="https://instagram.com/cole.caccamise" class="footer__icon" aria-label="Instagram">
                   <i class="fab fa-instagram"></i>
                 </a>
-
-                <a href="https://twitch.tv/colecaccamise" class="footer__icon" aria-label="Twitch">
-                  <i class="fab fa-twitch"></i>
-                </a>
           </div>
       </div>
 `
@@ -60,3 +56,4 @@ function toggleMenu() {
 }
 
 if(hamburger) hamburger.addEventListener('click', toggleMenu);
+
