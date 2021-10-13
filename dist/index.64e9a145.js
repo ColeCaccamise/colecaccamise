@@ -1,0 +1,2 @@
+const getLink=function(e){document.querySelector(".video-link").href=e;let r=`\n    <iframe src="https://www.youtube.com/embed/${e.slice(-11)}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>\n    `;document.querySelector(".vid-container").innerHTML+=r};getLink("https://youtu.be/yGHjqdriu08");
+//# sourceMappingURL=index.64e9a145.js.map
