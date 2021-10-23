@@ -11,4 +11,4 @@ const getLink = function (link) {
 }
 
 // Cole - Enter new video link here
-getLink('https://youtu.be/yGHjqdriu08');
+getLink('https://youtu.be/u3BCBs22wZI');
