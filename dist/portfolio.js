@@ -117,34 +117,74 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/script.js":[function(require,module,exports) {
-"use strict"; // don't have to reload page
-// if(module.hot) {
-//     module.hot.accept()
-// }
+})({"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
 
-var navbar = document.querySelector(".navbar"); // add shadow to navbar
-
-window.onscroll = function () {
-  if (window.pageYOffset > 30) {
-    navbar.classList.add("box-shadow");
-  } else {
-    navbar.classList.remove("box-shadow");
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
   }
-};
 
-var dynamicYear = new Date().getFullYear();
-var footer = "\n<div class=\"line\"></div>\n      \n      <div class='footer__content'>\n      \n          <div>\n              <p class='copyright'>&copy; <span id=\"year\">".concat(dynamicYear, "</span> <a href=\"/\"><span class=\"footer-name\">Cole Caccamise</span></a></p>\n          </div>\n          <div>\n              <a href=\"https://youtube.com/c/colecaccamise\" class=\"footer__icon\" aria-label=\"YouTube\">\n                  <i class=\"fab fa-youtube\"></i>\n                </a>\n  \n                <a href=\"https://twitter.com/colecaccamise\" class=\"footer__icon\" aria-label=\"Twitter\">\n                  <i class=\"fab fa-twitter\"></i>\n                </a>\n\n                <a href=\"https://instagram.com/cole.caccamise\" class=\"footer__icon\" aria-label=\"Instagram\">\n                  <i class=\"fab fa-instagram\"></i>\n                </a>\n          </div>\n      </div>\n");
-document.querySelector('.footer__container').innerHTML = footer;
-var hamburger = document.querySelector('.hamburger');
-var navMenu = document.querySelector('.navbar__menu');
-
-function toggleMenu() {
-  navMenu.classList.toggle('flex');
+  return bundleURL;
 }
 
-if (hamburger) hamburger.addEventListener('click', toggleMenu);
-},{}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -172,7 +212,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56293" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53252" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -348,5 +388,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/script.js"], null)
-//# sourceMappingURL=/script.d573be0b.js.map
+},{}]},{},["../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/portfolio.js.map
