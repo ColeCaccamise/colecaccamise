@@ -58,12 +58,14 @@
 
   &__logo {
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 200;
     color: $white-color;
     text-align: center;
+
     a {
       color: $white-color;
       font-size: 3rem;
+      letter-spacing: 0.5px;
 
       &:hover {
         color: $hover-color-white;

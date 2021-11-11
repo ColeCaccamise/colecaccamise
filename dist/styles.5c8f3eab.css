@@ -27,6 +27,9 @@
   .underline-white {
     color: #f9f9fb; }
 
+.semibold {
+  font-weight: 600; }
+
 .btn {
   padding: 1rem 2rem;
   border-radius: 6px;
@@ -97,12 +100,13 @@
         border-bottom: 1px solid black; }
   .navbar__logo {
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 200;
     color: #f9f9fb;
     text-align: center; }
     .navbar__logo a {
       color: #f9f9fb;
-      font-size: 3rem; }
+      font-size: 3rem;
+      letter-spacing: 0.5px; }
       .navbar__logo a:hover {
         color: rgba(255, 255, 255, 0.8); }
     .navbar__logo__top-section {
