@@ -127,13 +127,8 @@ var getLink = function getLink(link) {
 }; // Cole - Enter new video link here
 
 
-<<<<<<< HEAD
 getLink('https://youtu.be/Plo3A0-odww');
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
-=======
-getLink('https://youtu.be/wxRzqtaTxKQ');
-},{}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
->>>>>>> ffe1980f062f8c9ac644d56ff7c648e5c783030d
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -161,11 +156,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53736" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56293" + '/');
->>>>>>> ffe1980f062f8c9ac644d56ff7c648e5c783030d
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53775" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
