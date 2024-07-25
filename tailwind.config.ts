@@ -1,20 +1,89 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
-  },
-  plugins: [],
+	darkMode: 'media',
+	content: [
+		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./app/**/*.{js,ts,jsx,tsx,mdx}',
+		'./app/globals.css',
+	],
+	safelist: [
+		'bg-light-red-bg',
+		'bg-light-green-bg',
+		{ pattern: /^bg-light-.*-bg$/ },
+		{ pattern: /^border-.*-bg-border$/ },
+		'bg-ui-component-default',
+		'border-red-bg-border',
+		'border-green-bg-border',
+		'border-borders-non-interactive',
+		'text-error',
+		'text-success',
+		'text-warning',
+		'text-info',
+		'text-high-contrast-text',
+	],
+	theme: {
+		extend: {
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic':
+					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+			},
+			maxHeight: {
+				'screen-minus-20': 'calc(100vh - 5rem)',
+			},
+			colors: {
+				'app-bg': 'var(--app-bg)',
+				'sidebar-bg': 'var(--sidebar-bg)',
+				'ui-component-default': 'var(--ui-component-default)',
+				'ui-component-hover': 'var(--ui-component-hover)',
+				'ui-component-pressed-selected': 'var(--ui-component-pressed-selected)',
+				'borders-non-interactive': 'var(--borders-non-interactive)',
+				'subtle-borders-interactive': 'var(--subtle-borders-interactive)',
+				'stronger-borders-interactive-focus-rings':
+					'var(--stronger-borders-interactive-focus-rings)',
+				'solid-backgrounds': 'var(--solid-backgrounds)',
+				'hovered-solid-backgrounds': 'var(--hovered-solid-backgrounds)',
+				'low-contrast-text': 'var(--low-contrast-text)',
+				'high-contrast-text': 'var(--high-contrast-text)',
+				'overlay-05': 'var(--overlay-05)',
+				'overlay-10': 'var(--overlay-10)',
+				'overlay-15': 'var(--overlay-15)',
+				'overlay-20': 'var(--overlay-20)',
+				'overlay-30': 'var(--overlay-30)',
+				'overlay-40': 'var(--overlay-40)',
+				'overlay-50': 'var(--overlay-50)',
+				'overlay-60': 'var(--overlay-60)',
+				'overlay-70': 'var(--overlay-70)',
+				'overlay-80': 'var(--overlay-80)',
+				'overlay-90': 'var(--overlay-90)',
+				'overlay-95': 'var(--overlay-95)',
+				error: 'var(--error)',
+				info: 'var(--info)',
+				success: 'var(--success)',
+				warning: 'var(--warning)',
+				'yellow-text': 'var(--yellow-text)',
+				'purple-text': 'var(--purple-text)',
+				'orange-text': 'var(--orange-text)',
+				'red-bg-border': 'var(--red-bg-border)',
+				'blue-bg-border': 'var(--blue-bg-border)',
+				'green-bg-border': 'var(--green-bg-border)',
+				'yellow-bg-border': 'var(--yellow-bg-border)',
+				'purple-bg-border': 'var(--purple-bg-border)',
+				'orange-bg-border': 'var(--orange-bg-border)',
+				'light-red-bg': 'var(--light-red-bg)',
+				'light-blue-bg': 'var(--light-blue-bg)',
+				'light-green-bg': 'var(--light-green-bg)',
+				'light-yellow-bg': 'var(--light-yellow-bg)',
+				'light-purple-bg': 'var(--light-purple-bg)',
+				'light-orange-bg': 'var(--light-orange-bg)',
+			},
+		},
+	},
+	purge: {
+		options: {},
+	},
+	plugins: [],
 };
 export default config;

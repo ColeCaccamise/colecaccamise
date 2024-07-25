@@ -2,32 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+	height: 100%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	height: 100%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.transition-effect {
+	@apply transition duration-200;
+}
+
+a {
+	@apply transition-effect text-high-contrast-text;
+}
+
+@layer base {
+	/* TODO: create color system for B/W or an accent (for buttons etc) */
+	:root {
+		--error: #e5484d;
+		--info: #0090ff;
+		--success: #30a46c;
+		--warning: #ffe629;
+		--yellow-text: #d5ae39;
+		--purple-text: #8e4ec6;
+		--orange-text: #f76b15;
+
+		--app-bg: #111111;
+		--sidebar-bg: #191919;
+		--ui-component-default: #222222;
+		--ui-component-hover: #2a2a2a;
+		--ui-component-pressed-selected: #313131;
+		--borders-non-interactive: #3a3a3a;
+		--subtle-borders-interactive: #484848;
+		--stronger-borders-interactive-focus-rings: #606060;
+		--solid-backgrounds: #6e6e6e;
+		--hovered-solid-backgrounds: #7b7b7b;
+		--low-contrast-text: #b4b4b4;
+		--high-contrast-text: #eeeeee;
+		--overlay-05: hsla(0, 0%, 100%, 0.05);
+		--overlay-10: hsla(0, 0%, 100%, 0.1);
+		--overlay-15: hsla(0, 0%, 100%, 0.15);
+		--overlay-20: hsla(0, 0%, 100%, 0.2);
+		--overlay-30: hsla(0, 0%, 100%, 0.3);
+		--overlay-40: hsla(0, 0%, 100%, 0.4);
+		--overlay-50: hsla(0, 0%, 100%, 0.5);
+		--overlay-60: hsla(0, 0%, 100%, 0.6);
+		--overlay-70: hsla(0, 0%, 100%, 0.7);
+		--overlay-80: hsla(0, 0%, 100%, 0.8);
+		--overlay-90: hsla(0, 0%, 100%, 0.9);
+		--overlay-95: hsla(0, 0%, 100%, 0.95);
+		--red-bg-border: #641723;
+		--blue-bg-border: #113264;
+		--green-bg-border: #193b2d;
+		--yellow-bg-border: #473b1f;
+		--purple-bg-border: #402060;
+		--orange-bg-border: #582d1d;
+		--light-red-bg: #201314;
+		--light-blue-bg: #111927;
+		--light-green-bg: #121b17;
+		--light-yellow-bg: #1b180f;
+		--light-purple-bg: #1e1523;
+		--light-orange-bg: #121212;
+	}
+}
+
+@layer base {
+	h1 {
+		@apply scroll-m-20 text-4xl text-high-contrast-text font-extrabold tracking-tight lg:text-5xl;
+	}
+
+	h2 {
+		@apply scroll-m-20 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+	}
+
+	h3 {
+		@apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight;
+	}
+
+	h4 {
+		@apply scroll-m-20 text-xl font-semibold tracking-tight;
+	}
+
+	p {
+		@apply text-low-contrast-text leading-7;
+	}
+
+	.muted {
+		@apply text-sm;
+	}
+}
+
+/* For WebKit-based browsers */
+::-webkit-scrollbar {
+	width: 12px; /* Adjust scrollbar width here */
+}
+::-webkit-scrollbar-track {
+	background: transparent; /* Remove background color */
+}
+::-webkit-scrollbar-thumb {
+	background-color: darkgrey; /* Customize the scrollbar color */
+	border-radius: 10px; /* Roundness of the scrollbar */
+	border: 3px solid transparent; /* Space around the thumb */
+}
+/* For Firefox browsers */
+* {
+	scrollbar-width: thin; /* Adjust scrollbar width */
+	scrollbar-color: darkgrey transparent; /* Customize scrollbar and track color */
 }
