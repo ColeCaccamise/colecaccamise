@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { verifyLoginCode } from '@/app/admin/(auth)/auth/confirm-email/actions';
 import { useEffect, useState } from 'react';
 import toast from '@/utils/toast';
-import { isValidEmail } from '@/utils/validation';
+import { isValidEmail } from '@/lib/validation';
 import { useUser } from '@/context/user-provider';
 
 export default function ConfirmEmailPage() {

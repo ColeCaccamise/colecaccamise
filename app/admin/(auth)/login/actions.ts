@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation';
 import { createClient } from '@/utils/supabase/server';
 import { sendLoginEmail } from '@/app/api/send/send';
 import { generateMagicLink } from '../actions';
-import { isValidEmail } from '@/utils/validation';
+import { isValidEmail } from '@/lib/validation';
 
 export async function signIn(email: string) {
 	'use server';
