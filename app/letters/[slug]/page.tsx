@@ -1,16 +1,18 @@
 import { getCollectionBySlug } from '@/lib/mdx';
 
+import { Meta, Params } from '@/types/cms';
+
 const getPageContent = async (slug: string) => {
 	const { meta, content } = await getCollectionBySlug(slug, 'letters');
 	return { meta, content };
 };
 
-export async function generateMetadata({ params }) {
-	const { meta } = await getPageContent(params.slug);
+export async function generateMetadata({ params }: { params: Params }) {
+	const { meta }: { meta: Meta } = await getPageContent(params.slug);
 	return { title: meta.title };
 }
 
-const Page = async ({ params }) => {
+const Page = async ({ params }: { params: Params }) => {
 	const { content } = await getPageContent(params.slug);
 
 	return (

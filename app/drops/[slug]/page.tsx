@@ -1,17 +1,19 @@
 import { getCollectionBySlug } from '@/lib/mdx';
 
+import { Meta, Params } from '@/types/cms';
+
 const getPageContent = async (slug: string) => {
 	const { meta, content } = await getCollectionBySlug(slug, 'drops');
 	return { meta, content };
 };
 
-export async function generateMetadata({ params }) {
-	const { meta } = await getPageContent(params.slug);
+export async function generateMetadata({ params}:{params: Params} ) {
+	const { meta } : {meta: Meta} = await getPageContent(params.slug);
 	return { title: meta.name };
 }
 
-const DropPage = async ({ params }) => {
-	const { meta, content } = await getPageContent(params.slug);
+const DropPage = async ({ params }:{params: Params}) => {
+	const { meta, content }: {meta: Meta, content: any} = await getPageContent(params.slug);
 
 	return (
 		<section className='py-24'>
