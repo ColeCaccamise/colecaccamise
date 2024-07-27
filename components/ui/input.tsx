@@ -23,6 +23,7 @@ interface InputProps {
 	loading?: boolean;
 	icon?: JSX.Element;
 	prefix?: string | JSX.Element;
+	required?: boolean;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
@@ -45,6 +46,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 		loading,
 		icon,
 		prefix,
+		required,
 	},
 	ref: ForwardedRef<HTMLInputElement>
 ) {
@@ -60,6 +62,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 				className={`${className} ${size} ${weight} text-high-contrast-text ${placeholderStyle} outline-none`}
 				onChange={handleChange}
 				autoFocus={autoFocus}
+				required={required}
 			/>
 		);
 	}
@@ -105,6 +108,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 						className={`${className} ${size} ${weight} flex-grow text-high-contrast-text placeholder-high-contrast-text/50 outline-none bg-transparent p-2`}
 						onChange={handleChange}
 						autoFocus={autoFocus}
+						required={required}
 					/>
 				</div>
 

@@ -1,12 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllCollectionMeta } from '@/lib/mdx';
-import { DotFilledIcon } from '@radix-ui/react-icons';
-import Divider from '@/components/ui/divider';
+import ListContainer from '@/components/ui/list/list-container';
 import Listicle from '@/components/ui/list/listicle';
+import Input from '@/components/ui/input';
+import Button from '@/components/ui/button';
+import NewsletterSignup from '@/components/ui/newsletter-signup';
 
 export default async function Home() {
 	const drops = await getAllCollectionMeta('drops');
+	const stack = await getAllCollectionMeta('stack');
 
 	const ventures = [
 		{
@@ -56,54 +59,43 @@ export default async function Home() {
 					</p>
 				</div>
 
-				<div className=''>
-					<span>Weekly Newsletter</span>
-					<p>
-						Documenting the process of building my one person businesses.
-						Sharing lessons I learn and interesting resources I find.
-					</p>
-					{/* TODO: signup form */}
-				</div>
+				<NewsletterSignup formId='5584232' />
 
-				<div className=''>
-					<div className='mb-4'>
-						<span>Featured Drops</span>
-						<p>Premium digital products I’ve created recently</p>
-					</div>
-
+				<ListContainer
+					title='Featured Drops'
+					description='Premium digital products I’ve created recently'
+				>
 					<Listicle
 						collection={drops}
 						kind='drops'
 					/>
-				</div>
+				</ListContainer>
 
-				<div>
-					<div className='mb-4'>
-						<span>Ventures</span>
-
-						<p>Projects I&apos;m working on</p>
-					</div>
-
+				<ListContainer
+					title='Ventures'
+					description="Projects I'm working on"
+				>
 					<Listicle
 						collection={ventures}
 						kind='ventures'
 					/>
-				</div>
+				</ListContainer>
 
-				<div>
-					<span>Stack</span>
-					<p>Tools and products I use daily</p>
-					{/* TODO: list last ventures */}
-				</div>
+				<ListContainer
+					title='Stack'
+					description='Tools and products I use daily'
+				>
+					<Listicle
+						collection={stack}
+						kind='stack'
+					/>
+				</ListContainer>
 
-				<div className='opacity-80 cursor-wait'>
-					<span>The UI Letter (coming soon)</span>
-					<p>
-						My upcoming product design newsletter. Teaching founders how to
-						design websites that convert.
-					</p>
-					{/* TODO: list last ventures */}
-				</div>
+				<NewsletterSignup
+					title='The UI Letter (coming soon)'
+					description='My upcoming monthly product design newsletter. Teaching founders how to design websites that convert.'
+					formId='6876699'
+				/>
 
 				<div>
 					<span>Connect</span>

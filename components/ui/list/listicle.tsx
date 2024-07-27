@@ -14,14 +14,16 @@ export default function Listicle({
 	if (!collection || !kind) return null;
 
 	return (
-		<div className='flex flex-col'>
-			{collection.map((item: any, i: number) => (
-				<ListItem
-					key={i}
-					item={item}
-					kind={kind}
-				/>
-			))}
+		<>
+			<div>
+				{collection.map((item: any, i: number) => (
+					<ListItem
+						key={i}
+						item={item}
+						kind={kind}
+					/>
+				))}
+			</div>
 			{kind !== 'ventures' && (
 				<Link
 					href={`/${kind}`}
@@ -30,6 +32,6 @@ export default function Listicle({
 					View all <ArrowRightIcon />
 				</Link>
 			)}
-		</div>
+		</>
 	);
 }
