@@ -2,25 +2,28 @@ import { NextResponse, NextRequest } from 'next/server';
 import { get } from '@vercel/edge-config';
 import { updateSession } from '@/utils/supabase/middleware';
 import { isUserAuthenticated } from '@/utils/auth';
+import { RedoIcon } from 'lucide-react';
+import { isEmpty } from './lib/validation';
 
 type RedirectEntry = {
 	destination: string;
 	permanent: boolean;
 };
 
-// TODO: implement redirects: https://nextjs.org/docs/app/building-your-application/routing/redirecting#managing-redirects-at-scale-advanced
+interface Redirects {
+	[pathname: string]: RedirectEntry;
+}
 
 export async function middleware(request: NextRequest) {
 	await updateSession(request);
 
-	const pathname = request.nextUrl.pathname;
-	const redirectData = await get(pathname);
+	const pathname: string = request.nextUrl.pathname;
 
-	console.log('pathname', pathname);
+	const redirects: Redirects = (await get('redirects')) || {};
+	const redirectEntry: RedirectEntry = redirects[pathname];
 
-	if (redirectData && typeof redirectData === 'string') {
-		const redirectEntry: RedirectEntry = JSON.parse(redirectData);
-		const statusCode = redirectEntry.permanent ? 308 : 307;
+	if (!isEmpty(redirects) && redirectEntry) {
+		const statusCode = redirectEntry?.permanent ? 308 : 307;
 		return NextResponse.redirect(redirectEntry.destination, statusCode);
 	}
 

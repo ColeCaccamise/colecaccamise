@@ -53,8 +53,6 @@ export async function sendLoginEmail(email: string, url: string, code: string) {
 		template
 	);
 
-	console.log('emailData', emailError);
-
 	return emailError ? false : true;
 }
 

@@ -14,8 +14,6 @@ export async function POST(request: Request) {
 
 	const generatedLinks: LinkSchema[] | null = await createLinks(links);
 
-	console.log('generatedLinks', generatedLinks);
-
 	return Response.json(generatedLinks);
 }
 

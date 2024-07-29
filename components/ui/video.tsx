@@ -1,7 +1,6 @@
 import { YouTubeEmbed } from '@next/third-parties/google';
 
 export default function Video({ url }: { url: string }) {
-	console.log(url);
 	if (url === undefined) {
 		return null;
 	}

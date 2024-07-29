@@ -11,7 +11,6 @@ export async function generateMagicLink(email: string) {
 	});
 
 	if (error) {
-		console.log(error);
 		throw new Error('Could not generate magic link.');
 	}
 

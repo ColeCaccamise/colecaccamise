@@ -17,8 +17,6 @@ export async function signIn(email: string) {
 
 	const emailSent = await sendLoginEmail(email, url, code);
 
-	console.log('emailSent', emailSent);
-
 	if (emailSent) {
 		return redirect(
 			`/admin/auth/confirm-email?email=${encodeURIComponent(email)}&from=login`

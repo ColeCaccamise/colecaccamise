@@ -44,8 +44,6 @@ export const getCollectionBySlug = async (slug: string, collection: string) => {
 				components: { Video },
 			});
 
-		console.log({ meta: { ...frontmatter, slug: realSlug }, content });
-
 		return { meta: { ...frontmatter, slug: realSlug }, content };
 	} catch (error) {
 		return notFound();
