@@ -2,6 +2,7 @@ import { getAllCollectionMeta } from '@/lib/mdx';
 import ListItem from '@/components/ui/list/list-item';
 import NewsletterSignup from '@/components/ui/newsletter-signup';
 import Link from 'next/link';
+import { Drop } from '@/types/cms';
 
 export default async function DropsPage() {
 	const drops = await getAllCollectionMeta('drops');

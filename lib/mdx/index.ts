@@ -5,26 +5,7 @@ import path from 'path';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import Video from '@/components/ui/video';
 import { notFound } from 'next/navigation';
-
-type Drop = {
-	category: string;
-	seoDescription: string;
-	price: number;
-	oldPrice: number;
-	name: string;
-	lemonSqueezyLink: string;
-	thumbnailImage: string;
-};
-
-type Letter = {
-	title: string;
-	published: string;
-};
-
-type Stack = {
-	title: string;
-	seoDescription: string;
-};
+import { Drop, Letter, Stack } from '@/types/cms';
 
 type Frontmatter = Drop | Letter | Stack;
 
@@ -82,12 +63,12 @@ export const getAllCollectionMeta = async (collection: string) => {
 
 		const files = fs.readdirSync(rootDirectory);
 
-		let items = getItemsArray(collection);
+		let items: Drop[] | Stack[] | Letter[] = getItemsArray(collection);
 
 		for (const file of files) {
 			const { meta }: { meta: Drop | Letter | Stack } =
 				await getCollectionBySlug(`${file}`, collection);
-			items.push(meta);
+			items.push(meta as any);
 		}
 
 		return items;
