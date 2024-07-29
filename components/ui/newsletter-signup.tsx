@@ -38,6 +38,7 @@ export default function NewsletterSignup({
 		}
 
 		if (!isValidEmail(email)) {
+			setEmail('');
 			return toast('A valid email address is required.', 'error');
 		}
 
@@ -49,15 +50,18 @@ export default function NewsletterSignup({
 			.then((status) => {
 				if (status == 'inactive') {
 					toast('Check your email - I just need you to verify!', 'success');
-					plausible('Newsletter Signup', { props: { position: location } });
+					plausible('Newsletter Signup', { props: { location: location } });
 				} else {
 					toast("You're subscribed!", 'success');
 				}
 
+				setEmail('');
 				setFormSubmitting(false);
 			})
 			.catch((err) => {
 				toast(err.message, 'error');
+
+				setEmail('');
 				setFormSubmitting(false);
 			});
 	};
