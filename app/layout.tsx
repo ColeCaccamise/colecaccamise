@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { GoogleAnalytics } from '@next/third-parties/google';
+// import { GoogleAnalytics } from '@next/third-parties/google';
+import PlausibleProvider from 'next-plausible';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import '@/app/styles/btn.css';
@@ -63,16 +64,18 @@ export default function RootLayout({
 						className: 'select-none',
 					}}
 				/>
-				<NavigationMenu menuLinks={menuLinks} />
-				<div className='flex max-w-4xl w-full min-h-screen gap-12 px-8 mx-auto'>
-					<Sidebar menuLinks={menuLinks} />
+				<PlausibleProvider domain='colecaccamise.vercel.app'>
+					<NavigationMenu menuLinks={menuLinks} />
+					<div className='flex max-w-4xl w-full min-h-screen gap-12 px-8 mx-auto'>
+						<Sidebar menuLinks={menuLinks} />
 
-					<div className='flex flex-col gap-16 md:gap-24 w-full h-min overflow-visible py-20'>
-						<div>{children}</div>
+						<div className='flex flex-col gap-16 md:gap-24 w-full h-min overflow-visible py-20'>
+							<div>{children}</div>
 
-						<Footer />
+							<Footer />
+						</div>
 					</div>
-				</div>
+				</PlausibleProvider>
 
 				{/* <GoogleAnalytics gaId='G-925P4MT7PB' /> */}
 			</body>
