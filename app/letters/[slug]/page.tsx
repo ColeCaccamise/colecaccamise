@@ -43,7 +43,7 @@ const Page = async ({ params }: { params: Params }) => {
 						</div>
 
 						<span className='text-low-contrast-text'>
-							{formatDate(meta.published)}
+							{formatDate(meta.published || '')}
 						</span>
 					</div>
 				</div>

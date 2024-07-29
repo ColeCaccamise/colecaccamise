@@ -10,6 +10,7 @@ export type Drop = {
 	oldPrice?: number;
 	name?: string;
 	lemonSqueezyLink?: string;
+	demoLink?: string;
 	thumbnailImage?: string;
 	image1?: string;
 	image2?: string;

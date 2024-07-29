@@ -57,8 +57,8 @@ const DropPage = async ({ params }: { params: Params }) => {
 				{images.length === 1 && (
 					<Image
 						className='rounded-2xl'
-						src={meta?.image1}
-						alt={meta.title || `Product image 1`}
+						src={meta?.image1 || ''}
+						alt={meta?.name || `Product image 1`}
 						width={600}
 						height={600}
 						layout='responsive'
@@ -78,8 +78,8 @@ const DropPage = async ({ params }: { params: Params }) => {
 								<CarouselItem key={index}>
 									<Image
 										className='rounded-2xl'
-										src={image}
-										alt={meta.title || `Product image ${index}`}
+										src={image || ''}
+										alt={meta.name || `Product image ${index}`}
 										width={600}
 										height={600}
 										layout='responsive'

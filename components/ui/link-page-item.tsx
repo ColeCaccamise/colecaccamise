@@ -1,7 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 
-export default function LinkPageItem({ title, description, url, icon, cta }) {
+export default function LinkPageItem({
+	title,
+	description,
+	url,
+	icon,
+	cta,
+}: {
+	title: string;
+	description: string;
+	url: string;
+	icon: any;
+	cta: string;
+}) {
 	return (
 		<div className='bg-sidebar-bg border-2 border-ui-component-default rounded-md px-6 py-4 flex justify-between w-full'>
 			<div className='flex gap-6 items-center'>
