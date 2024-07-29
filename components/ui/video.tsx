@@ -19,10 +19,11 @@ export default function Video({ url }: { url: string }) {
 		: url.split('v=')[1];
 
 	return (
-		<YouTubeEmbed
-			videoid={videoId}
-			height={400}
-			params='web-share;'
-		/>
+		<div className='rounded-md overflow-hidden'>
+			<YouTubeEmbed
+				videoid={videoId}
+				params='web-share;'
+			/>
+		</div>
 	);
 }

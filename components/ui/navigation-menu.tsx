@@ -44,7 +44,7 @@ export default function NavigationMenu({
 			</div>
 
 			<ul
-				className={`bg-app-bg flex flex-col gap-4 items-center py-4 w-full absolute z-10 left-0 top-[81px] ${
+				className={`bg-app-bg flex flex-col gap-4 items-center py-4 w-full absolute z-10 left-0 top-[81px] list-none ${
 					menuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
 				}`}
 				style={{ overflow: 'hidden' }}

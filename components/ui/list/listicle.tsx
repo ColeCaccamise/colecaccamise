@@ -13,20 +13,21 @@ export default function Listicle({
 }) {
 	if (!collection || !kind) return null;
 
+	const valid = kind !== 'ventures' && collection.length > 0;
+
 	return (
-		<>
-			<div className=''>
-				<div className='flex flex-col transition-effect'>
-					{collection.map((item: any, i: number) => (
-						<ListItem
-							key={i}
-							item={item}
-							kind={kind}
-						/>
-					))}
-				</div>
+		<div className='flex flex-col gap-4'>
+			<div className='flex flex-col transition-effect'>
+				{collection.map((item: any, i: number) => (
+					<ListItem
+						key={i}
+						item={item}
+						kind={kind}
+					/>
+				))}
 			</div>
-			{kind !== 'ventures' && (
+
+			{valid && (
 				<Link
 					href={`/${kind}`}
 					className='text-low-contrast-text flex items-center gap-1 hover:text-high-contrast-text group transition-all duration-300 ease-in-out'
@@ -37,6 +38,6 @@ export default function Listicle({
 					</span>
 				</Link>
 			)}
-		</>
+		</div>
 	);
 }

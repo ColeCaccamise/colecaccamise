@@ -23,13 +23,20 @@ export default async function Home() {
 			url: 'https://youtube.com/@colecaccamise',
 		},
 		{
-			name: 'Founder Supply (launching soon)',
-			description: 'Premium Framer templates for startups & founders.',
+			name: 'Founder Supply (Re-brand launching soon)',
+			description:
+				'Premium Framer templates for startups & founders. Currently known as Websignr.',
+			url: 'https://caccamise.link/supply',
 		},
 		{
-			name: 'SaaSKit UI (launching soon)',
-			description: 'UI library for modern SaaS applications.',
+			name: 'Upcoming SaaS Product',
+			description:
+				"I'm currently validating some ideas I have and plan to document my first launch in public.",
 		},
+		// {
+		// 	name: 'SaaSKit UI (launching soon)',
+		// 	description: 'UI library for modern SaaS applications.',
+		// },
 	];
 
 	const socials = [
@@ -113,7 +120,10 @@ export default async function Home() {
 					formId='6876699'
 				/> */}
 
-				<div className='flex flex-col gap-4'>
+				<div
+					id='connect'
+					className='flex flex-col gap-4'
+				>
 					<div>
 						<span>Connect</span>
 						<p>

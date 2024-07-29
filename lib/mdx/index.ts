@@ -52,7 +52,11 @@ export const getCollectionBySlug = async (slug: string, collection: string) => {
 	}
 };
 
-export const getAllCollectionMeta = async (collection: string) => {
+export const getAllCollectionMeta = async (
+	collection: string,
+	limit?: number,
+	exclude?: string
+) => {
 	try {
 		const rootDirectory = path.join(
 			process.cwd(),
@@ -65,10 +69,22 @@ export const getAllCollectionMeta = async (collection: string) => {
 
 		let items: Drop[] | Stack[] | Letter[] = getItemsArray(collection);
 
-		for (const file of files) {
+		const effectiveLimit = limit ?? files.length;
+		let count = 0;
+
+		for (let i = 0; i < files.length && count < effectiveLimit; i++) {
+			const file = path.parse(files[i]).name;
+
+			// Skip the file if it matches the exclude slug
+			if (exclude && file === exclude) {
+				continue;
+			}
+
 			const { meta }: { meta: Drop | Letter | Stack } =
 				await getCollectionBySlug(`${file}`, collection);
 			items.push(meta as any);
+
+			count++;
 		}
 
 		return items;

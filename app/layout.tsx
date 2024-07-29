@@ -48,7 +48,7 @@ export default function RootLayout({
 			name: 'Links',
 		},
 		{
-			href: '/contact',
+			href: '/#connect',
 			name: 'Contact',
 		},
 	];

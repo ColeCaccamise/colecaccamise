@@ -2,7 +2,6 @@
 
 import LoginForm from '@/components/ui/login-form';
 import { signIn } from '@/app/admin/(auth)/login/actions';
-import BackHome from '@/components/ui/back-home';
 
 export default async function LoginPage() {
 	return (

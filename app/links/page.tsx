@@ -1,7 +1,105 @@
+import Avatar from '@/components/ui/avatar';
+import NewsletterSignup from '@/components/ui/newsletter-signup';
+import Video from '@/components/ui/video';
+import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import Link from 'next/link';
+import LinkPageItem from '@/components/ui/link-page-item';
+import {
+	faDroplet,
+	faPaperPlane,
+	faWindowMaximize,
+} from '@fortawesome/free-solid-svg-icons';
+
 export default function ContactPage() {
+	const latestVideo = 'https://youtu.be/vZBlPAu2_mk';
+
+	const links = [
+		{
+			title: 'Weekly Newsletter',
+			description: 'Insights on how I run my one person business.',
+			url: 'https://caccamise.link/x',
+			icon: faPaperPlane,
+			cta: 'Follow',
+		},
+		{
+			title: 'Twitter / X',
+			description: 'Writing about solopreneurship.',
+			url: 'https://caccamise.link/x',
+			icon: faXTwitter,
+			cta: 'Follow',
+		},
+		{
+			title: 'GitHub',
+			description: 'Building software and tools.',
+			url: 'https://git.new/cole',
+			icon: faGithub,
+			cta: 'View',
+		},
+		{
+			title: 'Founder Supply',
+			description: 'Website templates for founders & solopreneurs.',
+			url: 'https://caccamise.link/supply',
+			icon: faWindowMaximize,
+			cta: 'View',
+		},
+		{
+			title: 'Drops',
+			description: 'Wallpapers, Notion templates, and more.',
+			url: 'https://caccamise.link/supply',
+			icon: faDroplet,
+			cta: 'View',
+		},
+	];
+
 	return (
-		<>
-			<h1>Links</h1>
-		</>
+		<div className='flex flex-col gap-8'>
+			<div className='hidden md:block'>
+				<h1 className='text-4xl font-medium'>Links</h1>
+				<p>Quicklinks to my social platforms and projects.</p>
+			</div>
+
+			<div className='flex flex-col items-center md:hidden'>
+				<Avatar />
+				<h2>Cole Caccamise</h2>
+				<span>Solopreneur, Software Engineer, & Designer</span>
+			</div>
+
+			<div className='flex flex-col gap-16'>
+				<div className='w-full flex flex-col gap-4'>
+					<div className='bg-sidebar-bg border-2 border-ui-component-default rounded-md p-4 flex flex-col gap-3'>
+						<div className='flex justify-between items-center'>
+							<span>Latest Video</span>
+							<Link
+								className='flex gap-1 items-center text-sm text-low-contrast-text hover:text-high-contrast-text hover:opacity-90'
+								href={latestVideo}
+							>
+								<span>YouTube</span>
+								<span className='transform transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:text-high-contrast-text'>
+									<ArrowRightIcon />
+								</span>
+							</Link>
+						</div>
+
+						<Video url={latestVideo} />
+					</div>
+
+					<div className='bg-sidebar-bg border-2 border-ui-component-default rounded-md p-4 flex flex-col gap-3'>
+						<NewsletterSignup location='Links' />
+					</div>
+
+					{links.map((link, index) => (
+						<LinkPageItem
+							key={index}
+							title={link.title}
+							description={link.description}
+							url={link.url}
+							icon={link.icon}
+							cta={link.cta}
+						/>
+					))}
+				</div>
+			</div>
+		</div>
 	);
 }
