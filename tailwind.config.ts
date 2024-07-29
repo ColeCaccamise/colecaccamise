@@ -34,6 +34,7 @@ const config: Config = {
 				'screen-minus-20': 'calc(100vh - 5rem)',
 			},
 			colors: {
+				primary: 'var(--primary)',
 				'app-bg': 'var(--app-bg)',
 				'sidebar-bg': 'var(--sidebar-bg)',
 				'ui-component-default': 'var(--ui-component-default)',

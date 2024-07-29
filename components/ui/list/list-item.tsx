@@ -16,9 +16,9 @@ export default function ListItem({
 	const pattern = /^(?:[a-z]+:)?\/\//i;
 	const isNonRelativePath = pattern.test(url);
 
-	const className = `flex gap-4 items-center py-6 no-underline border-t border-b border-l border-r first:border-t-ui-component-default border-x-transparent border-y-ui-component-default  ${
+	const className = `flex py-6 gap-4 items-center no-underline ${
 		url
-			? 'hover:bg-sidebar-bg hover:-mx-3 hover:px-3 transition-all duration-200 hover:border-x-ui-component-default hover:rounded-md'
+			? 'hover:bg-sidebar-bg transition-all duration-200 rounded-md hover:border-ui-component-default hover:px-3 hover:-mx-3'
 			: 'select-none cursor-wait opacity-80'
 	}`;
 

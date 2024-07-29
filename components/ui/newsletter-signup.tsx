@@ -8,12 +8,23 @@ import { isValidEmail } from '@/lib/validation';
 import { subscribeToForm } from '@/lib/convertkit';
 
 export default function NewsletterSignup({
-	title = 'The Letter',
+	title,
 	formId = '5584232',
-	description = 'Documenting the process of building my one person businesses. Sharing lessons I learn and interesting resources I find.',
+	description,
+	cta = 'Join For Free',
+	lemonSqueezySignup = false,
+}: {
+	title?: string;
+	formId?: string;
+	description?: string;
+	cta?: string;
+	lemonSqueezySignup?: boolean;
 }) {
 	const [email, setEmail] = useState('');
 	const [formSubmitting, setFormSubmitting] = useState(false);
+
+	// TODO: add customers to lemon squeezy discount form, then use resend to send them a programatically gnerated discount code -- implement convertkit unsubscribes
+	// You are receiving this message because you purchased/downloaded a product from Cole Caccamise.
 
 	const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -48,10 +59,12 @@ export default function NewsletterSignup({
 
 	return (
 		<div className='flex flex-col gap-4'>
-			<div className='flex flex-col gap-2'>
-				<span className='font-medium'>{title}</span>
-				<p>{description}</p>
-			</div>
+			{title && (
+				<div className='flex flex-col gap-2'>
+					<span className='font-medium'>{title}</span>
+					<p>{description}</p>
+				</div>
+			)}
 
 			<form
 				onSubmit={handleSignup}
@@ -68,10 +81,10 @@ export default function NewsletterSignup({
 				/>
 				<Button
 					type='submit'
-					className='font-medium'
+					className='font-medium bg-primary'
 					loading={formSubmitting}
 				>
-					Join For Free
+					{cta}
 				</Button>
 			</form>
 		</div>

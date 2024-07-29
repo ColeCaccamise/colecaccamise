@@ -9,7 +9,7 @@ const getPageContent = async (slug: string) => {
 
 export async function generateMetadata({ params }: { params: Params }) {
 	const { meta }: { meta: Meta } = await getPageContent(params.slug);
-	return { title: meta.title };
+	return { title: `${meta.title} | Cole Caccamise` };
 }
 
 const Page = async ({ params }: { params: Params }) => {

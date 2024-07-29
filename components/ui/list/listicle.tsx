@@ -15,21 +15,26 @@ export default function Listicle({
 
 	return (
 		<>
-			<div>
-				{collection.map((item: any, i: number) => (
-					<ListItem
-						key={i}
-						item={item}
-						kind={kind}
-					/>
-				))}
+			<div className=''>
+				<div className='flex flex-col transition-effect'>
+					{collection.map((item: any, i: number) => (
+						<ListItem
+							key={i}
+							item={item}
+							kind={kind}
+						/>
+					))}
+				</div>
 			</div>
 			{kind !== 'ventures' && (
 				<Link
 					href={`/${kind}`}
-					className='text-low-contrast-text flex items-center gap-2'
+					className='text-low-contrast-text flex items-center gap-1 hover:text-high-contrast-text group transition-all duration-300 ease-in-out'
 				>
-					View all <ArrowRightIcon />
+					View all
+					<span className='transform transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:text-high-contrast-text'>
+						<ArrowRightIcon />
+					</span>
 				</Link>
 			)}
 		</>

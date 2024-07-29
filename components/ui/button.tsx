@@ -73,12 +73,14 @@ export default function Button({
 	return (
 		<button
 			disabled={loading || disabled}
-			className={`${className} btn btn-contrast whitespace-nowrap ${
+			className={`${className} btn btn-primary whitespace-nowrap ${
 				(loading || disabled) && 'btn-disabled'
 			} group flex  items-center`}
 			onClick={handleClick}
 		>
-			<span className={loading ? 'pr-2' : ''}>{loading && <Spinner />}</span>
+			<span className={loading ? 'pr-2' : ''}>
+				{loading && <Spinner variant='light' />}
+			</span>
 
 			{children}
 		</button>

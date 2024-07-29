@@ -7,13 +7,15 @@ const getPageContent = async (slug: string) => {
 	return { meta, content };
 };
 
-export async function generateMetadata({ params}:{params: Params} ) {
-	const { meta } : {meta: Meta} = await getPageContent(params.slug);
-	return { title: meta.name };
+export async function generateMetadata({ params }: { params: Params }) {
+	const { meta }: { meta: Meta } = await getPageContent(params.slug);
+	return { title: `${meta.title} | Cole Caccamise` };
 }
 
-const DropPage = async ({ params }:{params: Params}) => {
-	const { meta, content }: {meta: Meta, content: any} = await getPageContent(params.slug);
+const DropPage = async ({ params }: { params: Params }) => {
+	const { meta, content }: { meta: Meta; content: any } = await getPageContent(
+		params.slug
+	);
 
 	return (
 		<section className='py-24'>

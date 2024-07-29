@@ -4,9 +4,11 @@
 
 html {
 	height: 100%;
+	width: 100vw;
 }
 
 body {
+	width: 100%;
 	height: 100%;
 }
 
@@ -28,6 +30,8 @@ a {
 		--yellow-text: #d5ae39;
 		--purple-text: #8e4ec6;
 		--orange-text: #f76b15;
+
+		--primary: #5e69d1;
 
 		--app-bg: #111111;
 		--sidebar-bg: #191919;

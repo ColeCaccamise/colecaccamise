@@ -6,13 +6,16 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import '@/app/styles/btn.css';
 import { Toaster } from 'sonner';
+import Sidebar from '@/components/ui/sidebar';
+import NavigationMenu from '@/components/ui/navigation-menu';
+import Footer from '@/components/ui/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: {
 		template: '%s | Cole Caccamise',
-		default: 'Cole Caccamise - Software Designer',
+		default: 'Cole Caccamise - Solopreneur, Software Engineer, & Designer',
 	},
 	description: 'Cole Caccamise is a software engineer, designer, and creator.',
 };
@@ -22,10 +25,37 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const menuLinks = [
+		{
+			href: '/',
+			name: 'Home',
+		},
+		{
+			href: '/letters',
+			name: 'Letters',
+		},
+		{
+			href: '/drops',
+			name: 'Drops',
+		},
+		{
+			href: '/stack',
+			name: 'Stack',
+		},
+		{
+			href: '/links',
+			name: 'Links',
+		},
+		{
+			href: '/contact',
+			name: 'Contact',
+		},
+	];
+
 	return (
 		<html lang='en'>
 			<body
-				className={`${inter.className} dark:dark bg-app-bg text-high-contrast-text`}
+				className={`${inter.className} dark:dark bg-app-bg text-high-contrast-text overflow-x-hidden`}
 			>
 				<Toaster
 					toastOptions={{
@@ -33,8 +63,15 @@ export default function RootLayout({
 						className: 'select-none',
 					}}
 				/>
-				<div className='max-w-3xl py-20 px-8 mx-auto flex flex-col gap-24'>
-					{children}
+				<NavigationMenu menuLinks={menuLinks} />
+				<div className='flex max-w-4xl w-full min-h-screen gap-12 px-8 mx-auto'>
+					<Sidebar menuLinks={menuLinks} />
+
+					<div className='flex flex-col gap-16 md:gap-24 w-full h-min overflow-visible py-20'>
+						<div>{children}</div>
+
+						<Footer />
+					</div>
 				</div>
 
 				{/* <GoogleAnalytics gaId='G-925P4MT7PB' /> */}

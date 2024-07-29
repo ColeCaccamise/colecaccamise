@@ -7,7 +7,6 @@ import Video from '@/components/ui/video';
 import { notFound } from 'next/navigation';
 
 type Drop = {
-	slug: string;
 	category: string;
 	seoDescription: string;
 	price: number;
@@ -17,9 +16,25 @@ type Drop = {
 	thumbnailImage: string;
 };
 
+type Letter = {
+	title: string;
+	published: string;
+};
+
+type Stack = {
+	title: string;
+	seoDescription: string;
+};
+
+type Frontmatter = Drop | Letter | Stack;
+
 const getItemsArray = (collection: string) => {
 	if (collection === 'drops') {
 		return [] as Drop[];
+	} else if (collection === 'letters') {
+		return [] as Letter[];
+	} else if (collection === 'stack') {
+		return [] as Stack[];
 	} else {
 		return [];
 	}
@@ -41,11 +56,12 @@ export const getCollectionBySlug = async (slug: string, collection: string) => {
 
 		const fileContent = fs.readFileSync(filePath, { encoding: 'utf8' });
 
-		const { frontmatter, content } = await compileMDX({
-			source: fileContent,
-			options: { parseFrontmatter: true },
-			components: { Video },
-		});
+		const { frontmatter, content }: { frontmatter: Frontmatter; content: any } =
+			await compileMDX({
+				source: fileContent,
+				options: { parseFrontmatter: true },
+				components: { Video },
+			});
 
 		console.log({ meta: { ...frontmatter, slug: realSlug }, content });
 
@@ -69,7 +85,8 @@ export const getAllCollectionMeta = async (collection: string) => {
 		let items = getItemsArray(collection);
 
 		for (const file of files) {
-			const { meta } = await getCollectionBySlug(`${file}`, collection);
+			const { meta }: { meta: Drop | Letter | Stack } =
+				await getCollectionBySlug(`${file}`, collection);
 			items.push(meta);
 		}
 

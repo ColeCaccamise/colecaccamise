@@ -9,8 +9,8 @@ export default function ListContainer({
 }) {
 	return (
 		<div className='flex flex-col gap-4'>
-			<div>
-				<span>{title}</span>
+			<div className='pb-3 border-b border-ui-component-default'>
+				<span className='font-medium'>{title}</span>
 				<p>{description}</p>
 			</div>
 			{children}

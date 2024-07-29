@@ -1,12 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: 'Newsletter',
-	description:
-		'Newsletters from Cole Caccamise about growing a one person business.',
+	title: 'Contact',
+	description: 'Contact Cole Caccamise.',
 };
 
-export default function LettersLayout({
+export default function ContactLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;

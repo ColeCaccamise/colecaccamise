@@ -3,13 +3,18 @@ import Image from 'next/image';
 import { getAllCollectionMeta } from '@/lib/mdx';
 import ListContainer from '@/components/ui/list/list-container';
 import Listicle from '@/components/ui/list/listicle';
-import Input from '@/components/ui/input';
-import Button from '@/components/ui/button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faInstagram,
+	faLinkedin,
+	faXTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 import NewsletterSignup from '@/components/ui/newsletter-signup';
 
 export default async function Home() {
 	const drops = await getAllCollectionMeta('drops');
 	const stack = await getAllCollectionMeta('stack');
+	const letters = await getAllCollectionMeta('letters');
 
 	const ventures = [
 		{
@@ -19,47 +24,48 @@ export default async function Home() {
 		},
 		{
 			name: 'Founder Supply (launching soon)',
-			description: 'Premium Framer templates for startups & founders..',
+			description: 'Premium Framer templates for startups & founders.',
 		},
 		{
 			name: 'SaaSKit UI (launching soon)',
-			description: 'Premium Framer templates for startups & founders..',
+			description: 'UI library for modern SaaS applications.',
+		},
+	];
+
+	const socials = [
+		{
+			url: 'https://caccamise.link/x',
+			icon: faXTwitter,
+		},
+		{
+			url: 'https://caccamise.link/ig',
+			icon: faInstagram,
+		},
+		{
+			url: 'https://caccamise.link/in',
+			icon: faLinkedin,
 		},
 	];
 
 	return (
 		<>
-			<header className='w-full flex flex-col items-start text-left gap-4 '>
-				<Image
-					src='https://yt3.googleusercontent.com/xnP_Sb0Q94pr6mO5eBzH9j8NsZXStvTrpu4QTXjzDVoI25lTZ0FbPWVuivSqbUTHfPl-pwCxeA=s900-c-k-c0x00ffffff-no-rj'
-					width={72}
-					height={72}
-					className='rounded-full'
-					alt='Cole Caccamise'
-				/>
-				<div>
-					<h1 className='text-lg font-medium '>Cole Caccamise</h1>
-					<p>Software Engineer, Designer, & Video Creator</p>
-				</div>
-				{/* <div>
-					<button>Contact</button>
-					<button>Hire Me</button>
-				</div> */}
-			</header>
-
-			<main className='flex flex-col gap-24'>
-				<div className=''>
-					<span>Now</span>
+			<main className='flex flex-col gap-16 md:gap-24'>
+				<div className='flex flex-col gap-2'>
+					<span className='font-medium'>About</span>
 					<p>
-						I’m Cole - an indie hacker based in Buffalo, NY. I run a{' '}
-						<Link href='https://youtube.com/@colecaccamise'>
-							tech YouTube channel
-						</Link>{' '}
-						, build websites, and work as a developer.
+						I work as a software engineer intern and create tech videos about
+						products and tools I love.
+					</p>
+					<p>
+						I&apos;m passionate about design and building great SaaS products.
 					</p>
 				</div>
 
-				<NewsletterSignup formId='5584232' />
+				<NewsletterSignup
+					formId='5584232'
+					title='The Letter'
+					description='Documenting the process of building my one person businesses. Sharing lessons I learn and interesting resources I find.'
+				/>
 
 				<ListContainer
 					title='Featured Drops'
@@ -72,12 +78,12 @@ export default async function Home() {
 				</ListContainer>
 
 				<ListContainer
-					title='Ventures'
-					description="Projects I'm working on"
+					title='Featured Letters'
+					description='Recent posts from my newsletter'
 				>
 					<Listicle
-						collection={ventures}
-						kind='ventures'
+						collection={letters}
+						kind='letters'
 					/>
 				</ListContainer>
 
@@ -91,22 +97,51 @@ export default async function Home() {
 					/>
 				</ListContainer>
 
-				<NewsletterSignup
+				<ListContainer
+					title='Ventures'
+					description="Projects I'm working on"
+				>
+					<Listicle
+						collection={ventures}
+						kind='ventures'
+					/>
+				</ListContainer>
+
+				{/* <NewsletterSignup
 					title='The UI Letter (coming soon)'
 					description='My upcoming monthly product design newsletter. Teaching founders how to design websites that convert.'
 					formId='6876699'
-				/>
+				/> */}
 
-				<div>
-					<span>Connect</span>
-					<p>
-						Reach me at{' '}
-						<Link href='https://x.com/colecaccamise'>@colecaccamise</Link> or
-						<Link href='mailto:cole@colecaccamise.com'>
-							cole@colecaccamise.com
-						</Link>
-					</p>
-					{/* TODO: list last ventures */}
+				<div className='flex flex-col gap-4'>
+					<div>
+						<span>Connect</span>
+						<p>
+							Reach me directly at{' '}
+							<Link
+								className='hover:opacity-90'
+								href='mailto:cole@caccamedia.com'
+							>
+								cole@colecaccamise.com
+							</Link>{' '}
+							or connect on social media below.
+						</p>
+					</div>
+
+					<div className='flex gap-4'>
+						{socials.map((social) => (
+							<Link
+								href={social.url}
+								key={social.url}
+								className='bg-sidebar-bg w-12 h-12 rounded-md border border-borders-non-interactive flex items-center justify-center text-low-contrast-text hover:text-high-contrast-text hover:bg-ui-component-default hover:border-subtle-borders-interactive'
+							>
+								<FontAwesomeIcon
+									width={20}
+									icon={social.icon}
+								/>
+							</Link>
+						))}
+					</div>
 				</div>
 			</main>
 		</>

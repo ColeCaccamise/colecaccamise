@@ -1,3 +1,4 @@
+import { formatDate } from '@/lib/string';
 import { ArrowTopRightIcon, DotFilledIcon } from '@radix-ui/react-icons';
 
 type AllowedKinds = 'drops' | 'letters' | 'stack' | 'ventures';
@@ -28,9 +29,11 @@ export default function ListDescription({
 		);
 	} else if (kind === 'letters') {
 		return (
-			<div className='flex flex-col'>
+			<div className='w-full flex justify-between'>
 				<span>{item.title}</span>
-				<span className='text-low-contrast-text font-regular'>{item.date}</span>
+				<span className='text-low-contrast-text font-regular text-sm'>
+					{formatDate(item.published)}
+				</span>
 			</div>
 		);
 	} else if (kind === 'stack') {
