@@ -6,22 +6,26 @@ import { useState } from 'react';
 import toast from '@/utils/toast';
 import { isValidEmail } from '@/lib/validation';
 import { subscribeToForm } from '@/lib/convertkit';
+import { usePlausible } from 'next-plausible';
 
 export default function NewsletterSignup({
 	title,
 	formId = '5584232',
 	description,
 	cta = 'Join For Free',
+	location = 'Home',
 	lemonSqueezySignup = false,
 }: {
 	title?: string;
 	formId?: string;
 	description?: string;
 	cta?: string;
+	location?: string;
 	lemonSqueezySignup?: boolean;
 }) {
 	const [email, setEmail] = useState('');
 	const [formSubmitting, setFormSubmitting] = useState(false);
+	const plausible = usePlausible();
 
 	// TODO: add customers to lemon squeezy discount form, then use resend to send them a programatically gnerated discount code -- implement convertkit unsubscribes
 	// You are receiving this message because you purchased/downloaded a product from Cole Caccamise.
@@ -45,6 +49,7 @@ export default function NewsletterSignup({
 			.then((status) => {
 				if (status == 'inactive') {
 					toast('Check your email - I just need you to verify!', 'success');
+					plausible('Newsletter Signup', { props: { position: location } });
 				} else {
 					toast("You're subscribed!", 'success');
 				}
@@ -81,7 +86,7 @@ export default function NewsletterSignup({
 				/>
 				<Button
 					type='submit'
-					className='font-medium bg-primary'
+					className='font-medium bg-primary '
 					loading={formSubmitting}
 				>
 					{cta}

@@ -15,7 +15,10 @@ export default async function LettersPage() {
 					I write about what I&apos;m learning and curate valuable resources for
 					solopreneurs every Sunday morning.
 				</p>
-				<NewsletterSignup formId='5584232' />
+				<NewsletterSignup
+					formId='5584232'
+					location='Letters'
+				/>
 			</div>
 
 			<div className='flex flex-col gap-4'>

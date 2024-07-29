@@ -64,7 +64,11 @@ export default function RootLayout({
 						className: 'select-none',
 					}}
 				/>
-				<PlausibleProvider domain='colecaccamise.vercel.app'>
+				<PlausibleProvider
+					domain='colecaccamise.vercel.app'
+					trackOutboundLinks={true}
+					taggedEvents={true}
+				>
 					<NavigationMenu menuLinks={menuLinks} />
 					<div className='flex max-w-4xl w-full min-h-screen gap-12 px-8 mx-auto'>
 						<Sidebar menuLinks={menuLinks} />
