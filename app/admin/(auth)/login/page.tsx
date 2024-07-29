@@ -8,7 +8,6 @@ export default async function LoginPage() {
 	return (
 		<>
 			<div className='flex flex-col gap-6'>
-				<BackHome />
 				<div className='flex flex-col gap-4'>
 					<div className='flex flex-col gap-2'>
 						<h2>Log in</h2>

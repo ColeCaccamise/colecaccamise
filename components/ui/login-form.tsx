@@ -51,19 +51,6 @@ export default function LoginForm({
 				>
 					Continue with Email
 				</Button>
-
-				<div className='flex flex-col gap-2'>
-					<p className='text-sm text-text2'>
-						Not a member?{' '}
-						<Link
-							className='text-high-contrast-text font-medium'
-							href='/signup'
-						>
-							Sign up now
-						</Link>
-						.
-					</p>
-				</div>
 			</div>
 		</form>
 	);
