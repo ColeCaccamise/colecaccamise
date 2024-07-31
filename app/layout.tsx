@@ -19,6 +19,22 @@ export const metadata: Metadata = {
     default: "Cole Caccamise - Solopreneur, Software Engineer, & Designer",
   },
   description: "Cole Caccamise is a software engineer, designer, and creator.",
+  openGraph: {
+    title: {
+      template: "%s | Cole Caccamise",
+      default: "Cole Caccamise - Solopreneur, Software Engineer, & Designer",
+    },
+    description:
+      "Cole Caccamise is a software engineer, designer, and creator.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 800,
+        height: 600,
+        alt: "Cole Caccamise",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
