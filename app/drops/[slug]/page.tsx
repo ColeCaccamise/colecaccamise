@@ -135,12 +135,18 @@ const DropPage = async ({ params }: { params: Params }) => {
               <Button className="w-full font-medium">Buy Now</Button>
             </Link>
             {meta?.demoLink && (
-              <Button
-                variant="unstyled"
-                className="btn btn-contrast w-full font-medium"
+              <Link
+                target="_blank"
+                className="text-app-bg"
+                href={meta.demoLink}
               >
-                Live Demo
-              </Button>
+                <Button
+                  variant="unstyled"
+                  className="btn btn-contrast w-full font-medium"
+                >
+                  Live Demo
+                </Button>
+              </Link>
             )}
           </div>
         </div>

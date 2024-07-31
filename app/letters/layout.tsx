@@ -1,15 +1,20 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: 'Newsletter',
-	description:
-		'Newsletters from Cole Caccamise about growing a one person business.',
+  title: "Newsletter",
+  description:
+    "Newsletters from Cole Caccamise about growing a one person business.",
+  openGraph: {
+    title: "Newsletter",
+    description:
+      "Newsletters from Cole Caccamise about growing a one person business.",
+  },
 };
 
 export default function LettersLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return <>{children}</>;
+  return <>{children}</>;
 }
