@@ -12,9 +12,9 @@ import {
 import NewsletterSignup from "@/components/ui/newsletter-signup";
 
 export default async function Home() {
-  const drops = await getAllCollectionMeta("drops");
-  const stack = await getAllCollectionMeta("stack");
-  const letters = await getAllCollectionMeta("letters");
+  const drops = await getAllCollectionMeta("drops", 3);
+  const stack = await getAllCollectionMeta("stack", 3);
+  const letters = await getAllCollectionMeta("letters", 3);
 
   const ventures = [
     {

@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/carousel";
 import Button from "@/components/ui/button";
 
-import Image from "next/image";
 import { capitalize } from "@/lib/string";
 import BackLink from "@/components/ui/back-link";
 import Listicle from "@/components/ui/list/listicle";
@@ -30,6 +29,18 @@ export async function generateMetadata({ params }: { params: Params }) {
   return {
     title: `${meta.name} | Cole Caccamise`,
     description: meta.seoDescription,
+    openGraph: {
+      title: `${meta.name} | Cole Caccamise`,
+      description: meta.seoDescription,
+      images: [
+        {
+          url: meta.thumbnailImage,
+          width: 800,
+          height: 600,
+          alt: meta.name,
+        },
+      ],
+    },
   };
 }
 
