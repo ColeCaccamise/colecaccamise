@@ -2,7 +2,6 @@ import { NextResponse, NextRequest } from 'next/server';
 import { get } from '@vercel/edge-config';
 import { updateSession } from '@/utils/supabase/middleware';
 import { isUserAuthenticated } from '@/utils/auth';
-import { RedoIcon } from 'lucide-react';
 import { isEmpty } from './lib/validation';
 
 type RedirectEntry = {
