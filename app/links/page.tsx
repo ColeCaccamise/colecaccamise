@@ -26,13 +26,13 @@ export default function ContactPage() {
       icon: faPaperPlane,
       cta: "Read",
     },
-    // {
-    //   title: "UI Bear",
-    //   description: "Website templates for founders & solopreneurs.",
-    //   url: "https://uibear.com/?via=cole",
-    //   icon: faWindowMaximize,
-    //   cta: "Visit",
-    // },
+    {
+      title: "Visibly.co",
+      description: "Website templates for founders & solopreneurs.",
+      url: "https://visibly.co/?via=cole",
+      icon: faWindowMaximize,
+      cta: "Visit",
+    },
     {
       title: "Twitter / X",
       description: "Sharing what I'm working on.",

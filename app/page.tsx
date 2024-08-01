@@ -23,11 +23,17 @@ export default async function Home() {
       url: "https://youtube.com/@colecaccamise",
     },
     {
-      name: "UI Bear (launching soon)",
+      name: "Visibly.co (launching soon)",
       description:
         "TailwindCSS website templates. The fastest way for startups to ship their next project.",
-      url: "https://uibear.com",
+      url: "https://visibly.co?via=cole",
     },
+    // {
+    //   name: "Solofin.co",
+    //   description:
+    //     "Modern accounting software for freelancers and solopreneurs.",
+    //   url: "https://solofin.co?via=cole",
+    // },
   ];
 
   const socials = [
