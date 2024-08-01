@@ -1,14 +1,13 @@
 import Link from "next/link";
-import Image from "next/image";
-import { getAllCollectionMeta } from "@/lib/mdx";
-import ListContainer from "@/components/ui/list/list-container";
-import Listicle from "@/components/ui/list/listicle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faLinkedin,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { getAllCollectionMeta } from "@/lib/mdx";
+import ListContainer from "@/components/ui/list/list-container";
+import Listicle from "@/components/ui/list/listicle";
 import NewsletterSignup from "@/components/ui/newsletter-signup";
 
 export default async function Home() {
@@ -25,7 +24,7 @@ export default async function Home() {
     {
       name: "Visibly.co (launching soon)",
       description:
-        "TailwindCSS website templates. The fastest way for startups to ship their next project.",
+        "Launch your startup faster with Next.js & TailwindCSS landing page templates.",
       url: "https://visibly.co?via=cole",
     },
     // {
@@ -71,6 +70,10 @@ export default async function Home() {
           description="Documenting the process of building my one person businesses. Sharing lessons I learn and interesting resources I find."
         />
 
+        <ListContainer title="Ventures" description="Projects I'm working on">
+          <Listicle collection={ventures} kind="ventures" />
+        </ListContainer>
+
         <ListContainer
           title="Featured Drops"
           description="Premium digital products I’ve created recently"
@@ -91,16 +94,6 @@ export default async function Home() {
         >
           <Listicle collection={stack} kind="stack" />
         </ListContainer>
-
-        <ListContainer title="Ventures" description="Projects I'm working on">
-          <Listicle collection={ventures} kind="ventures" />
-        </ListContainer>
-
-        {/* <NewsletterSignup
-					title='The UI Letter (coming soon)'
-					description='My upcoming monthly product design newsletter. Teaching founders how to design websites that convert.'
-					formId='6876699'
-				/> */}
 
         <div id="connect" className="flex flex-col gap-4">
           <div>
