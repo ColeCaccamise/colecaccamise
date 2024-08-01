@@ -1,7 +1,11 @@
 import Avatar from "@/components/ui/avatar";
 import NewsletterSignup from "@/components/ui/newsletter-signup";
 import Video from "@/components/ui/video";
-import { faGithub, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faXTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import LinkPageItem from "@/components/ui/link-page-item";
@@ -20,13 +24,27 @@ export default function ContactPage() {
       description: "Insights on how I run my one person business.",
       url: "https://caccamise.link/x",
       icon: faPaperPlane,
+      cta: "Read",
+    },
+    // {
+    //   title: "UI Bear",
+    //   description: "Website templates for founders & solopreneurs.",
+    //   url: "https://uibear.com/?via=cole",
+    //   icon: faWindowMaximize,
+    //   cta: "Visit",
+    // },
+    {
+      title: "Twitter / X",
+      description: "Sharing what I'm working on.",
+      url: "https://caccamise.link/x",
+      icon: faXTwitter,
       cta: "Follow",
     },
     {
-      title: "Twitter / X",
-      description: "Writing about solopreneurship.",
+      title: "YouTube",
+      description: "Aesthetic tech videos.",
       url: "https://caccamise.link/x",
-      icon: faXTwitter,
+      icon: faYoutube,
       cta: "Follow",
     },
     {
@@ -37,18 +55,11 @@ export default function ContactPage() {
       cta: "View",
     },
     {
-      title: "Fleet",
-      description: "Website templates for founders & solopreneurs.",
-      url: "https://uibear.com/?via=cole",
-      icon: faWindowMaximize,
-      cta: "Visit",
-    },
-    {
       title: "Drops",
       description: "Wallpapers, Notion templates, and more.",
-      url: "https://caccamise.link/supply",
+      url: "https://colecaccamise.com/drops",
       icon: faDroplet,
-      cta: "Visit",
+      cta: "Shop",
     },
   ];
 

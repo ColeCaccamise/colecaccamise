@@ -16,6 +16,7 @@ const getPageContent = async (slug: string) => {
 export async function generateMetadata({ params }: { params: Params }) {
   const { meta }: { meta: Letter } = await getPageContent(params.slug);
   return {
+    metadataBase: new URL("https://colecaccamise.com"),
     title: `${meta.title} | Cole Caccamise`,
     description: meta.description,
     openGraph: {

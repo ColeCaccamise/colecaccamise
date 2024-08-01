@@ -27,6 +27,7 @@ const getPageContent = async (slug: string) => {
 export async function generateMetadata({ params }: { params: Params }) {
   const { meta }: { meta: Drop } = await getPageContent(params.slug);
   return {
+    metadataBase: new URL("https://colecaccamise.com"),
     title: `${meta.name} | Cole Caccamise`,
     description: meta.seoDescription,
     openGraph: {
@@ -151,6 +152,7 @@ const DropPage = async ({ params }: { params: Params }) => {
           </div>
         </div>
       </div>
+
       <div className="flex flex-col gap-2">
         <span className="text-2xl font-medium">You may also like</span>
         <Listicle collection={drops} kind="drops" />
