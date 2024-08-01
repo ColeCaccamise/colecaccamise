@@ -14,12 +14,10 @@ export async function POST(request: Request) {
 }
 
 export async function GET(request: NextRequest) {
-  //   const res = await request.json();
-
   const searchParams = request.nextUrl.searchParams;
 
   // get slug param
-  const key = searchParams.get("key");
+  const key = searchParams.get("slug");
 
   if (!key) {
     return Response.json(
@@ -33,8 +31,4 @@ export async function GET(request: NextRequest) {
   const keyAvailable: boolean = await isKeyAvailable(key);
 
   return Response.json({ available: keyAvailable });
-
-  // const slugAvailable = await isSlugAvailable(slug);
-
-  // return Response.json({ slugAvailable });
 }
