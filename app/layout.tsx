@@ -71,7 +71,7 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${inter.className} dark:dark overflow-x-hidden bg-app-bg text-high-contrast-text`}
       >
@@ -82,7 +82,7 @@ export default function RootLayout({
           }}
         />
         <PlausibleProvider
-          domain="colecaccamise.vercel.app"
+          domain="colecaccamise.com"
           trackOutboundLinks={true}
           taggedEvents={true}
         >
