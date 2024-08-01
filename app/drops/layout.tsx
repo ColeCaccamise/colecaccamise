@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://colecaccamise.com"),
   title: "Drops",
   description: "Digital products created by Cole Caccamise.",
   openGraph: {

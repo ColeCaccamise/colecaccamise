@@ -14,6 +14,7 @@ import Footer from "@/components/ui/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://colecaccamise.com"),
   title: {
     template: "%s | Cole Caccamise",
     default: "Cole Caccamise - Solopreneur, Software Engineer, & Designer",
@@ -42,7 +43,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const menuLinks = [
+  const menuLinks: { href: string; name: string; new?: boolean }[] = [
     {
       href: "/",
       name: "Home",
