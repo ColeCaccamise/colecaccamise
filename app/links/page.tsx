@@ -1,21 +1,21 @@
+import Link from "next/link";
 import Avatar from "@/components/ui/avatar";
 import NewsletterSignup from "@/components/ui/newsletter-signup";
 import Video from "@/components/ui/video";
+import LinkPageItem from "@/components/ui/link-page-item";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 import {
   faGithub,
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
-import LinkPageItem from "@/components/ui/link-page-item";
 import {
   faDroplet,
   faPaperPlane,
   faWindowMaximize,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function ContactPage() {
+export default function LinksPage() {
   const latestVideo = "https://youtu.be/vZBlPAu2_mk";
 
   const links = [
@@ -28,10 +28,10 @@ export default function ContactPage() {
     },
     {
       title: "Visibly.co",
-      description: "Website templates for founders & solopreneurs.",
+      description: "SaaS landing page templates.",
       url: "https://visibly.co/?via=cole",
       icon: faWindowMaximize,
-      cta: "Visit",
+      cta: "Explore",
     },
     {
       title: "Twitter / X",
@@ -41,25 +41,25 @@ export default function ContactPage() {
       cta: "Follow",
     },
     {
+      title: "Drops",
+      description: "Wallpapers, Notion templates, and more.",
+      url: "https://colecaccamise.com/drops",
+      icon: faDroplet,
+      cta: "Browse",
+    },
+    {
       title: "YouTube",
       description: "Aesthetic tech videos.",
       url: "https://caccamise.link/x",
       icon: faYoutube,
-      cta: "Follow",
+      cta: "Subscribe",
     },
     {
       title: "GitHub",
       description: "Building software and tools.",
       url: "https://git.new/cole",
       icon: faGithub,
-      cta: "View",
-    },
-    {
-      title: "Drops",
-      description: "Wallpapers, Notion templates, and more.",
-      url: "https://colecaccamise.com/drops",
-      icon: faDroplet,
-      cta: "Shop",
+      cta: "Visit",
     },
   ];
 
