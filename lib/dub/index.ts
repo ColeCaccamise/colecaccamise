@@ -1,64 +1,76 @@
-import { Dub } from 'dub';
-import { addTagParam, geoLocateLink, isAmazonUrl } from '@/lib/amazon';
+import { Dub } from "dub";
+import { addTagParam, geoLocateLink, isAmazonUrl } from "@/lib/amazon";
 
-const DUB_API_KEY = process.env.DUB_API_KEY || 'dub_df5RukKWblehKcYRw3qkvZhL';
+const DUB_API_KEY = process.env.DUB_API_KEY;
 
 const dub = new Dub({
-	token: DUB_API_KEY,
+  token: DUB_API_KEY,
 });
 
-type Link = { url: string; slug?: string; comments?: string };
+type Link = { url: string; key?: string; comments?: string };
 
-export async function isSlugAvailable(slug: string): Promise<boolean> {
-	try {
-		const res = await dub.links.get({
-			domain: 'coleca.cc',
-			key: slug,
-		});
+export async function isKeyAvailable(key: string): Promise<boolean> {
+  try {
+    const res = await dub.links.get({
+      domain: "caccamise.link",
+      key: key,
+    });
 
-		if (res) {
-			return false;
-		} else {
-			return true;
-		}
-	} catch (error: any) {
-		const dubError = error.error;
+    if (res) {
+      return false;
+    } else {
+      return true;
+    }
+  } catch (error: any) {
+    const dubError = error.error;
 
-		if (dubError.code === 'not_found') {
-			return true;
-		} else {
-			return false;
-		}
-	}
+    if (dubError.code === "not_found") {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
-export async function createLink(
-	url: string,
-	slug?: string,
-	comments?: string
-) {
-	if (!url) return null;
+export async function createLink(url: string, key?: string, comments?: string) {
+  if (!url) return null;
 
-	await createLinks([{ url, slug, comments }]);
+  await createLinks([{ url, key, comments }]);
 }
 
 export async function createLinks(links: Link[]) {
-	if (!links) return null;
+  if (!links) return null;
 
-	const linkPromises = links.map(async (link: Link) => {
-		const geoLocatedLink = await geoLocateLink(link.url);
+  const linkPromises = links.map(async (link: Link) => {
+    let geoLocatedLink = null;
+    let defaultUrl = link.url;
 
-		const defaultUrl = isAmazonUrl(link.url) ? addTagParam(link.url) : link.url;
+    const url = new URL(link.url);
 
-		return {
-			url: defaultUrl,
-			slug: link?.slug,
-			comments: link?.comments,
-			geo: geoLocatedLink || null,
-		};
-	});
+    const searchQuery = url.searchParams.get("k");
 
-	const preparedLinks: Link[] = await Promise.all(linkPromises);
+    if (searchQuery) {
+      const encodedQuery = encodeURIComponent(searchQuery);
 
-	return await dub.links.createMany(preparedLinks);
+      defaultUrl = isAmazonUrl(link.url)
+        ? addTagParam(`https://www.amazon.com/s?k=${encodedQuery}`)
+        : link.url;
+    } else {
+      geoLocatedLink = await geoLocateLink(link.url);
+      defaultUrl = isAmazonUrl(link.url) ? addTagParam(link.url) : link.url;
+    }
+
+    return {
+      url: defaultUrl,
+      key: link?.key,
+      comments: link?.comments,
+      geo: geoLocatedLink,
+    };
+  });
+
+  const preparedLinks: Link[] = await Promise.all(linkPromises);
+
+  const dubLinks = await dub.links.createMany(preparedLinks);
+
+  return dubLinks;
 }

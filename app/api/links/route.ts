@@ -1,44 +1,40 @@
-import { createLinks } from '@/lib/dub';
-import { LinkSchema } from 'dub/models/components';
-import { isSlugAvailable } from '@/lib/dub';
-import { type NextRequest } from 'next/server';
-
-type Link = {
-	url: string;
-};
+import { createLinks } from "@/lib/dub";
+import { LinkSchema } from "dub/models/components";
+import { isKeyAvailable } from "@/lib/dub";
+import { type NextRequest } from "next/server";
 
 export async function POST(request: Request) {
-	const res = await request.json();
+  const links = await request.json();
 
-	const links: Link[] = res.links;
+  console.log("links", links);
 
-	const generatedLinks: LinkSchema[] | null = await createLinks(links);
+  const generatedLinks: LinkSchema[] | null = await createLinks(links);
 
-	return Response.json(generatedLinks);
+  return Response.json(generatedLinks);
 }
 
 export async function GET(request: NextRequest) {
-	// const res = await request.json();
+  //   const res = await request.json();
 
-	const searchParams = request.nextUrl.searchParams;
+  const searchParams = request.nextUrl.searchParams;
 
-	// get slug param
-	const slug = searchParams.get('slug');
+  // get slug param
+  const key = searchParams.get("key");
 
-	if (!slug) {
-		return Response.json(
-			{ error: 'No slug provided' },
-			{
-				status: 400,
-			}
-		);
-	}
+  if (!key) {
+    return Response.json(
+      { error: "No slug provided" },
+      {
+        status: 400,
+      },
+    );
+  }
 
-	const slugAvailable: boolean = await isSlugAvailable(slug);
+  const keyAvailable: boolean = await isKeyAvailable(key);
 
-	return Response.json({ available: slugAvailable });
+  return Response.json({ available: keyAvailable });
 
-	// const slugAvailable = await isSlugAvailable(slug);
+  // const slugAvailable = await isSlugAvailable(slug);
 
-	// return Response.json({ slugAvailable });
+  // return Response.json({ slugAvailable });
 }
