@@ -25,7 +25,7 @@ export default async function Home() {
       name: "Visibly.co (launching soon)",
       description:
         "Launch your startup faster with Next.js & TailwindCSS landing page templates.",
-      url: "https://visibly.co?via=cole",
+      url: "https://caccamise.link/visibly",
     },
     // {
     //   name: "Solofin.co",
