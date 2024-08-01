@@ -6,8 +6,6 @@ import { type NextRequest } from "next/server";
 export async function POST(request: Request) {
   const links = await request.json();
 
-  console.log("links", links);
-
   const generatedLinks: LinkSchema[] | null = await createLinks(links);
 
   return Response.json(generatedLinks);

@@ -3,6 +3,13 @@ import * as cheerio from "cheerio";
 
 const AMAZON_AFFILIATE_TAG = process.env.AMAZON_AFFILIATE_TAG;
 
+type AmazonUrlParams = {
+  countryTLD: string;
+  amazonId?: string;
+  title?: string;
+  encodedQuery?: string;
+};
+
 export function isAmazonUrl(url: string): boolean {
   const parsedUrl = new URL(url);
 
@@ -48,62 +55,79 @@ function getAmazonId(pathame: string): string {
   }
 }
 
-export async function amazonUrl(
-  countryTLD: string,
-  amazonId: string,
-  title: string,
-) {
-  const url = `https://www.amazon.${countryTLD}/dp/${amazonId}?tag=${AMAZON_AFFILIATE_TAG}`;
+export async function amazonUrl({
+  countryTLD,
+  amazonId,
+  title,
+  encodedQuery,
+}: AmazonUrlParams) {
+  if (encodedQuery) {
+    return `https://www.amazon.${countryTLD}/s?k=${encodedQuery}&tag=${AMAZON_AFFILIATE_TAG}`;
+  } else {
+    const url = `https://www.amazon.${countryTLD}/dp/${amazonId}?tag=${AMAZON_AFFILIATE_TAG}`;
 
-  try {
-    await axios.get(url); // check if the link is valid
+    try {
+      await axios.get(url); // check if the link is valid
 
-    return url;
-  } catch (error) {
-    return encodeURI(
-      `https://www.amazon.${countryTLD}/s?k=${title}&tag=${AMAZON_AFFILIATE_TAG}`,
-    );
+      return url;
+    } catch (error) {
+      return encodeURI(
+        `https://www.amazon.${countryTLD}/s?k=${title}&tag=${AMAZON_AFFILIATE_TAG}`,
+      );
+    }
   }
 }
 
-export async function geoLocateLink(url: string) {
+export async function geoLocateLink(url: string, encodedQuery?: string) {
   if (!url) return null;
 
   try {
-    const parsedUrl = new URL(url);
-
-    if (isAmazonUrl(url)) {
-      const amazonId = getAmazonId(parsedUrl.pathname);
-
-      const productTitle = await axios.get(
-        `https://www.amazon.com/dp/${amazonId}`,
-      );
-
-      const html = productTitle.data;
-      const $ = cheerio.load(html);
-
-      let title = $("title").text().trim();
-
-      if (title) {
-        // Remove 'Amazon.com:' from the beginning of the title
-        title = title.replace(/^Amazon\.com:\s*/, "");
-
-        // Remove 'amazon.com' from anywhere else in the title
-        title = title.replace(/\s*amazon\.com\s*/gi, "");
-      }
-
-      // do work
+    if (encodedQuery) {
       return {
-        US: await amazonUrl("com", amazonId, title),
-        GB: await amazonUrl("co.uk", amazonId, title),
-        IT: await amazonUrl("it", amazonId, title),
-        FR: await amazonUrl("fr", amazonId, title),
-        ES: await amazonUrl("es", amazonId, title),
-        CA: await amazonUrl("ca", amazonId, title),
-        DE: await amazonUrl("de", amazonId, title),
+        US: await amazonUrl({ countryTLD: "com", encodedQuery }),
+        GB: await amazonUrl({ countryTLD: "co.uk", encodedQuery }),
+        IT: await amazonUrl({ countryTLD: "it", encodedQuery }),
+        FR: await amazonUrl({ countryTLD: "fr", encodedQuery }),
+        ES: await amazonUrl({ countryTLD: "es", encodedQuery }),
+        CA: await amazonUrl({ countryTLD: "ca", encodedQuery }),
+        DE: await amazonUrl({ countryTLD: "de", encodedQuery }),
       };
     } else {
-      return null;
+      const parsedUrl = new URL(url);
+
+      if (isAmazonUrl(url)) {
+        const amazonId = getAmazonId(parsedUrl.pathname);
+
+        const productTitle = await axios.get(
+          `https://www.amazon.com/dp/${amazonId}`,
+        );
+
+        const html = productTitle.data;
+        const $ = cheerio.load(html);
+
+        let title = $("title").text().trim();
+
+        if (title) {
+          // Remove 'Amazon.com:' from the beginning of the title
+          title = title.replace(/^Amazon\.com:\s*/, "");
+
+          // Remove 'amazon.com' from anywhere else in the title
+          title = title.replace(/\s*amazon\.com\s*/gi, "");
+        }
+
+        // do work
+        return {
+          US: await amazonUrl({ countryTLD: "com", amazonId, title }),
+          GB: await amazonUrl({ countryTLD: "co.uk", amazonId, title }),
+          IT: await amazonUrl({ countryTLD: "it", amazonId, title }),
+          FR: await amazonUrl({ countryTLD: "fr", amazonId, title }),
+          ES: await amazonUrl({ countryTLD: "es", amazonId, title }),
+          CA: await amazonUrl({ countryTLD: "ca", amazonId, title }),
+          DE: await amazonUrl({ countryTLD: "de", amazonId, title }),
+        };
+      } else {
+        return null;
+      }
     }
   } catch (error) {
     throw new Error("Invalid URL");

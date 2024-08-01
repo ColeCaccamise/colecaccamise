@@ -55,6 +55,8 @@ export async function createLinks(links: Link[]) {
       defaultUrl = isAmazonUrl(link.url)
         ? addTagParam(`https://www.amazon.com/s?k=${encodedQuery}`)
         : link.url;
+
+      geoLocatedLink = await geoLocateLink(link.url);
     } else {
       geoLocatedLink = await geoLocateLink(link.url);
       defaultUrl = isAmazonUrl(link.url) ? addTagParam(link.url) : link.url;
