@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Sidebar({
   menuLinks,
 }: {
-  menuLinks: { name: string; href: string; new: boolean }[];
+  menuLinks: { name: string; href: string; new?: boolean }[];
 }) {
   const pathname = usePathname();
 
