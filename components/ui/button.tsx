@@ -5,7 +5,7 @@ export default function Button({
   className,
   color,
   children,
-  type,
+  type = "button",
   variant,
   loading = false,
   disabled,
@@ -15,7 +15,7 @@ export default function Button({
   className?: string;
   color?: string;
   children: React.ReactNode;
-  type?: string;
+  type?: "button" | "submit" | "reset";
   variant?: string;
   loading?: boolean;
   disabled?: boolean;
@@ -41,6 +41,7 @@ export default function Button({
   if (variant === "destructive") {
     return (
       <button
+        type={type}
         disabled={loading || disabled}
         className={`btn btn-destructive whitespace-nowrap ${
           (loading || disabled) && "btn-disabled"
@@ -57,6 +58,7 @@ export default function Button({
   if (variant === "unstyled") {
     return (
       <button
+        type={type}
         disabled={loading || disabled}
         className={`${className} whitespace-nowrap ${
           (loading || disabled) && "btn-disabled"
@@ -72,6 +74,7 @@ export default function Button({
 
   return (
     <button
+      type={type}
       disabled={loading || disabled}
       className={`${className} btn btn-primary whitespace-nowrap ${
         (loading || disabled) && "btn-disabled"
