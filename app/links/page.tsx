@@ -22,14 +22,14 @@ export default function LinksPage() {
     {
       title: "Weekly Newsletter",
       description: "Insights on how I run my one person business.",
-      url: "https://caccamise.link/x",
+      url: "/letters?via=links",
       icon: faPaperPlane,
       cta: "Read",
     },
     {
       title: "Visibly.co",
       description: "SaaS landing page templates.",
-      url: "https://visibly.co/?via=cole",
+      url: "https://caccamise.link/visibly",
       icon: faWindowMaximize,
       cta: "Explore",
     },
@@ -43,14 +43,14 @@ export default function LinksPage() {
     {
       title: "Drops",
       description: "Wallpapers, Notion templates, and more.",
-      url: "https://colecaccamise.com/drops",
+      url: "https://colecaccamise.com/drops?via=links",
       icon: faDroplet,
       cta: "Browse",
     },
     {
       title: "YouTube",
       description: "Aesthetic tech videos.",
-      url: "https://caccamise.link/x",
+      url: "https://caccamise.link/youtube",
       icon: faYoutube,
       cta: "Subscribe",
     },
