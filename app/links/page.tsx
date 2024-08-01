@@ -70,7 +70,7 @@ export default function LinksPage() {
         <p>Quicklinks to my social platforms and projects.</p>
       </div>
 
-      <div className="flex flex-col items-center md:hidden">
+      <div className="flex flex-col items-center gap-2 md:hidden">
         <Avatar />
         <h2>Cole Caccamise</h2>
         <span>Solopreneur, Software Engineer, & Designer</span>

@@ -15,7 +15,7 @@ export default function LinkPageItem({
   cta: string;
 }) {
   return (
-    <div className="flex w-full items-center justify-between gap-2 rounded-md border-2 border-ui-component-default bg-sidebar-bg px-6 py-4">
+    <div className="flex w-full items-center justify-between gap-4 rounded-md border-2 border-ui-component-default bg-sidebar-bg px-6 py-4">
       <div className="flex items-center gap-6">
         <span className="text-low-contrast-text">
           <FontAwesomeIcon icon={icon} width={28} height={28} />

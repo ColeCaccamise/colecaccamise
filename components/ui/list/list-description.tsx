@@ -29,7 +29,7 @@ export default function ListDescription({
     );
   } else if (kind === "letters") {
     return (
-      <div className="flex w-full justify-between">
+      <div className="flex w-full flex-col items-start justify-between gap-1 md:flex-row md:items-center">
         <span>{item.title}</span>
         <span className="font-regular text-sm text-low-contrast-text">
           {formatDate(item.published)}
