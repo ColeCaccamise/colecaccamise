@@ -1,20 +1,20 @@
 /* Button styles */
 .btn {
-	@apply flex justify-center items-center py-3 px-6 rounded-md select-none hover:opacity-90 active:opacity-80 transition duration-200;
+  @apply flex select-none items-center justify-center rounded-md px-6 py-3 transition duration-200 hover:opacity-90 active:opacity-80;
 }
 
 .btn-primary {
-	@apply bg-primary text-high-contrast-text;
+  @apply bg-primary text-high-contrast-text;
 }
 
 .btn-contrast {
-	@apply bg-high-contrast-text text-app-bg;
+  @apply bg-high-contrast-text text-app-bg;
 }
 
 .btn-destructive {
-	@apply bg-error text-app-bg;
+  @apply bg-error text-app-bg;
 }
 
 .btn-disabled {
-	@apply cursor-not-allowed opacity-70 hover:opacity-70 active:opacity-70;
+  @apply cursor-not-allowed opacity-70 hover:opacity-70 active:opacity-70;
 }
