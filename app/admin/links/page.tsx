@@ -3,16 +3,17 @@
 import { useState } from "react";
 import axios from "axios";
 import Input from "@/components/ui/input";
-import toast from "@/utils/toast";
+import toast, { dismissAll } from "@/utils/toast";
 import Button from "@/components/ui/button";
 
 type Link = {
   url: string;
   key?: string;
   comments?: string;
+  shortLink?: string;
 };
 
-const defaultLink: Link = { url: "", key: "", comments: "" };
+const defaultLink: Link = { url: "", key: "", comments: "", shortLink: "" };
 
 export default function LinksPage() {
   const [link, setLink] = useState<Link>(defaultLink);
@@ -32,10 +33,12 @@ export default function LinksPage() {
     await axios
       .post("/api/links", [...links, link])
       .then((response) => {
-        setGeneratedLinks([...links, response.data]);
+        console.log("response", response.data);
+        setGeneratedLinks(response.data);
 
         setLink(defaultLink);
         setLinks([]);
+        dismissAll();
 
         toast("Links created", "success");
       })
@@ -106,11 +109,22 @@ export default function LinksPage() {
         </div>
       </form>
 
-      <div>
-        {links.map((link, index) => (
-          <div key={index}>{link?.url}</div>
-        ))}
-      </div>
+      {generatedLinks.length > 0 && (
+        <div className="flex flex-col gap-4 py-8">
+          <span className="text-lg font-medium">Generated Links:</span>
+          {generatedLinks.map((link, index) => (
+            <div
+              key={index}
+              onClick={() =>
+                navigator.clipboard.writeText(link?.shortLink || "")
+              }
+              className="cursor-pointer rounded p-2"
+            >
+              {link?.shortLink}
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }
