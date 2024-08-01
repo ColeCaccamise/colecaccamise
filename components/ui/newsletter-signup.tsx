@@ -14,6 +14,7 @@ export default function NewsletterSignup({
   description,
   cta = "Join For Free",
   location = "Home",
+  placeholder = "Your email",
   lemonSqueezySignup = false,
 }: {
   title?: string;
@@ -21,6 +22,7 @@ export default function NewsletterSignup({
   description?: string;
   cta?: string;
   location?: string;
+  placeholder?: string;
   lemonSqueezySignup?: boolean;
 }) {
   const [email, setEmail] = useState("");
@@ -78,7 +80,7 @@ export default function NewsletterSignup({
 
       <form
         onSubmit={handleSignup}
-        className="flex flex-col gap-4 rounded-md border-0 border-borders-non-interactive bg-transparent md:flex-row md:gap-0 md:border md:bg-ui-component-default"
+        className="flex flex-col gap-4 rounded-md border-0 border-borders-non-interactive bg-transparent p-0 md:flex-row md:gap-0 md:border md:bg-ui-component-default md:p-2 md:pl-4"
       >
         <Input
           variant="unstyled"
@@ -86,7 +88,7 @@ export default function NewsletterSignup({
           type="email"
           value={email}
           handleChange={(e) => setEmail(e.target.value)}
-          placeholder="Your email"
+          placeholder={placeholder}
           required
         />
         <Button

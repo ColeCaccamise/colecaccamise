@@ -96,7 +96,10 @@ export default function LinksPage() {
           </div>
 
           <div className="flex flex-col gap-3 rounded-md border-2 border-ui-component-default bg-sidebar-bg p-4">
-            <NewsletterSignup location="Links" />
+            <NewsletterSignup
+              placeholder="Subscribe to the newsletter"
+              location="Links"
+            />
           </div>
 
           {links.map((link, index) => (
