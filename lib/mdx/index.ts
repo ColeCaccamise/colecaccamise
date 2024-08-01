@@ -85,16 +85,14 @@ export const getAllCollectionMeta = async (
       count++;
     }
 
-    if (collection === "drops") {
-      items.sort((a: Drop, b: Drop) => {
-        // If a.position is undefined, push it to the end by setting it to a higher value (e.g., Infinity)
-        const posA = a.position !== undefined ? a.position : Infinity;
-        // If b.position is undefined, push it to the end by setting it to a higher value (e.g., Infinity)
-        const posB = b.position !== undefined ? b.position : Infinity;
+    items.sort((a, b) => {
+      // If a.position is undefined, push it to the end by setting it to a higher value (e.g., Infinity)
+      const posA = a.position !== undefined ? a.position : Infinity;
+      // If b.position is undefined, push it to the end by setting it to a higher value (e.g., Infinity)
+      const posB = b.position !== undefined ? b.position : Infinity;
 
-        return posA - posB;
-      });
-    }
+      return posA - posB;
+    });
 
     return items;
   } catch (error) {

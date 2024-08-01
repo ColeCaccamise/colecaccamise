@@ -26,6 +26,7 @@ export type Letter = {
   title?: string;
   published?: string;
   description?: string;
+  position?: number;
 };
 
 export type Stack = {
@@ -33,4 +34,5 @@ export type Stack = {
   title?: string;
   description?: string;
   seoDescription?: string;
+  position?: number;
 };
