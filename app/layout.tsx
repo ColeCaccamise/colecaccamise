@@ -1,7 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-// import { GoogleAnalytics } from '@next/third-parties/google';
 import PlausibleProvider from "next-plausible";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -97,8 +94,6 @@ export default function RootLayout({
             </div>
           </div>
         </PlausibleProvider>
-
-        {/* <GoogleAnalytics gaId='G-925P4MT7PB' /> */}
       </body>
     </html>
   );
