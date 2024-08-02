@@ -67,22 +67,12 @@ export const getAllCollectionMeta = async (
 
     let items: Drop[] | Stack[] | Letter[] = getItemsArray(collection);
 
-    const effectiveLimit = limit ?? files.length;
-    let count = 0;
-
-    for (let i = 0; i < files.length && count < effectiveLimit; i++) {
+    for (let i = 0; i < files.length; i++) {
       const file = path.parse(files[i]).name;
-
-      // Skip the file if it matches the exclude slug
-      if (exclude && file === exclude) {
-        continue;
-      }
 
       const { meta }: { meta: Drop | Letter | Stack } =
         await getCollectionBySlug(`${file}`, collection);
       items.push(meta as any);
-
-      count++;
     }
 
     items.sort((a, b) => {
@@ -93,6 +83,15 @@ export const getAllCollectionMeta = async (
 
       return posA - posB;
     });
+
+    // Filter out the excluded item
+    if (exclude) {
+      items = items.filter((item) => item.slug !== exclude);
+    }
+
+    // Apply the limit
+    const effectiveLimit = limit ?? items.length;
+    items = items.slice(0, effectiveLimit);
 
     return items;
   } catch (error) {
