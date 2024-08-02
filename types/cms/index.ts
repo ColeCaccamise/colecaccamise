@@ -35,4 +35,6 @@ export type Stack = {
   description?: string;
   seoDescription?: string;
   position?: number;
+  feedbackText?: string;
+  feedbackPreview?: string;
 };

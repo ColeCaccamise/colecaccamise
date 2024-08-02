@@ -60,7 +60,12 @@ const Page = async ({ params }: { params: Params }) => {
       </div>
       <div className="container flex flex-col gap-6 py-4">{content}</div>
 
-      <Feedback stack={meta.title} handleSendFeedback={sendFeedback} />
+      <Feedback
+        stack={meta.title}
+        feedbackText={meta.feedbackText}
+        feedbackPreview={meta.feedbackPreview}
+        handleSendFeedback={sendFeedback}
+      />
 
       {stack.length > 0 && (
         <div className="flex flex-col gap-2">

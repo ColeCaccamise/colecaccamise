@@ -8,9 +8,13 @@ import { isValidEmail } from "@/lib/validation";
 
 export default function Feedback({
   stack = "Stack",
+  feedbackText = "Something I missed? Let me know!",
+  feedbackPreview = "Can you include a link to...",
   handleSendFeedback,
 }: {
   stack?: string;
+  feedbackText?: string;
+  feedbackPreview?: string;
   handleSendFeedback: (
     email: string,
     feedback: string,
@@ -49,9 +53,7 @@ export default function Feedback({
   return (
     <form className="py-8" onSubmit={handleSubmit}>
       <div className="flex flex-col gap-4">
-        <span className="text-lg font-medium">
-          Something I missed? Let me know!
-        </span>
+        <span className="text-lg font-medium">{feedbackText}</span>
         <Input
           required
           type="email"
@@ -65,7 +67,7 @@ export default function Feedback({
           required
           type="text"
           variant="textarea"
-          placeholder="Can you include a link to..."
+          placeholder={feedbackPreview}
           className="min-h-32"
           value={feedback}
           handleChange={(e) => {
