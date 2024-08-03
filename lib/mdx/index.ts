@@ -3,7 +3,8 @@
 import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
-import Video from "@/components/ui/video";
+import VideoPlayer from "@/components/ui/video";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Drop, Letter, Stack } from "@/types/cms";
 
@@ -41,7 +42,7 @@ export const getCollectionBySlug = async (slug: string, collection: string) => {
       await compileMDX({
         source: fileContent,
         options: { parseFrontmatter: true },
-        components: { Video },
+        components: { VideoPlayer, Link },
       });
 
     return { meta: { ...frontmatter, slug: realSlug }, content };
