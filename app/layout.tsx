@@ -17,6 +17,21 @@ export const metadata: Metadata = {
     default: "Cole Caccamise - Solopreneur, Software Engineer, & Designer",
   },
   description: "Cole Caccamise is a software engineer, designer, and creator.",
+  twitter: {
+    title: {
+      template: "%s | Cole Caccamise",
+      default: "Cole Caccamise - Solopreneur, Software Engineer, & Designer",
+    },
+    description:
+      "Cole Caccamise is a software engineer, designer, and creator.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+  },
   openGraph: {
     title: {
       template: "%s | Cole Caccamise",
