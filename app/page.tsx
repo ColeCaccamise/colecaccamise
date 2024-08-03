@@ -102,7 +102,7 @@ export default async function Home() {
               Reach me directly at{" "}
               <Link
                 className="hover:opacity-90"
-                href="mailto:cole@caccamedia.com"
+                href="mailto:cole@colecaccamise.com"
               >
                 cole@colecaccamise.com
               </Link>{" "}
