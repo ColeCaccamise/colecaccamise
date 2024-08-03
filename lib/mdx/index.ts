@@ -27,12 +27,7 @@ export const getCollectionBySlug = async (slug: string, collection: string) => {
   try {
     const realSlug = slug.replace(/\.mdx$/, "");
 
-    const rootDirectory = path.join(
-      process.cwd(),
-      "app",
-      "content",
-      collection,
-    );
+    const rootDirectory = path.join(process.cwd(), "content", collection);
 
     const filePath = path.join(rootDirectory, `${realSlug}.mdx`);
 
@@ -57,12 +52,7 @@ export const getAllCollectionMeta = async (
   exclude?: string,
 ) => {
   try {
-    const rootDirectory = path.join(
-      process.cwd(),
-      "app",
-      "content",
-      collection,
-    );
+    const rootDirectory = path.join(process.cwd(), "content", collection);
 
     const files = fs.readdirSync(rootDirectory);
 
