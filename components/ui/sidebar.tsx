@@ -27,7 +27,7 @@ export default function Sidebar({
             alt="Cole Caccamise"
           />
           <div>
-            <h1 className="text-lg font-medium">Cole Caccamise</h1>
+            <span className="text-lg font-medium">Cole Caccamise</span>
             <p>Solopreneur</p>
           </div>
           {/* <div>
