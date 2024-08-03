@@ -19,6 +19,10 @@ export async function generateMetadata({ params }: { params: Params }) {
   return {
     title: `${meta.title} | Cole Caccamise`,
     description: meta.seoDescription,
+    openGraph: {
+      title: `${meta.title} | Cole Caccamise`,
+      description: meta.seoDescription,
+    },
   };
 }
 
