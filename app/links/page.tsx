@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Avatar from "@/components/ui/avatar";
 import NewsletterSignup from "@/components/ui/newsletter-signup";
-import Video from "@/components/ui/video";
+import VideoPlayer from "@/components/ui/video";
 import LinkPageItem from "@/components/ui/link-page-item";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import {
@@ -65,8 +65,8 @@ export default function LinksPage() {
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="hidden md:block">
-        <h1 className="text-4xl font-medium">Links</h1>
+      <div className="hidden flex-col gap-4 md:flex">
+        <h1 className="text-3xl font-medium">Links</h1>
         <p>Quicklinks to my social platforms and projects.</p>
       </div>
 
@@ -92,7 +92,7 @@ export default function LinksPage() {
               </Link>
             </div>
 
-            <Video url={latestVideo} />
+            <VideoPlayer url={latestVideo} />
           </div>
 
           <div className="flex flex-col gap-3 rounded-md border-2 border-ui-component-default bg-sidebar-bg p-4">
