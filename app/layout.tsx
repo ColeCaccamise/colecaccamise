@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     template: "%s | Cole Caccamise",
     default: "Cole Caccamise - Solopreneur, Software Engineer, & Designer",
   },
-  description: "Cole Caccamise is a software engineer, designer, and creator.",
+  description:
+    "Cole Caccamise is a software engineer, designer, and solopreneur.",
   twitter: {
     title: {
       template: "%s | Cole Caccamise",
