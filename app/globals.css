@@ -94,7 +94,7 @@ li {
 
 @layer base {
   h1 {
-    @apply scroll-m-20 text-4xl font-extrabold tracking-tight text-high-contrast-text lg:text-5xl;
+    @apply scroll-m-20 text-3xl font-medium tracking-tight text-high-contrast-text;
   }
 
   h2 {
