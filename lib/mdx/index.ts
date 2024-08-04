@@ -66,6 +66,14 @@ export const getAllCollectionMeta = async (
       items.push(meta as any);
     }
 
+    if (collection === "letters") {
+      items.sort((a: Letter, b: Letter) => {
+        const dateA = a.published ? new Date(a.published).getTime() : 0;
+        const dateB = b.published ? new Date(b.published).getTime() : 0;
+        return dateB - dateA;
+      });
+    }
+
     items.sort((a, b) => {
       // If a.position is undefined, push it to the end by setting it to a higher value (e.g., Infinity)
       const posA = a.position !== undefined ? a.position : Infinity;
