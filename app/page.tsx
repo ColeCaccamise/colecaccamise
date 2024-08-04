@@ -22,7 +22,7 @@ export default async function Home() {
       url: "https://youtube.com/@colecaccamise",
     },
     {
-      name: "Visibly.co (launching soon)",
+      name: "Visibly.co",
       description:
         "Launch your startup faster with Next.js & TailwindCSS landing page templates.",
       url: "https://caccamise.link/visibly",
@@ -67,7 +67,13 @@ export default async function Home() {
         <NewsletterSignup
           formId="5584232"
           title="The Letter"
-          description="Documenting the process of building my one person businesses. Sharing lessons I learn and interesting resources I find."
+          description={
+            <span>
+              Documenting the process of building my{" "}
+              <u>one person businesses</u>. Sharing lessons I learn and
+              interesting resources I find.
+            </span>
+          }
         />
 
         <ListContainer title="Ventures" description="Projects I'm working on">

@@ -19,7 +19,7 @@ export default function NewsletterSignup({
 }: {
   title?: string;
   formId?: string;
-  description?: string;
+  description?: string | React.ReactNode;
   cta?: string;
   location?: string;
   placeholder?: string;
