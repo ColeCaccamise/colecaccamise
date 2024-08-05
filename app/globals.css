@@ -25,7 +25,7 @@ code {
 }
 
 a {
-  @apply transition-effect text-primary underline hover:opacity-90;
+  @apply transition-effect hover:opacity-90;
 }
 
 ul {
