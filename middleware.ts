@@ -16,7 +16,7 @@ interface Redirects {
 export async function middleware(request: NextRequest) {
   // await updateSession(request);
 
-  // const pathname: string = request.nextUrl.pathname;
+  const pathname: string = request.nextUrl.pathname;
 
   // const redirects: Redirects = (await get('redirects')) || {};
   // const redirectEntry: RedirectEntry = redirects[pathname];
