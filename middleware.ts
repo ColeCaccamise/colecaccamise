@@ -1,45 +1,11 @@
 import { NextResponse, NextRequest } from "next/server";
-import { get } from "@vercel/edge-config";
 import { updateSession } from "@/utils/supabase/middleware";
 import { isUserAuthenticated } from "@/utils/auth";
-import { isEmpty } from "./lib/validation";
-
-type RedirectEntry = {
-  destination: string;
-  permanent: boolean;
-};
-
-interface Redirects {
-  [pathname: string]: RedirectEntry;
-}
-
-let cachedRedirects: Map<string, RedirectEntry> | null = null;
-const CACHE_TTL = 60 * 60 * 1000; // 1 hour
-let lastFetchTime = 0;
-
-async function getRedirects() {
-  const now = Date.now();
-  if (!cachedRedirects || now - lastFetchTime > CACHE_TTL) {
-    const redirects: Redirects = (await get("redirects")) || {};
-    console.log("checked redirects");
-    cachedRedirects = new Map(Object.entries(redirects));
-    lastFetchTime = now;
-  }
-  return cachedRedirects;
-}
 
 export async function middleware(request: NextRequest) {
   await updateSession(request);
 
   const pathname: string = request.nextUrl.pathname;
-
-  const redirects = await getRedirects();
-
-  const redirectEntry = redirects.get(pathname);
-  if (redirectEntry) {
-    const statusCode = redirectEntry.permanent ? 308 : 307;
-    return NextResponse.redirect(redirectEntry.destination, statusCode);
-  }
 
   const user = await isUserAuthenticated();
 
