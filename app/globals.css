@@ -25,7 +25,7 @@ code {
 }
 
 a {
-  @apply transition-effect hover:opacity-90;
+  @apply transition-effect text-high-contrast-text hover:opacity-90;
 }
 
 ul {
