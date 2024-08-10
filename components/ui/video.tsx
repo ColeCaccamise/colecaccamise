@@ -1,27 +1,44 @@
+import { Suspense } from "react";
 import { YouTubeEmbed } from "@next/third-parties/google";
-import Video from "next-video";
 
 export default function VideoPlayer({ url }: { url: string }) {
-  console.log(url);
-  if (url === undefined) {
+  if (!url) {
     return null;
   }
 
-  // return null if not youtube.com or youtu.be
   if (
     typeof url !== "string" ||
     (!url.includes("youtube.com") && !url.includes("youtu.be"))
   ) {
-    return <Video src={url} accentColor="#5e69d1" loop />;
+    return (
+      <Suspense fallback={<div>Loading video...</div>}>
+        <video
+          width="100%"
+          height="auto"
+          controls
+          preload="auto"
+          className="rounded-md"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={url} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </Suspense>
+    );
   } else {
     const videoId = url.includes("youtu.be")
       ? url.split("youtu.be/")[1]
       : url.split("v=")[1];
 
     return (
-      <div className="overflow-hidden rounded-md">
-        <YouTubeEmbed videoid={videoId} params="web-share;" />
-      </div>
+      <Suspense fallback={<div>Loading YouTube video...</div>}>
+        <div className="overflow-hidden rounded-md">
+          <YouTubeEmbed videoid={videoId} params="web-share;" />
+        </div>
+      </Suspense>
     );
   }
 }
