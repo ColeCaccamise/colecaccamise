@@ -15,6 +15,7 @@ export default function VideoPlayer({ url }: { url: string }) {
     return (
       <Suspense fallback={<div>Loading video...</div>}>
         <video
+          src={url}
           width="100%"
           height="auto"
           controls
@@ -25,7 +26,6 @@ export default function VideoPlayer({ url }: { url: string }) {
           loop
           playsInline
         >
-          <source src={url} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </Suspense>

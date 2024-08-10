@@ -133,36 +133,31 @@ const nextConfig = {
   },
 
   images: {
-    domains: ["lh3.googleusercontent.com", "localhost"],
+    domains: ["localhost"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "yt3.googleusercontent.com",
-        port: "",
-        pathname: "/*",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "framerusercontent.com",
-        port: "",
         pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
-        port: "",
-        pathname: "/****",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "colecaccamise.s3.us-east-1.amazonaws.com",
-        port: "",
         pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "colecaccamise.s3.amazonaws.com",
-        port: "",
         pathname: "/**",
       },
     ],
