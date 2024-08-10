@@ -1,3 +1,5 @@
+"use client";
+
 import { Suspense } from "react";
 import { YouTubeEmbed } from "@next/third-parties/google";
 
