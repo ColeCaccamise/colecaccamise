@@ -30,7 +30,7 @@ async function sendFeedback(email: string, feedback: string, stack: string) {
   "use server";
 
   const { data, error } = await sendEmail(
-    email,
+    "cole@caccamedia.com",
     `New Feedback from ${stack}`,
     <>
       <h1>New feedback from {stack}</h1>
