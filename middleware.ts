@@ -7,6 +7,10 @@ export async function middleware(request: NextRequest) {
 
   const pathname: string = request.nextUrl.pathname;
 
+  if (pathname === "/stack/undefined") {
+    return NextResponse.redirect(new URL("/stack", request.url));
+  }
+
   const user = await isUserAuthenticated();
 
   // Check if the current path is an auth route
