@@ -19,6 +19,8 @@ export type Drop = {
   image5?: string;
   image6?: string;
   position?: number;
+  testimonial?: string;
+  testimonialName?: string;
 };
 
 export type Letter = {

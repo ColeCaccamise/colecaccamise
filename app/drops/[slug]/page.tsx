@@ -3,6 +3,8 @@ import AspectRatio from "@/components/ui/aspect-ratio";
 
 import { Params, Drop } from "@/types/cms";
 
+import { StarFilledIcon } from "@radix-ui/react-icons";
+
 import Link from "next/link";
 
 import {
@@ -148,6 +150,27 @@ const DropPage = async ({ params }: { params: Params }) => {
                   Live Demo
                 </Button>
               </Link>
+            )}
+
+            {meta.testimonial && meta.testimonialName && (
+              <div className="flex flex-col gap-2">
+                <div className="flex text-warning">
+                  <StarFilledIcon />
+                  <StarFilledIcon />
+                  <StarFilledIcon />
+                  <StarFilledIcon />
+                  <StarFilledIcon />
+                </div>
+                <p className="text-sm italic">
+                  &quot;{meta.testimonial}&quot; - {meta.testimonialName} via{" "}
+                  <Link
+                    href="https://senja.io/p/cole-caccamise/t/c9b708d4-17fe-4012-9ce4-ad8d763e3d58"
+                    className="text-primary"
+                  >
+                    Senja
+                  </Link>
+                </p>
+              </div>
             )}
           </div>
         </div>
