@@ -20,6 +20,21 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: "/x",
+        destination: "https://caccamise.link/x",
+        permanent: false,
+      },
+      {
+        source: "/ig",
+        destination: "https://caccamise.link/ig",
+        permanent: false,
+      },
+      {
+        source: "/visibly",
+        destination: "https://caccamise.link/visibly",
+        permanent: false,
+      },
+      {
         source: "/terminal",
         destination: "https://caccamise.link/warp",
         permanent: false,
