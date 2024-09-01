@@ -16,7 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function LinksPage() {
-  const latestVideo = "https://www.youtube.com/watch?v=1LednJg4VE0";
+  const latestVideo = "https://youtu.be/0JSK0Kk8gAA";
 
   const links = [
     {
