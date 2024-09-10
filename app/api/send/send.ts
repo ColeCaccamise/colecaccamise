@@ -12,7 +12,7 @@ const sendEmail = async (
   template: JSX.Element,
 ) => {
   const { data, error } = await resend.emails.send({
-    from: `Cole Caccamise <cole@colecaccamise.com>`,
+    from: `Cole Caccamise <cole@mail.colecaccamise.com>`,
     to: [email],
     subject: subject,
     react: template,
