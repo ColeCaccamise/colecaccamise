@@ -135,3 +135,7 @@ li {
   scrollbar-width: thin; /* Adjust scrollbar width */
   scrollbar-color: darkgrey transparent; /* Customize scrollbar and track color */
 }
+
+li > :not([hidden]) ~ :not([hidden]) {
+  @apply m-0;
+}
