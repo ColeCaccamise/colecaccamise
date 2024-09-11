@@ -21,6 +21,7 @@ export type Drop = {
   position?: number;
   testimonial?: string;
   testimonialName?: string;
+  testimonialUrl?: string;
 };
 
 export type Letter = {
