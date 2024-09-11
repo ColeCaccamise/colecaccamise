@@ -13,8 +13,8 @@ import {
   faDroplet,
   faPaperPlane,
   faWindowMaximize,
-  faLink,
 } from "@fortawesome/free-solid-svg-icons";
+import DubLogo from "@/public/dub-logo.svg";
 
 export default function LinksPage() {
   const latestVideo = "https://www.youtube.com/watch?v=cOAh4xO3u2I";
@@ -66,8 +66,9 @@ export default function LinksPage() {
       title: "Dub.co",
       description: "How I create my caccamise.link shortlinks.",
       url: "https://refer.dub.co/colecaccamise",
-      icon: faLink,
+      icon: DubLogo,
       cta: "Visit",
+      svgIcon: true,
     },
   ];
 
@@ -118,6 +119,7 @@ export default function LinksPage() {
               url={link.url}
               icon={link.icon}
               cta={link.cta}
+              svgIcon={link.svgIcon || false}
             />
           ))}
         </div>
