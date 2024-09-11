@@ -13,6 +13,7 @@ import {
   faDroplet,
   faPaperPlane,
   faWindowMaximize,
+  faLink,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function LinksPage() {
@@ -59,6 +60,13 @@ export default function LinksPage() {
       description: "Building software and tools.",
       url: "https://git.new/cole",
       icon: faGithub,
+      cta: "Visit",
+    },
+    {
+      title: "Dub.co",
+      description: "How I create my caccamise.link shortlinks.",
+      url: "https://refer.dub.co/colecaccamise",
+      icon: faLink,
       cta: "Visit",
     },
   ];
