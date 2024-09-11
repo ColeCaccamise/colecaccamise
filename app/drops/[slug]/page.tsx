@@ -164,7 +164,8 @@ const DropPage = async ({ params }: { params: Params }) => {
                 <p className="text-sm italic">
                   &quot;{meta.testimonial}&quot; - {meta.testimonialName} via{" "}
                   <Link
-                    href="https://senja.io/p/cole-caccamise/t/c9b708d4-17fe-4012-9ce4-ad8d763e3d58"
+                    target="_blank"
+                    href={meta.testimonialUrl || ""}
                     className="text-primary"
                   >
                     Senja
