@@ -14,12 +14,20 @@ import {
   faPaperPlane,
   faWindowMaximize,
 } from "@fortawesome/free-solid-svg-icons";
+import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import DubLogo from "@/public/dub-logo.svg";
 
 export default function LinksPage() {
   const latestVideo = "https://www.youtube.com/watch?v=cOAh4xO3u2I";
 
   const links = [
+    {
+      title: "Get a Deadlock Invite",
+      description: "Deadlock is a new multiplayer game from Valve.",
+      url: "/deadlock?via=links",
+      icon: faSteam,
+      cta: "Get Invite",
+    },
     {
       title: "Weekly Newsletter",
       description: "Insights on how I run my one person business.",
