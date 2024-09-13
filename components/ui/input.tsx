@@ -3,6 +3,13 @@
 import Link from "next/link";
 import React, { forwardRef, ForwardedRef } from "react";
 import Spinner from "@/components/ui/spinner";
+import { AsteriskIcon } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface InputProps {
   className?: string;
@@ -94,18 +101,39 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 
   return (
     <div className="flex w-full flex-col gap-2">
-      <div className="flex justify-between">
-        {label && (
-          <label htmlFor={htmlFor} className={`text-sm ${weight}`}>
-            {label}
-          </label>
-        )}
-        {link && (
-          <Link href={link} className="text-sm font-medium" tabIndex={2}>
-            {linkText}
-          </Link>
-        )}
-      </div>
+      {(label || link) && (
+        <div className="flex justify-between">
+          {label && (
+            <label
+              htmlFor={htmlFor}
+              className={`text-sm ${weight} flex items-center gap-2`}
+            >
+              {label}
+              {required && (
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="flex h-4 w-4 items-center justify-center rounded-full bg-subtle-borders-interactive p-2.5 text-high-contrast-text">
+                        <span>
+                          <AsteriskIcon width={14} height={14} />
+                        </span>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Required</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              )}
+            </label>
+          )}
+          {link && (
+            <Link href={link} className="text-sm font-medium" tabIndex={2}>
+              {linkText}
+            </Link>
+          )}
+        </div>
+      )}
       <div
         className={`transition-effect group flex items-center justify-between overflow-hidden rounded-lg border border-subtle-borders-interactive bg-app-bg p-2 pr-4 hover:border-stronger-borders-interactive-focus-rings dark:bg-ui-component-default`}
       >
