@@ -39,7 +39,7 @@ const Page = async ({ params }: { params: Params }) => {
         <div className="flex flex-col gap-4 border-b border-ui-component-default pb-8">
           <h1 className="text-4xl font-medium">{meta.title}</h1>
           <span className="text-low-contrast-text">{meta.description}</span>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center">
             <div className="flex items-center gap-2">
               <Avatar width={36} height={36} />
               <span className="text-low-contrast-text">
