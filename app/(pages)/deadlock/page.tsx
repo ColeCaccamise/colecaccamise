@@ -7,6 +7,8 @@ import Link from "next/link";
 import { useState } from "react";
 import toast from "@/utils/toast";
 import { sendDeadlockInvite } from "./actions";
+import { isValidEmail } from "@/lib/validation";
+
 export default function DeadlockPage() {
   const [friendCode, setFriendCode] = useState("");
   const [email, setEmail] = useState("");
@@ -17,20 +19,28 @@ export default function DeadlockPage() {
 
     setIsLoading(true);
 
+    if (!friendCode) {
+      toast("Please enter a friend code", "error");
+      setIsLoading(false);
+      return;
+    }
+
+    if (email && !isValidEmail(email)) {
+      toast("Please enter a valid email", "error");
+      setIsLoading(false);
+      return;
+    }
+
     try {
       await sendDeadlockInvite(friendCode, email);
       setFriendCode("");
       setEmail("");
       toast("Sweet! I'll send you an invite soon.", "success");
     } catch (error: any) {
-      if (error.message === "invalid_email") {
-        toast("Please enter a valid email", "error");
-      } else {
-        toast(
-          "Something went wrong. Please try again or DM me on Twitter @colecaccamise instead",
-          "error",
-        );
-      }
+      toast(
+        "Something went wrong. Please try again or DM me on Twitter @colecaccamise instead",
+        "error",
+      );
     }
     setIsLoading(false);
   }
