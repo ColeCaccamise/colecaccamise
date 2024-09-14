@@ -22,7 +22,15 @@ export default function LinksPage() {
 
   const links = [
     {
-      title: "Get a Deadlock Invite",
+      title: "Dub.co",
+      description: "How I create my caccamise.link shortlinks.",
+      url: "https://refer.dub.co/colecaccamise",
+      icon: DubLogo,
+      cta: "Visit",
+      svgIcon: true,
+    },
+    {
+      title: "Get an invite to Deadlock",
       description: "Deadlock is a new multiplayer game from Valve.",
       url: "/deadlock?via=links",
       icon: faSteam,
@@ -36,19 +44,20 @@ export default function LinksPage() {
       cta: "Read",
     },
     {
-      title: "Visibly.co",
-      description: "SaaS landing page templates.",
-      url: "https://caccamise.link/visibly",
-      icon: faWindowMaximize,
-      cta: "Explore",
-    },
-    {
       title: "Twitter / X",
       description: "Sharing what I'm working on.",
       url: "https://caccamise.link/x",
       icon: faXTwitter,
       cta: "Follow",
     },
+    {
+      title: "Visibly.co",
+      description: "SaaS landing page templates.",
+      url: "https://caccamise.link/visibly",
+      icon: faWindowMaximize,
+      cta: "Explore",
+    },
+
     {
       title: "Drops",
       description: "Wallpapers, Notion templates, and more.",
@@ -69,14 +78,6 @@ export default function LinksPage() {
       url: "https://git.new/cole",
       icon: faGithub,
       cta: "Visit",
-    },
-    {
-      title: "Dub.co",
-      description: "How I create my caccamise.link shortlinks.",
-      url: "https://refer.dub.co/colecaccamise",
-      icon: DubLogo,
-      cta: "Visit",
-      svgIcon: true,
     },
   ];
 
