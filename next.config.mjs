@@ -175,6 +175,11 @@ const nextConfig = {
         hostname: "colecaccamise.s3.amazonaws.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "d27j5b63daowy8.cloudfront.net",
+        pathname: "/**",
+      },
     ],
   },
 };
