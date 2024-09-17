@@ -9,6 +9,7 @@ import { getAllCollectionMeta } from "@/lib/mdx";
 import ListContainer from "@/components/ui/list/list-container";
 import Listicle from "@/components/ui/list/listicle";
 import NewsletterSignup from "@/components/ui/newsletter-signup";
+import Avatar from "@/components/ui/avatar";
 
 export default async function Home() {
   const drops = await getAllCollectionMeta("drops", 3);
@@ -27,12 +28,6 @@ export default async function Home() {
         "Launch your startup faster with Next.js & TailwindCSS landing page templates.",
       url: "https://caccamise.link/visibly",
     },
-    // {
-    //   name: "Solofin.co",
-    //   description:
-    //     "Modern accounting software for freelancers and solopreneurs.",
-    //   url: "https://solofin.co?via=cole",
-    // },
   ];
 
   const socials = [
@@ -53,15 +48,22 @@ export default async function Home() {
   return (
     <>
       <main className="flex flex-col gap-16 md:gap-24">
-        <div className="flex flex-col gap-2">
-          <span className="font-medium">About</span>
-          <p>
-            I work as a software engineer intern and create tech videos about
-            products and tools I love.
-          </p>
-          <p>
-            I&apos;m passionate about design and building great SaaS products.
-          </p>
+        <div className="flex flex-col gap-4">
+          <div className="block md:hidden">
+            <Avatar width={56} height={56} />
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="font-medium">About</span>
+            <p>
+              I&apos;m a final year computer science student and software
+              engineer intern.
+            </p>
+            <p>Developing and designing software is my passion.</p>
+            <p>
+              In my spare time I create tech videos on YouTube and build things
+              for myself.
+            </p>
+          </div>
         </div>
 
         <NewsletterSignup
