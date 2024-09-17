@@ -74,6 +74,10 @@ export default function RootLayout({
       name: "Stack",
     },
     {
+      href: "/vault",
+      name: "Vault",
+    },
+    {
       href: "/links",
       name: "Links",
     },

@@ -180,6 +180,10 @@ const nextConfig = {
         hostname: "d27j5b63daowy8.cloudfront.net",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "**",
+      },
     ],
   },
 };
