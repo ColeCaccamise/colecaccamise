@@ -2,6 +2,11 @@ import axios from "axios";
 
 export async function getOpenGraphImage(url: string) {
   try {
+    if (url.includes("youtube.com")) {
+      const videoId = url.split("v=")[1];
+      return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+    }
+
     const response = await axios.get(url);
     const data = await response.data;
 

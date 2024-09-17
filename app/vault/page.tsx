@@ -15,7 +15,7 @@ export default async function VaultPage() {
         "A fantastic video series on UE5. I had a lot of fun going through this one.",
       url: "https://www.youtube.com/watch?v=L9qixi858Ag&list=PLIn-yd4vnXbjWeYqU7epakdnVzoysMToy",
       image: await getOpenGraphImage(
-        "https://www.youtube.com/watch?v=bDUFB1ng00Q&list=PLIn-yd4vnXbjWeYqU7epakdnVzoysMToy&index=2",
+        "https://www.youtube.com/watch?v=bDUFB1ng00Q",
       ),
       tags: ["videos"],
     },
