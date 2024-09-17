@@ -95,6 +95,8 @@ export default async function VaultPage() {
     },
   ];
 
+  console.log(vaultItems);
+
   return (
     <div className="flex flex-col gap-16">
       <div className="flex flex-col gap-4">
