@@ -18,7 +18,7 @@ import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import DubLogo from "@/public/dub-logo.svg";
 
 export default function LinksPage() {
-  const latestVideo = "https://www.youtube.com/watch?v=cOAh4xO3u2I";
+  const latestVideo = "https://www.youtube.com/watch?v=xq7PoEQxP9M";
 
   const links = [
     {
