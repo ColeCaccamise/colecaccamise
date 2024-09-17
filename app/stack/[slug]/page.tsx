@@ -3,7 +3,6 @@ import BackLink from "@/components/ui/back-link";
 
 import { Stack, Params } from "@/types/cms";
 import Listicle from "@/components/ui/list/listicle";
-import Input from "@/components/ui/input";
 import Feedback from "@/components/ui/feedback";
 
 import sendEmail from "@/app/api/send/send";
@@ -26,15 +25,14 @@ export async function generateMetadata({ params }: { params: Params }) {
   };
 }
 
-async function sendFeedback(email: string, feedback: string, stack: string) {
+async function sendFeedback(feedback: string, stack: string) {
   "use server";
 
   const { data, error } = await sendEmail(
-    "cole@caccamedia.com",
+    "cole@colecaccamise.com",
     `New Feedback from ${stack}`,
     <>
       <h1>New feedback from {stack}</h1>
-      <p>Email: {email}</p>
       <p>Feedback: {feedback}</p>
     </>,
   );

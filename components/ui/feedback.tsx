@@ -4,39 +4,28 @@ import Input from "./input";
 import Button from "./button";
 import { useState } from "react";
 import toast from "@/utils/toast";
-import { isValidEmail } from "@/lib/validation";
 
 export default function Feedback({
   stack = "Stack",
-  feedbackText = "Something I missed? Let me know!",
-  feedbackPreview = "Can you include a link to...",
+  feedbackText = "Have any suggestions? Let me know!",
+  feedbackPreview = "You should try...",
   handleSendFeedback,
 }: {
   stack?: string;
   feedbackText?: string;
   feedbackPreview?: string;
-  handleSendFeedback: (
-    email: string,
-    feedback: string,
-    stack: string,
-  ) => Promise<void>;
+  handleSendFeedback: (feedback: string, stack: string) => Promise<void>;
 }) {
-  const [email, setEmail] = useState("");
   const [feedback, setFeedback] = useState("");
   const [submitCount, setSubmitCount] = useState(0);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const validEmail = isValidEmail(email);
-
-    if (!validEmail) return toast("Please enter a valid email", "error");
-
-    await handleSendFeedback(email, feedback, stack)
+    await handleSendFeedback(feedback, stack)
       .then(() => {
-        toast("Thank you! I'll get back to you soon.", "success");
+        toast("Thanks for sharing!", "success");
 
-        setEmail("");
         setFeedback("");
         setSubmitCount(0);
       })
@@ -56,15 +45,6 @@ export default function Feedback({
         <span className="text-lg font-medium">{feedbackText}</span>
         <Input
           required
-          type="email"
-          placeholder="Your email"
-          value={email}
-          handleChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <Input
-          required
           type="text"
           variant="textarea"
           placeholder={feedbackPreview}
@@ -75,7 +55,7 @@ export default function Feedback({
           }}
         />
 
-        <Button className="w-fit" type="submit" disabled={!email || !feedback}>
+        <Button className="w-fit" type="submit" disabled={!feedback}>
           Submit
         </Button>
       </div>
