@@ -115,17 +115,15 @@ export default async function VaultPage() {
             href={item.url}
             className="flex flex-col gap-3 rounded-md border-2 border-ui-component-default bg-sidebar-bg p-4"
           >
-            {item.image && (
-              <div className="relative w-full pt-[56.25%]">
-                <Image
-                  className="absolute inset-0 rounded-md object-cover"
-                  src={item.image}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  alt={item.title || "Vault item"}
-                />
-              </div>
-            )}
+            <div className="relative w-full pt-[56.25%]">
+              <Image
+                className="absolute inset-0 rounded-md object-cover"
+                src={item.image}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                alt={item.title || "Vault item"}
+              />
+            </div>
             <div>
               <h3 className="text-lg font-medium">{item.title || "Title"}</h3>
 

@@ -10,6 +10,7 @@ export async function getOpenGraphImage(url: string) {
     if (ogImageMatch && (ogImageMatch[1] || ogImageMatch[2])) {
       return ogImageMatch[1] || ogImageMatch[2];
     }
+    console.log("OG:", data);
     // If no og:image is found, return null or a default image URL
     return null; // or return "https://example.com/default-image.jpg";
   } catch (error) {
