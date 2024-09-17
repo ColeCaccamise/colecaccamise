@@ -39,7 +39,7 @@ export default async function VaultPage() {
       title: "Animations on the Web",
       description:
         "Currently going through this course. Teaches you how to create beautiful animations.",
-      url: "https://animations.dev/learn",
+      url: "https://animations.dev",
       image: await getOpenGraphImage("https://animations.dev"),
       tags: ["courses"],
     },
