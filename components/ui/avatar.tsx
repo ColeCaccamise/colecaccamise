@@ -10,7 +10,7 @@ export default function Avatar({
 }) {
   return (
     <Image
-      src="https://yt3.googleusercontent.com/xnP_Sb0Q94pr6mO5eBzH9j8NsZXStvTrpu4QTXjzDVoI25lTZ0FbPWVuivSqbUTHfPl-pwCxeA=s900-c-k-c0x00ffffff-no-rj"
+      src="/cole.jpg"
       width={width}
       height={height}
       className="rounded-full"

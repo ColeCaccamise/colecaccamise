@@ -2,8 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import SidebarLink from "./sidebar-link";
-
-import Image from "next/image";
+import Avatar from "./avatar";
 
 export default function Sidebar({
   menuLinks,
@@ -19,13 +18,7 @@ export default function Sidebar({
         aria-label="Desktop navigation"
       >
         <div className="flex w-full flex-col items-start gap-4 text-left">
-          <Image
-            src="https://yt3.googleusercontent.com/xnP_Sb0Q94pr6mO5eBzH9j8NsZXStvTrpu4QTXjzDVoI25lTZ0FbPWVuivSqbUTHfPl-pwCxeA=s900-c-k-c0x00ffffff-no-rj"
-            width={72}
-            height={72}
-            className="rounded-full"
-            alt="Cole Caccamise"
-          />
+          <Avatar />
           <div>
             <span className="text-lg font-medium">Cole Caccamise</span>
             <p>Solopreneur</p>
