@@ -44,6 +44,13 @@ export default async function VaultPage() {
       tags: ["courses"],
     },
     {
+      title: "The Day You Became A Better Writer",
+      description: "Read this article right now (it only takes 2 minutes).",
+      url: "https://dilbertblog.typepad.com/the_dilbert_blog/2007/06/the_day_you_bec.html",
+      image: await getOpenGraphImage("https://dilbert.com/"),
+      tags: ["articles"],
+    },
+    {
       title: "Grow Your Personal Brand as a Designer",
       description:
         "A great talk with Oliur on how to grow your personal brand.",
@@ -62,6 +69,7 @@ export default async function VaultPage() {
       ),
       tags: ["videos"],
     },
+
     {
       title:
         "Why Startup Founders Should Launch Companies Sooner Than They Think",
