@@ -6,49 +6,46 @@ import Spinner from "./spinner";
 
 export default function AnimatedButton({
   type,
+  className,
   children,
   handleClick,
-  success = false,
   loading = false,
+  disabled = false,
 }: {
   type: "button" | "submit" | "reset";
+  className?: string;
   children: React.ReactNode;
   handleClick: () => void;
-  success: boolean;
   loading: boolean;
+  disabled?: boolean;
+  maxWidth?: string;
 }) {
-  const [buttonState, setButtonState] = useState<
-    "idle" | "loading" | "success"
-  >("idle");
+  const [buttonState, setButtonState] = useState<"idle" | "loading">("idle");
 
   const buttonCopy = {
-    idle: "Join For Free",
+    idle: children,
     loading: <Spinner variant="light" />,
-    success: "Check Your Email!",
   };
 
   useEffect(() => {
     if (loading) {
       setButtonState("loading");
-    } else if (success) {
-      setButtonState("success");
-      setTimeout(() => {
-        setButtonState("idle");
-      }, 3500);
+    } else {
+      setButtonState("idle");
     }
-  }, [success, loading]);
+  }, [loading]);
 
   return (
     <button
       type={type}
-      disabled={loading}
+      disabled={disabled || loading}
       onClick={handleClick}
-      className={`btn btn-primary relative h-[48px] w-full overflow-hidden md:w-[250px] ${
-        loading && "btn-disabled"
-      }`}
+      className={`btn btn-primary ${
+        loading || disabled ? "btn-disabled" : ""
+      } ${className}`}
     >
       <AnimatePresence mode="popLayout" initial={false}>
-        <motion.span
+        <motion.div
           key={buttonState}
           initial={{ y: -25, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -56,7 +53,7 @@ export default function AnimatedButton({
           transition={{ duration: 0.3, bounce: 0, type: "spring" }}
         >
           {buttonCopy[buttonState]}
-        </motion.span>
+        </motion.div>
       </AnimatePresence>
     </button>
   );

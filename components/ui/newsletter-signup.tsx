@@ -102,7 +102,8 @@ export default function NewsletterSignup({
           type="submit"
           handleClick={handleSignup}
           loading={formSubmitting}
-          success={success}
+          disabled={!email}
+          className="md:h-[48px] md:w-[147px]"
         >
           {cta}
         </AnimatedButton>

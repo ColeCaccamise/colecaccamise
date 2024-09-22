@@ -4,6 +4,7 @@ import Input from "./input";
 import Button from "./button";
 import { useState } from "react";
 import toast from "@/utils/toast";
+import AnimatedButton from "./animated-button";
 
 export default function Feedback({
   stack = "Stack",
@@ -18,9 +19,10 @@ export default function Feedback({
 }) {
   const [feedback, setFeedback] = useState("");
   const [submitCount, setSubmitCount] = useState(0);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  async function handleSubmit() {
+    setLoading(true);
 
     await handleSendFeedback(feedback, stack)
       .then(() => {
@@ -28,6 +30,7 @@ export default function Feedback({
 
         setFeedback("");
         setSubmitCount(0);
+        setSuccess(true);
       })
       .catch((error) => {
         if (submitCount > 1) {
@@ -36,11 +39,14 @@ export default function Feedback({
           setSubmitCount((prev) => prev + 1);
           toast(error.message, "error");
         }
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }
 
   return (
-    <form className="py-8" onSubmit={handleSubmit}>
+    <form className="py-8">
       <div className="flex flex-col gap-4">
         <span className="text-lg font-medium">{feedbackText}</span>
         <Input
@@ -55,9 +61,15 @@ export default function Feedback({
           }}
         />
 
-        <Button className="w-fit" type="submit" disabled={!feedback}>
+        <AnimatedButton
+          className="md:h-[48px] md:w-[101px]"
+          type="submit"
+          disabled={!feedback}
+          loading={loading}
+          handleClick={handleSubmit}
+        >
           Submit
-        </Button>
+        </AnimatedButton>
       </div>
     </form>
   );
