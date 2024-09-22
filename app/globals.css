@@ -118,6 +118,10 @@ li {
   }
 }
 
+.letter-content img {
+  @apply aspect-video w-full rounded-md object-cover;
+}
+
 /* For WebKit-based browsers */
 ::-webkit-scrollbar {
   width: 12px; /* Adjust scrollbar width here */

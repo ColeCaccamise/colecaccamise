@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   };
 }
 
+// TODO: add copy url button
 const Page = async ({ params }: { params: Params }) => {
   const { meta, content }: { meta: Letter; content: any } =
     await getPageContent(params.slug);
@@ -54,7 +55,7 @@ const Page = async ({ params }: { params: Params }) => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 py-4">{content}</div>
+        <div className="letter-content flex flex-col gap-6 py-4">{content}</div>
       </div>
 
       <div>
