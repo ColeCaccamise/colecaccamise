@@ -101,6 +101,14 @@ export const getAllCollectionMeta = async (
       items = items.filter((item) => item.slug !== exclude);
     }
 
+    if (items.some((item) => item.status === "draft")) {
+      const isAuthenticated = await isUserAuthenticated();
+
+      if (!isAuthenticated) {
+        items = items.filter((item) => item.status !== "draft");
+      }
+    }
+
     // Apply the limit
     const effectiveLimit = limit ?? items.length;
     items = items.slice(0, effectiveLimit);
