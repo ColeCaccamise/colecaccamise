@@ -22,6 +22,7 @@ export type Drop = {
   testimonial?: string;
   testimonialName?: string;
   testimonialUrl?: string;
+  status?: "draft" | "published";
 };
 
 export type Letter = {
@@ -30,6 +31,7 @@ export type Letter = {
   published?: string;
   description?: string;
   position?: number;
+  status?: "draft" | "published";
 };
 
 export type Stack = {
@@ -40,4 +42,5 @@ export type Stack = {
   position?: number;
   feedbackText?: string;
   feedbackPreview?: string;
+  status?: "draft" | "published";
 };

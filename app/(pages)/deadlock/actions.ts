@@ -1,8 +1,8 @@
 "use server";
 
-import { isValidEmail } from "@/lib/validation";
-import sendEmail from "@/app/api/send/send";
 import { DeadlockInviteEmail } from "@/emails/deadlock-email";
+import { sendEmail } from "@/lib/resend";
+
 export async function sendDeadlockInvite(friendCode: string, email: string) {
   console.log("--- New Deadlock Invite Request ---");
   console.log("Friend Code:", friendCode);

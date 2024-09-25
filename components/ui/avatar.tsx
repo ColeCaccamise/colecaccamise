@@ -10,6 +10,7 @@ export default function Avatar({
 }) {
   return (
     <Image
+      loading="eager"
       src="/cole.jpg"
       width={width}
       height={height}

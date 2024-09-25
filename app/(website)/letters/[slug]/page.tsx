@@ -7,9 +7,13 @@ import Link from "next/link";
 import { Letter, Params } from "@/types/cms";
 import { formatDate } from "@/lib/string";
 import Listicle from "@/components/ui/list/listicle";
+import { notFound } from "next/navigation";
 
 const getPageContent = async (slug: string) => {
+  "use server";
+
   const { meta, content } = await getCollectionBySlug(slug, "letters");
+
   return { meta, content };
 };
 

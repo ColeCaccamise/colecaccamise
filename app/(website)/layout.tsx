@@ -1,13 +1,12 @@
 import Footer from "@/components/ui/footer";
 import NavigationMenu from "@/components/ui/navigation-menu";
 import Sidebar from "@/components/ui/sidebar";
-import Link from "next/link";
 
-export const metadata = {
-  title: "Page Not Found",
-};
-
-export default function NotFound() {
+export default function WebsiteLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const menuLinks: { href: string; name: string; new?: boolean }[] = [
     {
       href: "/",
@@ -46,14 +45,7 @@ export default function NotFound() {
         <Sidebar menuLinks={menuLinks} />
 
         <div className="flex h-min w-full flex-col gap-16 overflow-visible py-8 md:gap-24 md:py-20">
-          <div className="flex h-full flex-col gap-4">
-            <h1>Yikes, that&apos;s a 404.</h1>
-            <p>
-              This is embarassing, but I couldn&apos;t find what you&apos;re
-              looking for.
-            </p>
-            <Link href="/">Return Home</Link>
-          </div>
+          {children}
 
           <Footer />
         </div>

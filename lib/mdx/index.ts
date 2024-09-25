@@ -7,6 +7,7 @@ import VideoPlayer from "@/components/ui/video";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Drop, Letter, Stack } from "@/types/cms";
+import { isUserAuthenticated } from "@/lib/auth";
 
 type Frontmatter = Drop | Letter | Stack;
 
@@ -24,6 +25,8 @@ const getItemsArray = (collection: string) => {
 
 // helpers
 export const getCollectionBySlug = async (slug: string, collection: string) => {
+  "use server";
+
   try {
     const realSlug = slug.replace(/\.mdx$/, "");
 
@@ -39,6 +42,16 @@ export const getCollectionBySlug = async (slug: string, collection: string) => {
         options: { parseFrontmatter: true },
         components: { VideoPlayer, Link },
       });
+
+    if (frontmatter.status === "draft") {
+      if ("name" in frontmatter) {
+        frontmatter.name = frontmatter.name + " (DRAFT)";
+      }
+
+      if ("title" in frontmatter) {
+        frontmatter.title = frontmatter.title + " (DRAFT)";
+      }
+    }
 
     return { meta: { ...frontmatter, slug: realSlug }, content };
   } catch (error) {
