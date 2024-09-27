@@ -2,7 +2,7 @@
   "crons": [
     {
       "path": "/api/cron/finance-video",
-      "schedule": "0 19 * * 5"
+      "schedule": "0 23 * * 5"
     }
   ]
 }
