@@ -21,7 +21,7 @@ export default function Sidebar({
           <Avatar />
           <div>
             <span className="text-lg font-medium">Cole Caccamise</span>
-            <p>Solopreneur</p>
+            <p>Software Engineer</p>
           </div>
           {/* <div>
 					<button>Contact</button>
