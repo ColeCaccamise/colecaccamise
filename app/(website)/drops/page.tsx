@@ -22,7 +22,7 @@ export default async function DropsPage() {
         <span className="font-medium">All drops</span>
 
         <div className="flex flex-col">
-          {drops.map((drop) => (
+          {drops?.map((drop) => (
             <ListItem item={drop} kind="drops" key={drop.slug} />
           ))}
         </div>

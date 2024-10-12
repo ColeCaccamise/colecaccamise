@@ -31,13 +31,13 @@ export async function generateMetadata({ params }: { params: Params }) {
   return {
     metadataBase: new URL("https://colecaccamise.com"),
     title: `${meta.name} | Cole Caccamise`,
-    description: meta.seoDescription,
+    description: meta.description,
     openGraph: {
       title: `${meta.name} | Cole Caccamise`,
-      description: meta.seoDescription,
+      description: meta.description,
       images: [
         {
-          url: meta.thumbnailImage,
+          url: meta.thumbnail_image,
           width: 800,
           height: 600,
           alt: meta.name,
@@ -55,12 +55,12 @@ const DropPage = async ({ params }: { params: Params }) => {
   const drops = await getAllCollectionMeta("drops", 3, meta.slug);
 
   const images = [
-    meta.image1,
-    meta.image2,
-    meta.image3,
-    meta.image4,
-    meta.image5,
-    meta.image6,
+    meta.image_1,
+    meta.image_2,
+    meta.image_3,
+    meta.image_4,
+    meta.image_5,
+    meta.image_6,
   ].filter((item) => item !== null);
 
   const buttonStyles =
@@ -72,7 +72,7 @@ const DropPage = async ({ params }: { params: Params }) => {
         {images.length === 1 && (
           <AspectRatio
             className="rounded-2xl"
-            src={meta?.image1 || ""}
+            src={meta?.image_1 || ""}
             alt={meta?.name || `Product image 1`}
             width={600}
             height={600}
@@ -119,9 +119,9 @@ const DropPage = async ({ params }: { params: Params }) => {
               <h1 className="text-4xl font-medium">{meta.name}</h1>
               <span className="text-xl">
                 ${meta.price}{" "}
-                {meta.oldPrice && (
+                {meta.old_price && (
                   <span className="text-low-contrast-text line-through">
-                    ${meta.oldPrice}
+                    ${meta.old_price}
                   </span>
                 )}
               </span>
@@ -134,14 +134,14 @@ const DropPage = async ({ params }: { params: Params }) => {
           </div>
 
           <div className="flex flex-col gap-4">
-            <Link href={meta.lemonSqueezyLink || ""}>
+            <Link href={meta.lemon_squeezy_link || ""}>
               <Button className="w-full font-medium">Buy Now</Button>
             </Link>
-            {meta?.demoLink && (
+            {meta?.demo_link && (
               <Link
                 target="_blank"
                 className="text-app-bg"
-                href={meta.demoLink}
+                href={meta.demo_link}
               >
                 <Button
                   variant="unstyled"
@@ -152,7 +152,7 @@ const DropPage = async ({ params }: { params: Params }) => {
               </Link>
             )}
 
-            {meta.testimonial && meta.testimonialName && (
+            {meta.testimonial && meta.testimonial_name && (
               <div className="flex flex-col gap-2">
                 <div className="flex text-warning">
                   <StarFilledIcon />
@@ -162,10 +162,10 @@ const DropPage = async ({ params }: { params: Params }) => {
                   <StarFilledIcon />
                 </div>
                 <p className="text-sm italic">
-                  &quot;{meta.testimonial}&quot; - {meta.testimonialName} via{" "}
+                  &quot;{meta.testimonial}&quot; - {meta.testimonial_name} via{" "}
                   <Link
                     target="_blank"
-                    href={meta.testimonialUrl || ""}
+                    href={meta.testimonial_url || ""}
                     className="text-primary"
                   >
                     Senja

@@ -30,7 +30,7 @@ export default function ListDescription({
   } else if (kind === "letters") {
     return (
       <div className="flex w-full flex-col items-start justify-between gap-1 md:flex-row md:items-center">
-        <span>{item.title}</span>
+        <span>{item.name}</span>
         <span className="font-regular text-sm text-low-contrast-text">
           {formatDate(item.published)}
         </span>
@@ -39,7 +39,7 @@ export default function ListDescription({
   } else if (kind === "stack") {
     return (
       <div className="flex flex-col">
-        <span>{item.title}</span>
+        <span>{item.name}</span>
         <span className="font-regular text-low-contrast-text">
           {item.description}
         </span>

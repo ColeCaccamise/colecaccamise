@@ -3,7 +3,7 @@ import Avatar from "@/components/ui/avatar";
 import NewsletterSignup from "@/components/ui/newsletter-signup";
 import BackLink from "@/components/ui/back-link";
 import Link from "next/link";
-
+import axios from "axios";
 import { Letter, Params } from "@/types/cms";
 import { formatDate } from "@/lib/string";
 import Listicle from "@/components/ui/list/listicle";
@@ -17,14 +17,28 @@ const getPageContent = async (slug: string) => {
   return { meta, content };
 };
 
+const fetchLetter = async (slug: string) => {
+  "use server";
+
+  try {
+    const res = await axios.get(`http://localhost:3000/api/letters/${slug}`);
+
+    const data = await res.data;
+
+    return data;
+  } catch (error) {
+    return null;
+  }
+};
+
 export async function generateMetadata({ params }: { params: Params }) {
   const { meta }: { meta: Letter } = await getPageContent(params.slug);
   return {
     metadataBase: new URL("https://colecaccamise.com"),
-    title: `${meta.title} | Cole Caccamise`,
+    title: `${meta.name} | Cole Caccamise`,
     description: meta.description,
     openGraph: {
-      title: `${meta.title} | Cole Caccamise`,
+      title: `${meta.name} | Cole Caccamise`,
       description: meta.description,
     },
   };
@@ -35,6 +49,9 @@ const Page = async ({ params }: { params: Params }) => {
   const { meta, content }: { meta: Letter; content: any } =
     await getPageContent(params.slug);
 
+  const letter = await fetchLetter(params.slug);
+  console.log("letter", letter);
+
   const letters = await getAllCollectionMeta("letters", 3, meta.slug);
 
   return (
@@ -42,7 +59,7 @@ const Page = async ({ params }: { params: Params }) => {
       <div className="flex flex-col gap-8">
         <BackLink href="/letters">Back</BackLink>
         <div className="flex flex-col gap-4 border-b border-ui-component-default pb-8">
-          <h1 className="text-4xl font-medium">{meta.title}</h1>
+          <h1 className="text-4xl font-medium">{meta.name}</h1>
           <span className="text-low-contrast-text">{meta.description}</span>
           <div className="flex flex-col items-start gap-4 md:flex-row md:items-center">
             <div className="flex items-center gap-2">

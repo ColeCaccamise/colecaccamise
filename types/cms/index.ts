@@ -5,29 +5,30 @@ export type Meta = { slug: string; name?: string; title?: string };
 export type Drop = {
   slug?: string;
   category?: string;
-  seoDescription?: string;
+  description?: string;
   price?: number;
-  oldPrice?: number;
+  old_price?: number;
   name?: string;
-  lemonSqueezyLink?: string;
-  demoLink?: string;
-  thumbnailImage?: string;
-  image1?: string;
-  image2?: string;
-  image3?: string;
-  image4?: string;
-  image5?: string;
-  image6?: string;
+  lemon_squeezy_link?: string;
+  demo_link?: string;
+  thumbnail_image?: string;
+  image_1?: string;
+  image_2?: string;
+  image_3?: string;
+  image_4?: string;
+  image_5?: string;
+  image_6?: string;
   position?: number;
   testimonial?: string;
-  testimonialName?: string;
-  testimonialUrl?: string;
+  testimonial_name?: string;
+  testimonial_url?: string;
   status?: "draft" | "published";
+  published?: string;
 };
 
 export type Letter = {
   slug?: string;
-  title?: string;
+  name?: string;
   published?: string;
   description?: string;
   position?: number;
@@ -36,11 +37,12 @@ export type Letter = {
 
 export type Stack = {
   slug?: string;
-  title?: string;
+  name?: string;
   description?: string;
-  seoDescription?: string;
+  seo_description?: string;
   position?: number;
-  feedbackText?: string;
-  feedbackPreview?: string;
+  feedback_text?: string;
+  feedback_preview?: string;
   status?: "draft" | "published";
+  published?: string;
 };

@@ -27,11 +27,11 @@ const getPageContent = async (slug: string) => {
 export async function generateMetadata({ params }: { params: Params }) {
   const { meta }: { meta: Stack } = await getPageContent(params.slug);
   return {
-    title: `${meta.title} | Cole Caccamise`,
-    description: meta.seoDescription,
+    title: `${meta.name} | Cole Caccamise`,
+    description: meta.seo_description,
     openGraph: {
-      title: `${meta.title} | Cole Caccamise`,
-      description: meta.seoDescription,
+      title: `${meta.name} | Cole Caccamise`,
+      description: meta.seo_description,
     },
   };
 }
@@ -64,7 +64,7 @@ const Page = async ({ params }: { params: Params }) => {
     <div className="flex flex-col gap-8">
       <BackLink href="/stack">Back</BackLink>
       <div className="flex flex-col gap-4 border-b border-ui-component-default pb-8">
-        <h1 className="text-4xl font-medium">{meta.title}</h1>
+        <h1 className="text-4xl font-medium">{meta.name}</h1>
         <span className="text-low-contrast-text">{meta.description}</span>
         <span className="text-sm">
           Note: I may earn a commission from some links (thank you for
@@ -74,9 +74,9 @@ const Page = async ({ params }: { params: Params }) => {
       <div className="container flex flex-col gap-6 py-4">{content}</div>
 
       <Feedback
-        stack={meta.title}
-        feedbackText={meta.feedbackText}
-        feedbackPreview={meta.feedbackPreview}
+        stack={meta.name}
+        feedbackText={meta.feedback_text}
+        feedbackPreview={meta.feedback_preview}
         handleSendFeedback={sendFeedback}
       />
 
