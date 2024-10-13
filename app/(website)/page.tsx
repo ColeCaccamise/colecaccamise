@@ -22,12 +22,6 @@ export default async function Home() {
       description: "Aesthetic tech videos.",
       url: "https://youtube.com/@colecaccamise",
     },
-    {
-      name: "Visibly.co",
-      description:
-        "Launch your startup faster with Next.js & TailwindCSS landing page templates.",
-      url: "https://caccamise.link/visibly",
-    },
   ];
 
   const socials = [
@@ -116,6 +110,8 @@ export default async function Home() {
               </Link>{" "}
               or connect on social media below.
             </p>
+
+            <p>I&apos;m available and looking for new opportunities.</p>
           </div>
 
           <div className="flex gap-4">
