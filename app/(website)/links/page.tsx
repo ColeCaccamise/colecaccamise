@@ -9,18 +9,21 @@ import {
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  faDroplet,
-  faPaperPlane,
-  faWindowMaximize,
-} from "@fortawesome/free-solid-svg-icons";
+import { faDroplet, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import DubLogo from "@/public/dub-logo.svg";
 
 export default function LinksPage() {
-  const latestVideo = "https://www.youtube.com/watch?v=xq7PoEQxP9M";
+  const latestVideo = "https://youtu.be/TcDJTnZ2tnM";
 
   const links = [
+    {
+      title: "Weekly Newsletter",
+      description: "Insights on how I run my one person business.",
+      url: "/letters?via=links",
+      icon: faPaperPlane,
+      cta: "Read",
+    },
     {
       title: "Dub.co",
       description: "How I create my caccamise.link shortlinks.",
@@ -37,27 +40,12 @@ export default function LinksPage() {
       cta: "Get Invite",
     },
     {
-      title: "Weekly Newsletter",
-      description: "Insights on how I run my one person business.",
-      url: "/letters?via=links",
-      icon: faPaperPlane,
-      cta: "Read",
-    },
-    {
       title: "Twitter / X",
       description: "Sharing what I'm working on.",
       url: "https://caccamise.link/x",
       icon: faXTwitter,
       cta: "Follow",
     },
-    {
-      title: "Visibly.co",
-      description: "SaaS landing page templates.",
-      url: "https://caccamise.link/visibly",
-      icon: faWindowMaximize,
-      cta: "Explore",
-    },
-
     {
       title: "Drops",
       description: "Wallpapers, Notion templates, and more.",
