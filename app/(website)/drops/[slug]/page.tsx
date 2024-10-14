@@ -31,10 +31,10 @@ export async function generateMetadata({ params }: { params: Params }) {
   return {
     metadataBase: new URL("https://colecaccamise.com"),
     title: `${meta.name} | Cole Caccamise`,
-    description: meta.description,
+    description: meta.seo_description,
     openGraph: {
       title: `${meta.name} | Cole Caccamise`,
-      description: meta.description,
+      description: meta.seo_description,
       images: [
         {
           url: meta.thumbnail_image,

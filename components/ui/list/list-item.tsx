@@ -28,11 +28,11 @@ export default function ListItem({
       target={isNonRelativePath ? "_blank" : ""}
       className={className}
     >
-      {item.thumbnailImage && (
+      {item.thumbnail_image && (
         <div className="h-16 w-16 overflow-hidden">
           <Image
             className="h-full rounded-lg object-cover"
-            src={item.thumbnailImage}
+            src={item.thumbnail_image}
             alt={item.name || item.title}
             width={512}
             height={512}
@@ -43,11 +43,11 @@ export default function ListItem({
     </Link>
   ) : (
     <span className={className}>
-      {item.thumbnailImage && (
+      {item.thumbnail_image && (
         <div className="h-16 w-16 overflow-hidden">
           <Image
             className="h-full rounded-lg object-cover"
-            src={item.thumbnailImage}
+            src={item.thumbnail_image}
             alt={item.name || item.title}
             width={512}
             height={512}

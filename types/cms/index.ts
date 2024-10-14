@@ -6,6 +6,7 @@ export type Drop = {
   slug?: string;
   category?: string;
   description?: string;
+  seo_description?: string;
   price?: number;
   old_price?: number;
   name?: string;
