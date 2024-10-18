@@ -23,7 +23,7 @@ export default async function Home() {
       url: "https://youtube.com/@colecaccamise",
     },
     {
-      name: "Convertfiles.app",
+      name: "ConvertFiles.app",
       description: "Free YouTube to MP3 Conversion tool.",
       url: "https://convertfiles.app/tools/youtube-to-mp3?ref=cole",
     },
