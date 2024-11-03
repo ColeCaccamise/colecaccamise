@@ -1,30 +1,29 @@
-export function formatDate(dateString: string) {
-	try {
-		const dateParts = dateString.split('-');
-		const year = parseInt(dateParts[0], 10);
-		const month = parseInt(dateParts[1], 10) - 1;
-		const day = parseInt(dateParts[2], 10);
+export function formatDate(timestamp: string) {
+  if (!timestamp) {
+    return "";
+  }
 
-		const date = new Date(year, month, day);
+  try {
+    const date = new Date(timestamp);
 
-		if (isNaN(date.getTime())) {
-			throw new Error('Invalid date');
-		}
+    if (isNaN(date.getTime())) {
+      throw new Error("Invalid date");
+    }
 
-		return new Intl.DateTimeFormat('en-US', {
-			month: 'long',
-			day: 'numeric',
-			year: 'numeric',
-		}).format(date);
-	} catch (error) {
-		console.error('Invalid date format:', dateString);
-		return dateString;
-	}
+    return new Intl.DateTimeFormat("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    }).format(date);
+  } catch (error) {
+    console.error("Invalid timestamp format:", timestamp);
+    return timestamp;
+  }
 }
 
 export function capitalize(str: string): string {
-	if (str.length === 0) {
-		return str;
-	}
-	return str.charAt(0).toUpperCase() + str.slice(1);
+  if (str.length === 0) {
+    return str;
+  }
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
