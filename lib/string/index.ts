@@ -4,17 +4,23 @@ export function formatDate(timestamp: string) {
   }
 
   try {
-    const date = new Date(timestamp);
+    // Parse the timestamp string to a Date object in UTC
+    const date = new Date(timestamp + "T13:00:00Z");
+
+    // Create a formatter for EST timezone
+    const formatter = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/New_York",
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
 
     if (isNaN(date.getTime())) {
       throw new Error("Invalid date");
     }
 
-    return new Intl.DateTimeFormat("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    }).format(date);
+    // Format the date in EST
+    return formatter.format(date);
   } catch (error) {
     console.error("Invalid timestamp format:", timestamp);
     return timestamp;
