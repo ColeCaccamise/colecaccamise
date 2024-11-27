@@ -66,7 +66,7 @@ const Page = async ({ params }: { params: Params }) => {
               <Avatar width={36} height={36} />
               <span className="text-low-contrast-text">
                 by{" "}
-                <Link href="https://x.com/colecaccamise">Cole Caccamise</Link>
+                <Link href="https://caccamise.link/x">Cole Caccamise</Link>
               </span>
             </div>
 
