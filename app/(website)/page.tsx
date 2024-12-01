@@ -21,7 +21,7 @@ export default async function Home() {
       name: "YouTube | Cole Caccamise",
       description: "Aesthetic tech videos.",
       url: "https://youtube.com/@colecaccamise",
-    },
+    }
   ];
 
   const socials = [
@@ -54,8 +54,8 @@ export default async function Home() {
             </p>
             <p>Developing and designing software is my passion.</p>
             <p>
-              In my spare time I create tech videos on YouTube and build things
-              for myself.
+              In my spare time I create tech videos on YouTube and make indie
+             games in Unreal Engine 5.
             </p>
           </div>
         </div>
