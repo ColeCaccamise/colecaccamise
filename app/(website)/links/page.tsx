@@ -3,18 +3,18 @@ import Avatar from "@/components/ui/avatar";
 import NewsletterSignup from "@/components/ui/newsletter-signup";
 import VideoPlayer from "@/components/ui/video";
 import LinkPageItem from "@/components/ui/link-page-item";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { ArrowRightIcon, EnvelopeClosedIcon } from "@radix-ui/react-icons";
 import {
   faGithub,
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faDroplet, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faDroplet, faPaperPlane, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import DubLogo from "@/public/dub-logo.svg";
 
 export default function LinksPage() {
-  const latestVideo = "https://youtu.be/yCP8ONIB7pY";
+  const latestVideo = "https://youtu.be/V8K6hiRWp18";
 
   const links = [
     {
@@ -29,15 +29,8 @@ export default function LinksPage() {
       description: "How I create my caccamise.link shortlinks.",
       url: "https://refer.dub.co/colecaccamise",
       icon: DubLogo,
-      cta: "Visit",
+      cta: "Try",
       svgIcon: true,
-    },
-    {
-      title: "Get an invite to Deadlock",
-      description: "Deadlock is a new multiplayer game from Valve.",
-      url: "/deadlock?via=links",
-      icon: faSteam,
-      cta: "Get Invite",
     },
     {
       title: "Twitter / X",
@@ -101,7 +94,19 @@ export default function LinksPage() {
             <VideoPlayer url={latestVideo} />
           </div>
 
+          <LinkPageItem
+              key="contact"
+              title="Contact me"
+              description="I'm open to new opportunities."
+              url="mailto:cole@colecaccamise.com"
+              icon={faEnvelope}
+              cta="Email"
+              svgIcon={false}
+          />
+
           <div className="flex flex-col gap-3 rounded-md border-2 border-ui-component-default bg-sidebar-bg p-4">
+            
+
             <NewsletterSignup
               placeholder="Subscribe to the newsletter"
               location="Links"

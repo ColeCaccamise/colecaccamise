@@ -10,12 +10,21 @@ export const metadata = {
 export default async function VaultPage() {
   const vaultItems = [
     {
-      title: "UE5 Beginner Tutorial",
-      description:
-        "A fantastic video series on UE5. I had a lot of fun going through this one.",
-      url: "https://www.youtube.com/watch?v=L9qixi858Ag&list=PLIn-yd4vnXbjWeYqU7epakdnVzoysMToy",
+      title: "Speak Like A Leader: Make People Respect You",
+      description: "A great watch with Lelia Hormozi and Simon Quibb.",
+      url: "https://www.youtube.com/watch?v=fABX411MixY",
       image: await getOpenGraphImage(
-        "https://www.youtube.com/watch?v=bDUFB1ng00Q",
+        "https://www.youtube.com/watch?v=fABX411MixY",
+      ),
+      tags: ["videos"],
+    },
+    {
+      title:
+        "Jason Fried challenges your thinking on fundraising, goals, growth, and more",
+      description: "The case for profitability over growth.",
+      url: "https://www.youtube.com/watch?v=dAnF0tk0di8",
+      image: await getOpenGraphImage(
+        "https://www.youtube.com/watch?v=dAnF0tk0di8",
       ),
       tags: ["videos"],
     },
@@ -27,64 +36,38 @@ export default async function VaultPage() {
       tags: ["companies"],
     },
     {
-      title: "How to Validate Any SaaS Idea",
-      description: "A must-watch for any aspiring SaaS founder.",
-      url: "https://www.youtube.com/watch?v=aSMxdBVTcLg",
-      image: await getOpenGraphImage(
-        "https://www.youtube.com/watch?v=aSMxdBVTcLg",
-      ),
-      tags: ["videos"],
-    },
-    {
-      title: "Animations on the Web",
-      description:
-        "Currently going through this course. Teaches you how to create beautiful animations.",
-      url: "https://animations.dev",
-      image: await getOpenGraphImage("https://animations.dev"),
-      tags: ["courses"],
-    },
-    {
-      title: "The Day You Became A Better Writer",
-      description: "Read this article right now (it only takes 2 minutes).",
-      url: "https://dilbertblog.typepad.com/the_dilbert_blog/2007/06/the_day_you_bec.html",
-      image: await getOpenGraphImage("https://dilbert.com/"),
-      tags: ["articles"],
-    },
-    {
-      title: "Grow Your Personal Brand as a Designer",
-      description:
-        "A great talk with Oliur on how to grow your personal brand.",
-      url: "https://www.youtube.com/watch?v=dYtzaiqu6Fw",
-      image: await getOpenGraphImage(
-        "https://www.youtube.com/watch?v=dYtzaiqu6Fw",
-      ),
-      tags: ["videos"],
-    },
-    {
-      title: "Programming, Viral AI Startups, and Digital Nomad Life",
-      description: "An amazing conversation about the nomad lifestyle.",
-      url: "https://www.youtube.com/watch?v=oFtjKbXKqbg",
-      image: await getOpenGraphImage(
-        "https://www.youtube.com/watch?v=oFtjKbXKqbg",
-      ),
-      tags: ["videos"],
-    },
-
-    {
-      title:
-        "Why Startup Founders Should Launch Companies Sooner Than They Think",
-      description: "A great video by YC.",
-      url: "https://www.youtube.com/watch?v=Nsx5RDVKZSk",
-      image: await getOpenGraphImage(
-        "https://www.youtube.com/watch?v=Nsx5RDVKZSk",
-      ),
-      tags: ["videos"],
+      title: "Railway",
+      description: "Easily ship backend apps/services.",
+      url: "https://caccamise.link/railway",
+      image: await getOpenGraphImage("https://railway.app"),
+      tags: ["companies"],
     },
     {
       title: "Resend",
       description: "Email for developers.",
       url: "https://resend.com/",
       image: await getOpenGraphImage("https://resend.com"),
+      tags: ["companies"],
+    },
+    {
+      title: "Cursor",
+      description: "Fast, AI-powered code editor.",
+      url: "https://cursor.com",
+      image: await getOpenGraphImage("https://cursor.com"),
+      tags: ["companies"],
+    },
+    {
+      title: "Claude",
+      description: "My favorite LLM for programming and idea generation.",
+      url: "https://claude.ai/new",
+      image: await getOpenGraphImage("https://claude.ai/new"),
+      tags: ["companies"],
+    },
+    {
+      title: "Superhuman",
+      description: "The fastest and prettiest email client.",
+      url: "https://caccamise.link/superhuman",
+      image: await getOpenGraphImage("https://superhuman.com"),
       tags: ["companies"],
     },
     {
@@ -101,6 +84,21 @@ export default async function VaultPage() {
       image: await getOpenGraphImage("https://warp.dev"),
       tags: ["companies"],
     },
+    {
+      title: "Digital Ocean",
+      description:
+        "Simple and afforadble VPS hosting. What I use for some of my smaller projects.",
+      url: "https://caccamise.link/digitalocean",
+      image: await getOpenGraphImage("https://digitalocean.com"),
+      tags: ["companies"],
+    },
+    {
+      title: "Kit.com",
+      description: "Simple newsletters.",
+      url: "https://kit.com",
+      image: await getOpenGraphImage("https://kit.com"),
+      tags: ["companies"],
+    }
   ];
 
   return (
