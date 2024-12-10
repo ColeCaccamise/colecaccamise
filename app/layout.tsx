@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "@/app/styles/btn.css";
 import { Toaster } from "sonner";
+import { CSPostHogProvider } from './providers'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -69,7 +70,9 @@ export default function RootLayout({
           trackOutboundLinks={true}
           taggedEvents={true}
         >
-          <>{children}</>
+          <CSPostHogProvider>
+            <>{children}</>
+          </CSPostHogProvider>
         </PlausibleProvider>
       </body>
     </html>

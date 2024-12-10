@@ -45,6 +45,7 @@
     "next-video": "^1.1.3",
     "path": "^0.12.7",
     "pnpm": "^9.5.0",
+    "posthog-js": "^1.195.0",
     "radix-ui": "^1.0.1",
     "react": "^18",
     "react-dom": "^18",
