@@ -1,7 +1,11 @@
+'use client'
+
 import Footer from "@/components/ui/footer";
 import NavigationMenu from "@/components/ui/navigation-menu";
 import Sidebar from "@/components/ui/sidebar";
 import Link from "next/link";
+import { Logger } from "next-axiom";
+import { usePathname } from "next/navigation";
 
 export const metadata = {
   title: "Page Not Found",
@@ -38,6 +42,15 @@ export default function NotFound() {
       name: "Contact",
     },
   ];
+
+  const log = new Logger();
+  const pathname = usePathname()
+
+  if (!pathname.startsWith("/_next")) {
+    log.warn("Page not found", {
+      pathname,
+    });
+  }
 
   return (
     <>

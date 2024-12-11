@@ -1,4 +1,5 @@
 import nextMDX from "@next/mdx";
+import { withAxiom } from "next-axiom";
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
@@ -192,4 +193,4 @@ const nextConfig = {
   },
 };
 
-export default withMDX(nextConfig);
+export default withAxiom(withMDX(nextConfig));
