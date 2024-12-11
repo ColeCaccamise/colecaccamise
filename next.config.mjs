@@ -144,6 +144,11 @@ const nextConfig = {
         destination: "https://colecaccamise.com/stack/pc",
         permanent: false,
       },
+      {
+        source: "/setapp",
+        destination: "https://caccamise.link/setapp",
+        permanent: false,
+      },
     ];
   },
 
