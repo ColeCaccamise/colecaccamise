@@ -9,7 +9,11 @@ import {
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faDroplet, faPaperPlane, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faDroplet,
+  faPaperPlane,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import DubLogo from "@/public/dub-logo.svg";
 
@@ -72,7 +76,7 @@ export default function LinksPage() {
       <div className="flex flex-col items-center gap-2 md:hidden">
         <Avatar />
         <h2>Cole Caccamise</h2>
-        <span>Solopreneur, Software Engineer, & Designer</span>
+        <span>Software Engineer & Entrepreneur</span>
       </div>
 
       <div className="flex flex-col gap-16">
@@ -95,18 +99,16 @@ export default function LinksPage() {
           </div>
 
           <LinkPageItem
-              key="contact"
-              title="Contact me"
-              description="I'm open to new opportunities."
-              url="mailto:cole@colecaccamise.com"
-              icon={faEnvelope}
-              cta="Email"
-              svgIcon={false}
+            key="contact"
+            title="Contact me"
+            description="I'm open to new opportunities."
+            url="mailto:cole@colecaccamise.com"
+            icon={faEnvelope}
+            cta="Email"
+            svgIcon={false}
           />
 
           <div className="flex flex-col gap-3 rounded-md border-2 border-ui-component-default bg-sidebar-bg p-4">
-            
-
             <NewsletterSignup
               placeholder="Subscribe to the newsletter"
               location="Links"
