@@ -13,7 +13,7 @@ export default async function LettersPage() {
         </h1>
         <p>
           I write about what I&apos;m learning and curate valuable resources for
-          solopreneurs every Sunday morning.
+          entrepreneurs every Sunday morning.
         </p>
         <NewsletterSignup formId="5584232" location="Letters" />
       </div>

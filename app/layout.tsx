@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "@/app/styles/btn.css";
 import { Toaster } from "sonner";
-import { CSPostHogProvider } from './providers'
+import { CSPostHogProvider } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,17 +12,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://colecaccamise.com"),
   title: {
     template: "%s | Cole Caccamise",
-    default: "Cole Caccamise - Solopreneur, Software Engineer, & Designer",
+    default: "Cole Caccamise - Software Engineer & Entrepreneur",
   },
-  description:
-    "Cole Caccamise is a solopreneur, software engineer, and designer.",
+  description: "Cole Caccamise is a software engineer and entrepreneur.",
   twitter: {
     title: {
       template: "%s | Cole Caccamise",
-      default: "Cole Caccamise - Solopreneur, Software Engineer, & Designer",
+      default: "Cole Caccamise - Software Engineer & Entrepreneur",
     },
-    description:
-      "Cole Caccamise is a software engineer, designer, and creator.",
+    description: "Cole Caccamise is a software engineer and entrepreneur.",
     images: [
       {
         url: "/opengraph-image.png",
@@ -34,10 +32,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: {
       template: "%s | Cole Caccamise",
-      default: "Cole Caccamise - Solopreneur, Software Engineer, & Designer",
+      default: "Cole Caccamise - Software Engineer & Entrepreneur",
     },
-    description:
-      "Cole Caccamise is a software engineer, designer, and creator.",
+    description: "Cole Caccamise is a software engineer and entrepreneur.",
     images: [
       {
         url: "/opengraph-image.png",
