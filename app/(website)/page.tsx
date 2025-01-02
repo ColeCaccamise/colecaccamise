@@ -21,7 +21,7 @@ export default async function Home() {
       name: "YouTube | Cole Caccamise",
       description: "Aesthetic tech videos.",
       url: "https://youtube.com/@colecaccamise",
-    }
+    },
   ];
 
   const socials = [
@@ -55,7 +55,7 @@ export default async function Home() {
             <p>Developing and designing software is my passion.</p>
             <p>
               In my spare time I create tech videos on YouTube and make indie
-             games in Unreal Engine 5.
+              games in Unreal Engine 5.
             </p>
           </div>
         </div>
@@ -65,9 +65,11 @@ export default async function Home() {
           title="The Letter"
           description={
             <span>
-              Documenting the process of building my{" "}
-              <u>one person businesses</u>. Sharing lessons I learn and
-              interesting resources I find.
+              Documenting the process of{" "}
+              <Link href="/letters" className="hover:opacity-90">
+                building my businesses
+              </Link>
+              . Sharing lessons I learn and interesting resources I find.
             </span>
           }
         />

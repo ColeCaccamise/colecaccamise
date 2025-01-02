@@ -23,7 +23,7 @@ export default function LinksPage() {
   const links = [
     {
       title: "Weekly Newsletter",
-      description: "Insights on how I run my one person business.",
+      description: "Insights on how I'm building my businesses.",
       url: "/letters?via=links",
       icon: faPaperPlane,
       cta: "Read",
