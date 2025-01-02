@@ -52,10 +52,9 @@ export default async function Home() {
               I&apos;m a final year computer science student and software
               engineer intern.
             </p>
-            <p>Developing and designing software is my passion.</p>
             <p>
-              In my spare time I create tech videos on YouTube and make indie
-              games in Unreal Engine 5.
+              In my spare time I build things for myself and make games in
+              Unreal Engine 5.
             </p>
           </div>
         </div>
