@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "@/app/styles/btn.css";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,6 +62,7 @@ export default function RootLayout({
             className: "select-none",
           }}
         />
+        <Analytics />
         <PlausibleProvider
           domain="colecaccamise.com"
           trackOutboundLinks={true}

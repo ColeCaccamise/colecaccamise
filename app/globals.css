@@ -51,9 +51,14 @@ li {
     --purple-text: #8e4ec6;
     --orange-text: #f76b15;
 
-    --primary: #5e69d1;
-
-    --app-bg: #111111;
+    /* hsl(234deg, 55.6%, 59.4%) */
+    /* --primary: #5e69d1; */
+    --primary: hsla(234, 56%, 59%, 1);
+    /* hsl(240deg, 6.25%, 6.27%) */
+    /* --app-bg: hsla(234, 6%, 6%, 1); */
+    /* --app-bg: hsl(0deg, 0%, 6.67%, 1) */
+    --app-bg: hsla(0, 6%, 6%, 1);
+    /* --app-bg: #111111; */
     --sidebar-bg: #191919;
     --ui-component-default: #222222;
     --ui-component-hover: #2a2a2a;
@@ -63,8 +68,12 @@ li {
     --stronger-borders-interactive-focus-rings: #606060;
     --solid-backgrounds: #6e6e6e;
     --hovered-solid-backgrounds: #7b7b7b;
-    --low-contrast-text: #b4b4b4;
-    --high-contrast-text: #eeeeee;
+    /* --low-contrast-text: #b4b4b4; */
+    --low-contrast-text: hsla(0, 0%, 58%, 1);
+    /* hsl(240deg, 0.952%, 58.8%, 1) */
+    /* hsl(240deg, 15.4%, 94.9%) */
+    /* --high-contrast-text: #eeeeee; */
+    --high-contrast-text: hsla(0, 15%, 95%, 1);
     --overlay-05: hsla(0, 0%, 100%, 0.05);
     --overlay-10: hsla(0, 0%, 100%, 0.1);
     --overlay-15: hsla(0, 0%, 100%, 0.15);
