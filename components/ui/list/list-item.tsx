@@ -27,6 +27,7 @@ export default function ListItem({
       href={url}
       target={isNonRelativePath ? "_blank" : ""}
       className={className}
+      prefetch={true}
     >
       {item.thumbnail_image && (
         <div className="h-16 w-16 overflow-hidden">
