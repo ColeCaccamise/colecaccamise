@@ -134,9 +134,14 @@ const DropPage = async ({ params }: { params: Params }) => {
           </div>
 
           <div className="flex flex-col gap-4">
-            <Link href={meta.lemon_squeezy_link || ""}>
-              <Button className="w-full font-medium">Buy Now</Button>
+            <Link
+              href={`${meta.lemon_squeezy_link || ""}${meta.discount_code ? `?checkout[discount_code]=${meta.discount_code}` : ""}`}
+            >
+              <Button className="w-full font-medium">
+                {meta.cta_text || "Buy Now"}
+              </Button>
             </Link>
+
             {meta?.demo_link && (
               <Link
                 target="_blank"
@@ -150,6 +155,12 @@ const DropPage = async ({ params }: { params: Params }) => {
                   Live Demo
                 </Button>
               </Link>
+            )}
+
+            {meta.cta_sub_text && (
+              <span className="text-xs text-low-contrast-text">
+                {meta.cta_sub_text}
+              </span>
             )}
 
             {meta.testimonial && meta.testimonial_name && (

@@ -11,6 +11,7 @@ export type Drop = {
   old_price?: number;
   name?: string;
   lemon_squeezy_link?: string;
+  discount_code?: string;
   demo_link?: string;
   thumbnail_image?: string;
   image_1?: string;
@@ -25,6 +26,8 @@ export type Drop = {
   testimonial_url?: string;
   status?: "draft" | "published";
   published?: string;
+  cta_text?: string;
+  cta_sub_text?: string;
 };
 
 export type Letter = {
