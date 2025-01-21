@@ -22,6 +22,11 @@ export default async function Home() {
       description: "Aesthetic tech videos.",
       url: "https://youtube.com/@colecaccamise",
     },
+    {
+      name: "Hyperapta Studios",
+      description: "Indie game studio.",
+      url: "https://hyperapta.com",
+    },
   ];
 
   const socials = [
