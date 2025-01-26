@@ -104,7 +104,7 @@ export default async function Home() {
         </ListContainer>
 
         <div id="connect" className="flex flex-col gap-4">
-          <div>
+          <div className="flex flex-col gap-2">
             <span>Connect</span>
             <p>
               Reach me directly at{" "}
@@ -117,7 +117,10 @@ export default async function Home() {
               or connect on social media below.
             </p>
 
-            <p>I&apos;m available and looking for new opportunities.</p>
+            <p>
+              I enjoy meeting fellow developers and creators, so feel free to{" "}
+              <Link href="https://cal.link/cole">schedule a quick call</Link>!
+            </p>
           </div>
 
           <div className="flex gap-4">
