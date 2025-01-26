@@ -3,7 +3,7 @@ import Avatar from "@/components/ui/avatar";
 import NewsletterSignup from "@/components/ui/newsletter-signup";
 import VideoPlayer from "@/components/ui/video";
 import LinkPageItem from "@/components/ui/link-page-item";
-import { ArrowRightIcon, EnvelopeClosedIcon } from "@radix-ui/react-icons";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 import {
   faGithub,
   faXTwitter,
@@ -13,9 +13,11 @@ import {
   faDroplet,
   faPaperPlane,
   faEnvelope,
+  faCalendar,
 } from "@fortawesome/free-solid-svg-icons";
 import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import DubLogo from "@/public/dub-logo.svg";
+import { Calendar } from "lucide-react";
 
 export default function LinksPage() {
   const latestVideo = "https://youtu.be/V8K6hiRWp18";
@@ -101,10 +103,20 @@ export default function LinksPage() {
           <LinkPageItem
             key="contact"
             title="Contact me"
-            description="I'm open to new opportunities."
+            description="Reach out if you'd like to work together."
             url="mailto:cole@colecaccamise.com"
             icon={faEnvelope}
             cta="Email"
+            svgIcon={false}
+          />
+
+          <LinkPageItem
+            key="contact"
+            title="Schedule a Call"
+            description="I'm always happy to chat with other developers and creators."
+            url="https://cal.link/cole"
+            icon={faCalendar}
+            cta="Schedule"
             svgIcon={false}
           />
 
