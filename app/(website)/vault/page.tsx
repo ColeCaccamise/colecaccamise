@@ -43,6 +43,15 @@ export default async function VaultPage() {
       tags: ["companies"],
     },
     {
+      title: "WorkOS",
+      description:
+        "Easily add authentication and enterprise features to your app.",
+      url: "https://workos.com/",
+      image:
+        "https://cdn.prod.website-files.com/621f54116cab10f6e9215d8b/627321b887917b110d342e2b_homepage.png",
+      tags: ["companies"],
+    },
+    {
       title: "Railway",
       description: "Easily ship backend apps/services.",
       url: "https://caccamise.link/railway",
@@ -61,6 +70,13 @@ export default async function VaultPage() {
       description: "Fast, AI-powered code editor.",
       url: "https://cursor.com",
       image: "https://www.cursor.com/opengraph-image.png",
+      tags: ["companies"],
+    },
+    {
+      title: "Screen Studio",
+      description: "Create beautiful screen recordings.",
+      url: "https://caccamise.link/screen",
+      image: "https://screen.studio/og-main-2.png",
       tags: ["companies"],
     },
     {
