@@ -1,13 +1,11 @@
 import { getCollectionBySlug, getAllCollectionMeta } from "@/lib/mdx";
-import Avatar from "@/components/ui/avatar";
 import NewsletterSignup from "@/components/ui/newsletter-signup";
 import BackLink from "@/components/ui/back-link";
-import Link from "next/link";
 import axios from "axios";
 import { Letter, Params } from "@/types/cms";
-import { formatDate } from "@/lib/string";
+import { formatDate, formatTimeAgo } from "@/lib/string";
 import Listicle from "@/components/ui/list/listicle";
-import { notFound } from "next/navigation";
+import CopyLinkButton from "./copy-link-button";
 
 const getPageContent = async (slug: string) => {
   "use server";
@@ -44,13 +42,11 @@ export async function generateMetadata({ params }: { params: Params }) {
   };
 }
 
-// TODO: add copy url button
 const Page = async ({ params }: { params: Params }) => {
   const { meta, content }: { meta: Letter; content: any } =
     await getPageContent(params.slug);
 
   const letter = await fetchLetter(params.slug);
-  console.log("letter", letter);
 
   const letters = await getAllCollectionMeta("letters", 3, meta.slug);
 
@@ -58,25 +54,20 @@ const Page = async ({ params }: { params: Params }) => {
     <div className="flex flex-col gap-16">
       <div className="flex flex-col gap-8">
         <BackLink href="/letters">Back</BackLink>
-        <div className="flex flex-col gap-4 border-b border-ui-component-default pb-8">
-          <h1 className="text-4xl font-medium">{meta.name}</h1>
-          <span className="text-low-contrast-text">{meta.description}</span>
-          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center">
-            <div className="flex items-center gap-2">
-              <Avatar width={36} height={36} />
-              <span className="text-low-contrast-text">
-                by{" "}
-                <Link href="https://caccamise.link/x">Cole Caccamise</Link>
-              </span>
-            </div>
-
-            <span className="text-low-contrast-text">
-              {formatDate(meta.published || "")}
-            </span>
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl">{meta.name}</h1>
           </div>
+          <span className="text-low-contrast-text">{meta.description}</span>
+          <span className="text-sm text-low-contrast-text">
+            {formatDate(meta.published || "")} (
+            {formatTimeAgo(meta.published || "")})
+          </span>
         </div>
 
-        <div className="letter-content flex flex-col gap-6 py-4">{content}</div>
+        <div className="letter-content flex flex-col gap-6">{content}</div>
+
+        <CopyLinkButton />
       </div>
 
       <div>
@@ -89,12 +80,7 @@ const Page = async ({ params }: { params: Params }) => {
               Sign up to receive more insights on running a one-person business.
             </p>
           </div>
-          <NewsletterSignup
-            formId="5584232"
-            location="Letters"
-            // title='Not already a subscriber?'
-            // description='Sign up to receive more insights on running a one-person business.'
-          />
+          <NewsletterSignup formId="5584232" location="Letters" />
         </div>
       </div>
 
