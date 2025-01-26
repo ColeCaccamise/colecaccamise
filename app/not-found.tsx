@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Footer from "@/components/ui/footer";
 import NavigationMenu from "@/components/ui/navigation-menu";
@@ -6,45 +6,15 @@ import Sidebar from "@/components/ui/sidebar";
 import Link from "next/link";
 import { Logger } from "next-axiom";
 import { usePathname } from "next/navigation";
+import { menuItems } from "./(website)/menu-items";
 
 export const metadata = {
   title: "Page Not Found",
 };
 
 export default function NotFound() {
-  const menuLinks: { href: string; name: string; new?: boolean }[] = [
-    {
-      href: "/",
-      name: "Home",
-    },
-    {
-      href: "/letters",
-      name: "Letters",
-    },
-    {
-      href: "/drops",
-      name: "Drops",
-    },
-    {
-      href: "/stack",
-      name: "Stack",
-    },
-    {
-      href: "/vault",
-      name: "Vault",
-    },
-    {
-      href: "/links",
-      name: "Links",
-    },
-    {
-      href: "/#connect",
-      name: "Contact",
-    },
-  ];
-
   const log = new Logger();
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   if (!pathname.startsWith("/_next")) {
     log.warn("Page not found", {
@@ -54,9 +24,9 @@ export default function NotFound() {
 
   return (
     <>
-      <NavigationMenu menuLinks={menuLinks} />
+      <NavigationMenu menuLinks={menuItems} />
       <div className="mx-auto flex min-h-screen w-full max-w-4xl gap-12 px-8">
-        <Sidebar menuLinks={menuLinks} />
+        <Sidebar menuLinks={menuItems} />
 
         <div className="flex h-min w-full flex-col gap-16 overflow-visible py-8 md:gap-24 md:py-20">
           <div className="flex h-full flex-col gap-4">

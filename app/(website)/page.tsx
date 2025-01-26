@@ -54,12 +54,12 @@ export default async function Home() {
           <div className="flex flex-col gap-2">
             <span className="font-medium">About</span>
             <p>
-              I&apos;m a final year computer science student and software
-              engineer intern.
+              I&apos;m a final year Computer Science student and Software
+              Engineer intern.
             </p>
             <p>
-              In my spare time I build things for myself and make games in
-              Unreal Engine 5.
+              In my spare time I build things for myself and{" "}
+              <Link href="https://caccamise.link/youtube">make videos</Link>.
             </p>
           </div>
         </div>
@@ -78,7 +78,10 @@ export default async function Home() {
           }
         />
 
-        <ListContainer title="Ventures" description="Projects I'm working on">
+        <ListContainer
+          title="Ventures"
+          description="Businesses I'm actively working on"
+        >
           <Listicle collection={ventures} kind="ventures" />
         </ListContainer>
 
@@ -87,13 +90,6 @@ export default async function Home() {
           description="Premium digital products I’ve created recently"
         >
           <Listicle collection={drops} kind="drops" />
-        </ListContainer>
-
-        <ListContainer
-          title="Featured Letters"
-          description="Recent posts from my newsletter"
-        >
-          <Listicle collection={letters} kind="letters" />
         </ListContainer>
 
         <ListContainer

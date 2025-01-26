@@ -5,13 +5,13 @@ export default function ListContainer({
 }: {
   children: React.ReactNode;
   title: string;
-  description: string;
+  description?: string;
 }) {
   return (
     <div className="flex flex-col gap-4">
-      <div className="border-b border-ui-component-default pb-3">
+      <div className="pb-1">
         <span className="font-medium">{title}</span>
-        <p>{description}</p>
+        {description && <p>{description}</p>}
       </div>
       {children}
     </div>
