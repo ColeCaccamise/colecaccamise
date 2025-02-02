@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ListDescription from "./list-description";
 
-type AllowedKinds = "drops" | "letters" | "stack" | "ventures";
+type AllowedKinds = "drops" | "letters" | "stack" | "ventures" | "jobs";
 
 export default function ListItem({
   item,

@@ -14,10 +14,9 @@ import {
   faPaperPlane,
   faEnvelope,
   faCalendar,
+  faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
-import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import DubLogo from "@/public/dub-logo.svg";
-import { Calendar } from "lucide-react";
 
 export default function LinksPage() {
   const latestVideo = "https://youtu.be/V8K6hiRWp18";
@@ -29,6 +28,13 @@ export default function LinksPage() {
       url: "/letters?via=links",
       icon: faPaperPlane,
       cta: "Read",
+    },
+    {
+      title: "Jobs",
+      description: "Join my team and build cool things.",
+      url: "/jobs",
+      icon: faBriefcase,
+      cta: "View",
     },
     {
       title: "Dub.co",

@@ -23,13 +23,9 @@ export default function Sidebar({
             <span className="text-lg font-medium">Cole Caccamise</span>
             <p>Software Engineer</p>
           </div>
-          {/* <div>
-					<button>Contact</button>
-					<button>Hire Me</button>
-				</div> */}
         </div>
 
-        <ul className="flex list-none flex-col gap-4">
+        <ul className="flex list-none flex-col gap-4 space-y-0">
           {menuLinks.map((link) => (
             <li key={link.href}>
               <SidebarLink

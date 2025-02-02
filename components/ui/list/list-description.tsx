@@ -1,7 +1,7 @@
 import { formatDate } from "@/lib/string";
 import { ArrowTopRightIcon, DotFilledIcon } from "@radix-ui/react-icons";
 
-type AllowedKinds = "drops" | "letters" | "stack" | "ventures";
+type AllowedKinds = "drops" | "letters" | "stack" | "ventures" | "jobs";
 
 export default function ListDescription({
   item,
@@ -53,6 +53,15 @@ export default function ListDescription({
         </span>
         <span className="font-regular text-low-contrast-text">
           {item.description}
+        </span>
+      </div>
+    );
+  } else if (kind === "jobs") {
+    return (
+      <div className="flex w-full flex-col items-start justify-between gap-1 md:flex-row md:items-center">
+        <span>{item.name}</span>
+        <span className="font-regular text-sm text-low-contrast-text">
+          {item.location}
         </span>
       </div>
     );

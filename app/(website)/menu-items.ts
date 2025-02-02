@@ -27,4 +27,8 @@ export const menuItems: { href: string; name: string; new?: boolean }[] = [
     href: "/links",
     name: "Links",
   },
+  {
+    href: "/jobs",
+    name: "Jobs",
+  },
 ];

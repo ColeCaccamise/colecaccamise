@@ -6,10 +6,10 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import VideoPlayer from "@/components/ui/video";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Drop, Letter, Stack } from "@/types/cms";
+import { Drop, Letter, Stack, Job } from "@/types/cms";
 import { isUserAuthenticated } from "@/lib/auth";
 
-type Frontmatter = Drop | Letter | Stack;
+type Frontmatter = Drop | Letter | Stack | Job;
 
 const getItemsArray = (collection: string) => {
   if (collection === "drops") {
@@ -18,6 +18,8 @@ const getItemsArray = (collection: string) => {
     return [] as Letter[];
   } else if (collection === "stack") {
     return [] as Stack[];
+  } else if (collection === "jobs") {
+    return [] as Job[];
   } else {
     return [];
   }
@@ -69,7 +71,7 @@ export const getAllCollectionMeta = async (
 
     const files = fs.readdirSync(rootDirectory);
 
-    let items: Drop[] | Stack[] | Letter[] = getItemsArray(collection);
+    let items: Drop[] | Stack[] | Letter[] | Job[] = getItemsArray(collection);
 
     for (let i = 0; i < files.length; i++) {
       const file = path.parse(files[i]).name;
@@ -81,6 +83,12 @@ export const getAllCollectionMeta = async (
 
     if (collection === "letters") {
       items.sort((a: Letter, b: Letter) => {
+        const dateA = a.published ? new Date(a.published).getTime() : 0;
+        const dateB = b.published ? new Date(b.published).getTime() : 0;
+        return dateB - dateA;
+      });
+    } else if (collection === "jobs") {
+      items.sort((a: Job, b: Job) => {
         const dateA = a.published ? new Date(a.published).getTime() : 0;
         const dateB = b.published ? new Date(b.published).getTime() : 0;
         return dateB - dateA;

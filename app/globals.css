@@ -29,7 +29,7 @@ a {
 }
 
 ul {
-  @apply list-inside list-disc;
+  @apply list-inside list-disc space-y-2;
 }
 
 ol {

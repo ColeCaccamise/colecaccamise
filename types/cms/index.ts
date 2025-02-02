@@ -50,3 +50,15 @@ export type Stack = {
   status?: "draft" | "published";
   published?: string;
 };
+
+export type Job = {
+  slug?: string;
+  name?: string;
+  description?: string;
+  seo_description?: string;
+  position?: number;
+  status?: "draft" | "published";
+  location?: string;
+  type?: "full-time" | "part-time" | "contract";
+  published?: string;
+};
