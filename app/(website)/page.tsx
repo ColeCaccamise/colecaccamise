@@ -58,8 +58,11 @@ export default async function Home() {
               Engineer intern.
             </p>
             <p>
-              In my spare time I build things for myself and{" "}
-              <Link href="https://caccamise.link/youtube">make videos</Link>.
+              I like to build products and{" "}
+              <Link href="https://caccamise.link/youtube">
+                make videos about technology
+              </Link>
+              .
             </p>
           </div>
         </div>
@@ -86,6 +89,13 @@ export default async function Home() {
         </ListContainer>
 
         <ListContainer
+          title="Recent Letters"
+          description="Writing about my experiences and learnings"
+        >
+          <Listicle collection={letters} kind="letters" />
+        </ListContainer>
+
+        <ListContainer
           title="Featured Drops"
           description="Premium digital products I’ve created recently"
         >
@@ -103,7 +113,7 @@ export default async function Home() {
           <div className="flex flex-col gap-2">
             <span>Connect</span>
             <p>
-              Reach me directly at{" "}
+              Reach me at{" "}
               <Link
                 className="hover:opacity-90"
                 href="mailto:cole@colecaccamise.com"
