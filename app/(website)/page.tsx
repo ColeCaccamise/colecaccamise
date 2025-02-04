@@ -54,15 +54,13 @@ export default async function Home() {
           <div className="flex flex-col gap-2">
             <span className="font-medium">About</span>
             <p>
-              I&apos;m a final year Computer Science student and Software
-              Engineer intern.
+              A design-focused engineer who's passionate about building
+              software.
             </p>
             <p>
-              I like to build products and{" "}
-              <Link href="https://caccamise.link/youtube">
-                make videos about technology
-              </Link>
-              .
+              I enjoy sharing my experiences{" "}
+              <Link href="https://caccamise.link/youtube">through video</Link>{" "}
+              and <Link href="/letters">written word</Link>.
             </p>
           </div>
         </div>
