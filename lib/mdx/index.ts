@@ -7,7 +7,6 @@ import VideoPlayer from "@/components/ui/video";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Drop, Letter, Stack, Job } from "@/types/cms";
-import { isUserAuthenticated } from "@/lib/auth";
 
 type Frontmatter = Drop | Letter | Stack | Job;
 
@@ -110,9 +109,7 @@ export const getAllCollectionMeta = async (
     }
 
     if (items.some((item) => item.status === "draft")) {
-      const isAuthenticated = await isUserAuthenticated();
-
-      if (!isAuthenticated) {
+      if (process.env.NODE_ENV !== "development") {
         items = items.filter((item) => item.status !== "draft");
       }
     }

@@ -7,16 +7,13 @@ import Feedback from "@/components/ui/feedback";
 
 import { sendEmail } from "@/lib/resend";
 import { notFound } from "next/navigation";
-import { isUserAuthenticated } from "@/lib/auth";
 
 const getPageContent = async (slug: string) => {
   const { meta, content }: { meta: Stack; content: any } =
     await getCollectionBySlug(slug, "stack");
 
   if (meta.status === "draft") {
-    const isAuthenticated = await isUserAuthenticated();
-
-    if (!isAuthenticated) {
+    if (process.env.NODE_ENV !== "development") {
       return notFound();
     }
   }
