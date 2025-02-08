@@ -54,7 +54,7 @@ export default async function Home() {
           <div className="flex flex-col gap-2">
             <span className="font-medium">About</span>
             <p>
-              A design-focused engineer who's passionate about building
+              A design-focused engineer who is passionate about building
               software.
             </p>
             <p>
