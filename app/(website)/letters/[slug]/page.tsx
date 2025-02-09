@@ -54,11 +54,13 @@ const Page = async ({ params }: { params: Params }) => {
     <div className="flex flex-col gap-16">
       <div className="flex flex-col gap-8">
         <BackLink href="/letters">Back</BackLink>
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl">{meta.name}</h1>
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center justify-between">
+              <h1 className="text-2xl">{meta.name}</h1>
+            </div>
+            <span className="text-low-contrast-text">{meta.description}</span>
           </div>
-          <span className="text-low-contrast-text">{meta.description}</span>
           <span className="text-sm text-low-contrast-text">
             {formatDate(meta.published || "")} (
             {formatTimeAgo(meta.published || "")})
