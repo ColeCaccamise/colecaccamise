@@ -48,6 +48,7 @@ const config: Config = {
         "hovered-solid-backgrounds": "var(--hovered-solid-backgrounds)",
         "low-contrast-text": "var(--low-contrast-text)",
         "high-contrast-text": "var(--high-contrast-text)",
+        "muted-text": "var(--muted-text)",
         "overlay-05": "var(--overlay-05)",
         "overlay-10": "var(--overlay-10)",
         "overlay-15": "var(--overlay-15)",

@@ -70,6 +70,7 @@ li {
     --hovered-solid-backgrounds: #7b7b7b;
     /* --low-contrast-text: #b4b4b4; */
     --low-contrast-text: hsla(0, 0%, 58%, 1);
+    --muted-text: hsla(0, 0%, 38%, 1);
     /* hsl(240deg, 0.952%, 58.8%, 1) */
     /* hsl(240deg, 15.4%, 94.9%) */
     /* --high-contrast-text: #eeeeee; */
