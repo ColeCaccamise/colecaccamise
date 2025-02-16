@@ -1,0 +1,95 @@
+---
+name: How I Shipped My First App In 6 Days
+description:
+published: 2025-02-16
+---
+
+One of my goals for 2025 was to start shipping the side projects I was building.
+
+To this day I've never released anything I've built for myself (excluding one project last year that I realized didn't work properly).
+
+Fear is the #1 thing that has held me back, and I knew that I would never get closer until I released _something_.
+
+I'm getting back into uploading consistently on YouTube again, but shifting my niche to development.
+
+As a part of that I've been trying to learn how to make better videos. I took a thumbnail course a couple of weeks ago so the idea of improving thumbnails has been top of mind.
+
+On Monday, February 10th, I had found an idea I had written down about an AI tool to give feedback on thumbnails, and thought it was the perfect opportunity to build something fast.
+
+This week's video was 'how I build my apps' and I wanted to have an actual app on the internet I could use as a case study for that.
+
+I spent no more than 30 minutes thinking about what the MVP would be, and came up with this list:
+
+#### 1. Homepage Image Upload
+
+Upload a thumbnail (from a file or YouTube URL), add video title and description from an intuitive homepage interface.
+
+<CustomImage
+  url="https://assets.colecaccamise.com/letters/how-i-shipped-my-first-app-in-6-days/roast-my-thumbnail.png"
+  description="The homepage of Roast My Thumbnail"
+  alt="The homepage of Roast My Thumbnail"
+/>
+
+#### 2. AI Analysis
+
+Send the thumbnail to an AI model that evaluates it based on proven thumbnail design principles.
+
+#### 3. Shareable Results
+
+Have a dedicated page to view the results and optionally make it public.
+
+<CustomImage
+  url="https://assets.colecaccamise.com/letters/how-i-shipped-my-first-app-in-6-days/roast.png"
+  description="The roast description page of Roast My Thumbnail"
+  alt="The roast description page of Roast My Thumbnail"
+/>
+
+#### 4. History Dashboard
+
+Access all your previous thumbnail roasts in one organized dashboard.
+
+<CustomImage
+  url="https://assets.colecaccamise.com/letters/how-i-shipped-my-first-app-in-6-days/roasts.png"
+  description="The roast history page of Roast My Thumbnail"
+  alt="The roast history page of Roast My Thumbnail"
+/>
+
+I was able to build the initial flow of uploading an image and getting a response within the first day.
+
+I built both frontend and backend with Next.js which sped up the process of building UIs and connecting them to actual data.
+
+The hard part became associating each roast with a user (or a logged out 'anonymous' user), and setting up proper rate limiting.
+
+The majority of these 6 days were spent adding authentication, setting up payments with Stripe, and figuring out which plan a user had.
+
+<CustomImage
+  url="https://assets.colecaccamise.com/letters/how-i-shipped-my-first-app-in-6-days/pricing.png"
+  description="The plans/pricing page of Roast My Thumbnail"
+  alt="The plans/pricing page of Roast My Thumbnail"
+/>
+
+I wasn't initially going to bother having much account management or any way to collect payments, but it forced me to take the project seriously and has already been a significant learning experience.
+
+Charging for your app completely changes your mindset around building it.
+
+The goal isn't to make (any) profit, but to break the limiting belief that you need permission from anyone to ship something.
+
+It's not a toy project but a real product that real people can pay for.
+
+That alone has reduced the pressure I feel about building another app (or improving this one).
+
+The deadline of today's video (and the fact I talked about it) forced me to ship it in such a short amount of time, and taught me a ton.
+
+You can try it for free at <a href="https://roastmythumbnail.com?ref=cole" target="_blank" rel="noopener noreferrer">roastmythumbnail.com</a>
+
+## How I Coded My First App In 6 Days (SOLO / with AI)
+
+<VideoPlayer url="https://youtu.be/jhRwNg129SU" />
+
+I went over more of the process in the video and talked about all the tech I used to build it.
+
+Have a great week.
+
+Cole
+
+P.S. If you found this letter helpful, please consider sharing it with a friend :)

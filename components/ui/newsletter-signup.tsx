@@ -15,7 +15,7 @@ export default function NewsletterSignup({
   description,
   cta = "Join For Free",
   location = "Home",
-  placeholder = "Your email",
+  placeholder = "peter.parker@gmail.com",
   lemonSqueezySignup = false,
 }: {
   title?: string;
