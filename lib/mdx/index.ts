@@ -8,6 +8,7 @@ import CustomImage from "@/components/ui/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Drop, Letter, Stack, Job } from "@/types/cms";
+import Button from "@/components/ui/button";
 
 type Frontmatter = Drop | Letter | Stack | Job;
 
@@ -42,7 +43,7 @@ export const getCollectionBySlug = async (slug: string, collection: string) => {
       await compileMDX({
         source: fileContent,
         options: { parseFrontmatter: true },
-        components: { VideoPlayer, Link, CustomImage },
+        components: { VideoPlayer, Link, CustomImage, Button },
       });
 
     if (frontmatter.status === "draft") {
