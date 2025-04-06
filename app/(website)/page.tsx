@@ -18,6 +18,11 @@ export default async function Home() {
 
   const ventures = [
     {
+      name: "Creator Kiwi",
+      description: "Your AI content copilot.",
+      url: "https://creator.kiwi/cole",
+    },
+    {
       name: "YouTube | Cole Caccamise",
       description: "Aesthetic tech videos.",
       url: "https://youtube.com/@colecaccamise",
@@ -54,8 +59,8 @@ export default async function Home() {
           <div className="flex flex-col gap-2">
             <span className="font-medium">About</span>
             <p>
-              A design-focused engineer who is passionate about building
-              software.
+              Building the future of content marketing at{" "}
+              <Link href="https://creator.kiwi/cole">Creator Kiwi</Link>.
             </p>
             <p>
               I enjoy sharing my experiences{" "}
@@ -119,11 +124,6 @@ export default async function Home() {
                 cole@colecaccamise.com
               </Link>{" "}
               or connect on social media below.
-            </p>
-
-            <p>
-              I enjoy meeting fellow developers and creators, so feel free to{" "}
-              <Link href="https://cal.link/cole">schedule a quick call</Link>!
             </p>
           </div>
 
