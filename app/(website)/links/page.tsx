@@ -17,9 +17,10 @@ import {
   faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
 import DubLogo from "@/public/dub-logo.svg";
+import CreatorKiwiLogo from "@/public/creatorkiwi-logo.svg";
 
 export default function LinksPage() {
-  const latestVideo = "https://youtu.be/V8K6hiRWp18";
+  const latestVideo = "https://youtu.be/wf2j65Z8Xv4";
 
   const links = [
     {
@@ -89,6 +90,16 @@ export default function LinksPage() {
 
       <div className="flex flex-col gap-16">
         <div className="flex w-full flex-col gap-4">
+          <LinkPageItem
+            key="creatorkiwi"
+            title="Creator Kiwi"
+            description="Building the future of content marketing."
+            url="https://creatorkiwi.com/?ref=links"
+            icon={CreatorKiwiLogo}
+            cta="Join waitlist"
+            svgIcon={true}
+          />
+
           <div className="flex flex-col gap-3 rounded-md border-2 border-ui-component-default bg-sidebar-bg p-4">
             <div className="flex items-center justify-between">
               <span>Latest Video</span>
@@ -113,16 +124,6 @@ export default function LinksPage() {
             url="mailto:cole@colecaccamise.com"
             icon={faEnvelope}
             cta="Email"
-            svgIcon={false}
-          />
-
-          <LinkPageItem
-            key="contact"
-            title="Schedule a Call"
-            description="I'm always happy to chat with other developers and creators."
-            url="https://cal.link/cole"
-            icon={faCalendar}
-            cta="Schedule"
             svgIcon={false}
           />
 
