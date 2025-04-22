@@ -19,18 +19,13 @@ export default async function Home() {
   const ventures = [
     {
       name: "Creator Kiwi",
-      description: "Your AI content copilot.",
+      description: "Turn your YouTube videos into revenue.",
       url: "https://creator.kiwi/cole",
     },
     {
       name: "YouTube | Cole Caccamise",
       description: "Aesthetic tech videos.",
       url: "https://youtube.com/@colecaccamise",
-    },
-    {
-      name: "Hyperapta Studios",
-      description: "Indie game studio.",
-      url: "https://hyperapta.com",
     },
   ];
 
