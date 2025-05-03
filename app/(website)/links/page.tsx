@@ -20,7 +20,7 @@ import DubLogo from "@/public/dub-logo.svg";
 import CreatorKiwiLogo from "@/public/creatorkiwi-logo.svg";
 
 export default function LinksPage() {
-  const latestVideo = "https://youtu.be/wf2j65Z8Xv4";
+  const latestVideo = "https://youtu.be/FGQW3LG6sYk";
 
   const links = [
     {
