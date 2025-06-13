@@ -1,3 +1,3 @@
 ## Cole Caccamise
 
-Cole Caccamise is a software engineer based in Buffalo, NY.
+Cole Caccamise is a software engineer based in the San Francisco Bay Area.
