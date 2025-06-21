@@ -90,13 +90,6 @@ export default function NewsletterSignup({
           placeholder={placeholder}
           required
         />
-        {/* <Button
-          type="submit"
-          className="bg-primary font-medium"
-          loading={formSubmitting}
-        >
-          {cta}
-        </Button> */}
 
         <AnimatedButton
           type="submit"

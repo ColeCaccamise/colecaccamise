@@ -15,7 +15,7 @@ export default function AnimatedButton({
   type: "button" | "submit" | "reset";
   className?: string;
   children: React.ReactNode;
-  handleClick: () => void;
+  handleClick?: () => void;
   loading: boolean;
   disabled?: boolean;
   maxWidth?: string;
@@ -39,7 +39,7 @@ export default function AnimatedButton({
     <button
       type={type}
       disabled={disabled || loading}
-      onClick={handleClick}
+      onClick={handleClick || undefined}
       className={`btn btn-primary ${
         loading || disabled ? "btn-disabled" : ""
       } ${className}`}
