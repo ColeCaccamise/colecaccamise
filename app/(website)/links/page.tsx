@@ -31,13 +31,6 @@ export default function LinksPage() {
       cta: "Read",
     },
     {
-      title: "Jobs",
-      description: "Join my team and build cool things.",
-      url: "/jobs",
-      icon: faBriefcase,
-      cta: "View",
-    },
-    {
       title: "Dub.co",
       description: "How I create my caccamise.link shortlinks.",
       url: "https://refer.dub.co/colecaccamise",
@@ -93,10 +86,10 @@ export default function LinksPage() {
           <LinkPageItem
             key="creatorkiwi"
             title="Creator Kiwi"
-            description="Building the future of content marketing."
+            description="Earn more from YouTube."
             url="https://creatorkiwi.com/?ref=links"
             icon={CreatorKiwiLogo}
-            cta="Join waitlist"
+            cta="Get started"
             svgIcon={true}
           />
 
