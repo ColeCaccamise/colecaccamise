@@ -7,18 +7,21 @@ import { createOrder } from "../actions";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function SoloFounderTools() {
   const [email, setEmail] = useState("");
   const [formSubmitting, setFormSubmitting] = useState(false);
   const productId = "3755f71e-3389-4cf8-937f-a45f7fa31f6b";
+  const searchParams = useSearchParams();
+  const clickId = searchParams.get("kiwi_id");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setFormSubmitting(true);
 
-    const { success, error } = await createOrder(email, productId);
+    const { success, error } = await createOrder(email, productId, clickId);
 
     if (success) {
       toast("I just sent it to you - check your email!", "success");

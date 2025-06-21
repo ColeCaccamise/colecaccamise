@@ -2,7 +2,11 @@
 
 import axios from "axios";
 
-export async function createOrder(email: string, productId: string) {
+export async function createOrder(
+  email: string,
+  productId: string,
+  clickId?: string | null,
+) {
   if (!email) {
     return { success: false, error: "Email is required" };
   }
@@ -15,6 +19,7 @@ export async function createOrder(email: string, productId: string) {
     await axios.post("https://api.creatorkiwi.com/orders", {
       email: email,
       product_id: productId,
+      click_id: clickId,
     });
 
     return { success: true };
