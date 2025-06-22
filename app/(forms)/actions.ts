@@ -16,7 +16,7 @@ export async function createOrder(
   }
 
   try {
-    await axios.post("https://api.creatorkiwi.com/orders", {
+    await axios.post("http://localhost:8000/orders", {
       email: email,
       product_id: productId,
       click_id: clickId,
