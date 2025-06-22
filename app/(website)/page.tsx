@@ -54,7 +54,7 @@ export default async function Home() {
           <div className="flex flex-col gap-2">
             <span className="font-medium">About</span>
             <p>
-              Building the future of content marketing at{" "}
+              Turning creators into profitable entrepreneurs at{" "}
               <Link href="https://creator.kiwi/cole">Creator Kiwi</Link>.
             </p>
             <p>
