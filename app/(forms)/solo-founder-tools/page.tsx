@@ -6,10 +6,11 @@ import toast from "@/utils/toast";
 import { createOrder } from "../actions";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import Spinner from "@/components/ui/spinner";
 
-export default function SoloFounderTools() {
+function SoloFounderToolsContent() {
   const [email, setEmail] = useState("");
   const [formSubmitting, setFormSubmitting] = useState(false);
   const productId = "850146be-d63a-438d-b64f-a945cf1c21f0";
@@ -76,7 +77,7 @@ export default function SoloFounderTools() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-1">
+      <div className="flex h-[110px] items-center justify-center gap-1">
         <span className="text-sm text-low-contrast-text">Powered by</span>
         <Link href="https://creatorkiwi.com?ref=solo-founder-tools">
           <Image
@@ -88,5 +89,19 @@ export default function SoloFounderTools() {
         </Link>
       </div>
     </div>
+  );
+}
+
+export default function SoloFounderTools() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex h-full w-full items-center justify-center">
+          <Spinner />
+        </div>
+      }
+    >
+      <SoloFounderToolsContent />
+    </Suspense>
   );
 }
