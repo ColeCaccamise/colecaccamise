@@ -1,39 +1,9 @@
-"use client";
-
-import AnimatedButton from "@/components/ui/animated-button";
-import Input from "@/components/ui/input";
-import toast from "@/utils/toast";
-import { createOrder } from "../actions";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
-import Spinner from "@/components/ui/spinner";
+import { Suspense } from "react";
+import SoloFounderToolsForm from "./form";
 
-function SoloFounderToolsContent() {
-  const [email, setEmail] = useState("");
-  const [formSubmitting, setFormSubmitting] = useState(false);
-  const productId = "850146be-d63a-438d-b64f-a945cf1c21f0";
-  const searchParams = useSearchParams();
-  const clickId = searchParams.get("kiwi_id");
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    setFormSubmitting(true);
-
-    const { success, error } = await createOrder(email, productId, clickId);
-
-    if (success) {
-      toast("I just sent it to you - check your email!", "success");
-      setEmail("");
-    } else {
-      toast(error || "Something went wrong", "error");
-    }
-
-    setFormSubmitting(false);
-  };
-
+export default function SoloFounderTools() {
   return (
     <div className="mx-auto flex h-full max-w-lg flex-col items-center justify-center gap-12 px-4 md:px-0">
       <div className="flex flex-col gap-6">
@@ -49,32 +19,13 @@ function SoloFounderToolsContent() {
           </p>
         </div>
 
-        <div className="flex w-full flex-col items-center gap-4">
-          <form
-            className="flex w-full flex-col gap-4 rounded-md border-0 border-borders-non-interactive bg-transparent p-0 md:flex-row md:gap-0 md:border md:bg-ui-component-default md:p-2 md:pl-4"
-            onSubmit={handleSubmit}
-          >
-            <Input
-              variant="unstyled"
-              className="flex w-full items-center justify-between overflow-hidden rounded-lg border border-subtle-borders-interactive bg-transparent px-4 py-3 hover:border-stronger-borders-interactive-focus-rings md:border-none md:bg-app-bg md:px-0 dark:bg-ui-component-default"
-              type="email"
-              value={email}
-              handleChange={(e) => setEmail(e.target.value)}
-              placeholder="peter.parker@gmail.com"
-              required
-              autoFocus
-            />
-
-            <AnimatedButton
-              type="submit"
-              loading={formSubmitting}
-              disabled={!email}
-              className="md:h-[48px] md:w-[147px]"
-            >
-              Get the list
-            </AnimatedButton>
-          </form>
-        </div>
+        <Suspense
+          fallback={
+            <div className="h-[66px] w-full animate-pulse rounded bg-ui-component-default"></div>
+          }
+        >
+          <SoloFounderToolsForm />
+        </Suspense>
       </div>
 
       <div className="flex h-[110px] items-center justify-center gap-1">
@@ -89,19 +40,5 @@ function SoloFounderToolsContent() {
         </Link>
       </div>
     </div>
-  );
-}
-
-export default function SoloFounderTools() {
-  return (
-    <Suspense
-      fallback={
-        <div className="flex h-full w-full items-center justify-center">
-          <Spinner />
-        </div>
-      }
-    >
-      <SoloFounderToolsContent />
-    </Suspense>
   );
 }
