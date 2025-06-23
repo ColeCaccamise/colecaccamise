@@ -16,7 +16,7 @@ export async function createOrder(
   }
 
   try {
-    await axios.post("http://localhost:8000/orders", {
+    await axios.post("https://api.creatorkiwi.com/orders", {
       email: email,
       product_id: productId,
       click_id: clickId,
@@ -26,6 +26,9 @@ export async function createOrder(
   } catch (error) {
     console.error(error);
 
-    return { success: false, error: "Failed to create order" };
+    return {
+      success: false,
+      error: "Something went wrong! Sorry about that..",
+    };
   }
 }
