@@ -10,7 +10,7 @@ import { useSearchParams } from "next/navigation";
 export default function SoloFounderToolsForm() {
   const [email, setEmail] = useState("");
   const [formSubmitting, setFormSubmitting] = useState(false);
-  const productId = "850146be-d63a-438d-b64f-a945cf1c21f0";
+  const productId = "3755f71e-3389-4cf8-937f-a45f7fa31f6b";
   const searchParams = useSearchParams();
   const clickId = searchParams.get("kiwi_id");
 
