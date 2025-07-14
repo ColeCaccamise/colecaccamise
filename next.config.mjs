@@ -187,6 +187,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "cdn.creatorkiwi.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "**",
       },
     ],
