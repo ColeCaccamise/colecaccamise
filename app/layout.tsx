@@ -5,8 +5,11 @@ import "./globals.css";
 import "@/app/styles/btn.css";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const selineToken = process.env.NEXT_PUBLIC_SELINE_TOKEN;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://colecaccamise.com"),
@@ -53,6 +56,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <Script
+          src="https://sln.colecaccamise.com/seline.js"
+          data-token={selineToken}
+          strategy="afterInteractive"
+          data-api-host="https://sln.colecaccamise.com"
+        />
+      </head>
       <body
         className={`${inter.className} dark:dark overflow-x-hidden bg-app-bg text-high-contrast-text`}
       >
