@@ -1,19 +1,19 @@
 import { getAllCollectionMeta } from "@/lib/mdx";
 import NewsletterSignup from "@/components/ui/newsletter-signup";
 import ListItem from "@/components/ui/list/list-item";
+import { Letter } from "@/types/cms";
 
 export default async function LettersPage() {
-  const letters = await getAllCollectionMeta("letters");
+  const letters = await getAllCollectionMeta<Letter>("letters");
 
   return (
     <div className="flex flex-col gap-16">
       <div className="flex flex-col gap-4">
-        <h1 className="text-3xl font-medium">
-          Building businesses in public. Sharing my experiences.
+        <h1 className="text-3xl font-medium leading-10">
+          Trying to build cool sh*t in public.
         </h1>
-        <p>
-          I write about what I&apos;m learning and curate valuable resources for
-          entrepreneurs every Sunday morning.
+        <p className="text-sm leading-7 text-low-contrast-text">
+          I write about my learnings every Sunday morning.
         </p>
         <NewsletterSignup formId="5584232" location="Letters" />
       </div>

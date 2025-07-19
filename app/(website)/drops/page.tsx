@@ -1,21 +1,16 @@
 import { getAllCollectionMeta } from "@/lib/mdx";
 import ListItem from "@/components/ui/list/list-item";
-import NewsletterSignup from "@/components/ui/newsletter-signup";
-import Link from "next/link";
 import { Drop } from "@/types/cms";
+import Link from "next/link";
 
 export default async function DropsPage() {
-  const drops = await getAllCollectionMeta("drops");
+  const drops = await getAllCollectionMeta<Drop>("drops");
 
   return (
     <div className="flex flex-col gap-16">
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-medium">Drops</h1>
         <p>Premium digital products I&apos;ve created.</p>
-        {/* <NewsletterSignup
-					cta='Get 20% Off'
-					formId='5584232'
-				/> */}
       </div>
 
       <div className="flex flex-col gap-4">

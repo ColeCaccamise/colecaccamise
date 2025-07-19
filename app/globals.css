@@ -13,7 +13,7 @@ body {
 }
 
 kbd {
-  @apply rounded-md bg-ui-component-default p-1 text-sm text-low-contrast-text;
+  @apply flex h-[24px] w-[24px] items-center justify-center rounded-md border border-borders-non-interactive bg-ui-component-default p-1 text-sm text-low-contrast-text;
 }
 
 code {

@@ -79,7 +79,7 @@ const Page = async ({ params }: { params: Params }) => {
               Not already a subscriber?
             </span>
             <p>
-              Sign up to receive more insights on running a one-person business.
+              Sign up to receive more insights on building digital products.
             </p>
           </div>
           <NewsletterSignup formId="5584232" location="Letters" />

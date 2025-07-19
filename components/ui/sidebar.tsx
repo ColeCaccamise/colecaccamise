@@ -1,18 +1,32 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import SidebarLink from "./sidebar-link";
 import Avatar from "./avatar";
+import { useHotkeys } from "react-hotkeys-hook";
+import { cn } from "@/lib/utils";
 
 export default function Sidebar({
   menuLinks,
 }: {
-  menuLinks: { name: string; href: string; new?: boolean }[];
+  menuLinks: { name: string; href: string; new?: boolean; kbd?: string }[];
 }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  useHotkeys("1", () => router.push("/"));
+  useHotkeys("2", () => router.push("/letters"));
+  useHotkeys("3", () => router.push("/drops"));
+  useHotkeys("4", () => router.push("/stack"));
+  useHotkeys("5", () => router.push("/vault"));
+  useHotkeys("6", () => router.push("/links"));
+
+  const isActive = (href: string) => {
+    return href === "/" ? pathname === href : pathname.startsWith(href);
+  };
 
   return (
-    <aside className={`sticky top-0 hidden h-screen w-48 py-20 md:block`}>
+    <aside className={`sticky top-0 hidden h-screen w-[170px] py-20 md:block`}>
       <nav
         className="flex h-full w-full flex-col gap-12 overflow-visible"
         aria-label="Desktop navigation"
@@ -21,7 +35,7 @@ export default function Sidebar({
           <Avatar />
           <div>
             <span className="text-lg font-medium">Cole Caccamise</span>
-            <p>Software Engineer</p>
+            <p className="whitespace-nowrap">Software Engineer</p>
           </div>
         </div>
 
@@ -36,7 +50,18 @@ export default function Sidebar({
                     : pathname.startsWith(link.href)
                 }
               >
-                <span>{link.name}</span>
+                <span className="flex w-full items-center justify-between gap-1">
+                  {link.name}
+                  {link.kbd && (
+                    <kbd
+                      className={cn(
+                        isActive(link.href) && "text-high-contrast-text",
+                      )}
+                    >
+                      {link.kbd}
+                    </kbd>
+                  )}
+                </span>
                 {link.new && (
                   <div className="flex w-fit items-center justify-center rounded-full bg-primary px-2 py-1">
                     <div className="text-xs">NEW</div>

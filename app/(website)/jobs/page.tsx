@@ -1,9 +1,10 @@
 import { getAllCollectionMeta } from "@/lib/mdx";
-import NewsletterSignup from "@/components/ui/newsletter-signup";
 import ListItem from "@/components/ui/list/list-item";
+import { Job } from "@/types/cms";
 
 export default async function JobsPage() {
-  const jobs = await getAllCollectionMeta("jobs");
+  const jobs = await getAllCollectionMeta<Job>("jobs");
+  const openJobs = jobs.filter((job) => job.open === true);
 
   return (
     <div className="flex flex-col gap-16">
@@ -19,12 +20,18 @@ export default async function JobsPage() {
         <span className="font-medium">Open positions</span>
 
         <div className="flex flex-col">
-          {jobs.length > 0 ? (
-            jobs.map((job) => (
+          {openJobs.length > 0 ? (
+            openJobs.map((job) => (
               <ListItem item={job} kind="jobs" key={job.slug} />
             ))
           ) : (
-            <p>No open positions at the moment.</p>
+            <p className="text-sm leading-7 text-low-contrast-text">
+              I don&apos;t have any open positions at the moment, but I&apos;m
+              always happy to connect with talented people. Feel free to reach
+              me at{" "}
+              <a href="mailto:cole@colecaccamise.com">cole@colecaccamise.com</a>
+              .
+            </p>
           )}
         </div>
       </div>

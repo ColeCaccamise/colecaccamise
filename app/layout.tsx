@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import PlausibleProvider from "next-plausible";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import "@/app/styles/btn.css";
-import { Toaster } from "sonner";
+import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Toaster } from "sonner";
+import "@/app/styles/btn.css";
+import "./globals.css";
 
 const selineToken = process.env.NEXT_PUBLIC_SELINE_TOKEN;
 
@@ -65,7 +63,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} dark:dark overflow-x-hidden bg-app-bg text-high-contrast-text`}
+        className={`${GeistMono.className} dark:dark overflow-x-hidden bg-app-bg text-high-contrast-text`}
       >
         <Toaster
           toastOptions={{

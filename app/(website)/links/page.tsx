@@ -13,14 +13,11 @@ import {
   faDroplet,
   faPaperPlane,
   faEnvelope,
-  faCalendar,
-  faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
-import DubLogo from "@/public/dub-logo.svg";
 import CreatorKiwiLogo from "@/public/creatorkiwi-logo.svg";
 
 export default function LinksPage() {
-  const latestVideo = "https://www.youtube.com/watch?v=qlnYAt5MpuA";
+  const latestVideo = "https://www.youtube.com/watch?v=QSNQ7cSA_hM";
 
   const links = [
     {
@@ -29,14 +26,6 @@ export default function LinksPage() {
       url: "/letters?via=links",
       icon: faPaperPlane,
       cta: "Read",
-    },
-    {
-      title: "Dub.co",
-      description: "How I create my caccamise.link shortlinks.",
-      url: "https://refer.dub.co/colecaccamise",
-      icon: DubLogo,
-      cta: "Try",
-      svgIcon: true,
     },
     {
       title: "Twitter / X",
@@ -122,7 +111,7 @@ export default function LinksPage() {
 
           <div className="flex flex-col gap-3 rounded-md border-2 border-ui-component-default bg-sidebar-bg p-4">
             <NewsletterSignup
-              placeholder="Subscribe to the newsletter"
+              placeholder="Building my projects in public"
               location="Links"
             />
           </div>
@@ -135,7 +124,7 @@ export default function LinksPage() {
               url={link.url}
               icon={link.icon}
               cta={link.cta}
-              svgIcon={link.svgIcon || false}
+              svgIcon={false}
             />
           ))}
         </div>

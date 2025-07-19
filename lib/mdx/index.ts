@@ -62,11 +62,11 @@ export const getCollectionBySlug = async (slug: string, collection: string) => {
   }
 };
 
-export const getAllCollectionMeta = async (
+export const getAllCollectionMeta = async <T extends Frontmatter>(
   collection: string,
   limit?: number,
   exclude?: string,
-) => {
+): Promise<T[]> => {
   try {
     const rootDirectory = path.join(process.cwd(), "content", collection);
 
@@ -120,7 +120,7 @@ export const getAllCollectionMeta = async (
     const effectiveLimit = limit ?? items.length;
     items = items.slice(0, effectiveLimit);
 
-    return items;
+    return items as T[];
   } catch (error) {
     return notFound();
   }

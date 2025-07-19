@@ -61,4 +61,5 @@ export type Job = {
   location?: string;
   type?: "full-time" | "part-time" | "contract";
   published?: string;
+  open?: boolean;
 };

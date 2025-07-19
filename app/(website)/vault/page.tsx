@@ -15,6 +15,12 @@ function getYoutubeImage(url: string) {
 export default async function VaultPage() {
   const vaultItems = [
     {
+      title: "Seline",
+      description: "Simple and privacy-focused web analytics.",
+      url: "https://seline.com",
+      image: "/images/seline.png",
+    },
+    {
       title: "Ghostty",
       description: "A fast terminal emulator for macOS.",
       url: "https://ghostty.org/",
@@ -34,13 +40,6 @@ export default async function VaultPage() {
       url: "https://yaak.app/",
       image: "https://yaak.app/static/og.png",
       tags: ["tools"],
-    },
-    {
-      title: "Dub.co",
-      description: "Create powerful short links.",
-      url: "https://refer.dub.co/colecaccamise",
-      image: "https://assets.dub.co/thumbnail.jpg",
-      tags: ["companies"],
     },
     {
       title: "WorkOS",
@@ -69,7 +68,7 @@ export default async function VaultPage() {
       title: "Cursor",
       description: "Fast, AI-powered code editor.",
       url: "https://cursor.com",
-      image: "https://www.cursor.com/opengraph-image.png",
+      image: "https://cursor.com/en/opengraph-image.png",
       tags: ["companies"],
     },
     {
