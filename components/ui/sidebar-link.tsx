@@ -13,7 +13,7 @@ export default function SidebarLink({
 }) {
   return (
     <Link
-      className={`text-uppercase flex items-center gap-2 py-1 hover:text-high-contrast-text ${
+      className={`flex items-center gap-2 py-1 hover:text-high-contrast-text ${
         active ? "text-high-contrast-text" : "text-low-contrast-text"
       }`}
       href={href}
