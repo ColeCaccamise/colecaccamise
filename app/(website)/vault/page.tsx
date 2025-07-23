@@ -1,16 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getOpenGraphImage } from "@/lib/opengraph";
 
 export const metadata = {
   title: "Vault",
   description: "Links to valuable resources I've come across.",
 };
-
-function getYoutubeImage(url: string) {
-  const videoId = url.split("v=")[1];
-  return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
-}
 
 export default async function VaultPage() {
   const vaultItems = [
@@ -19,6 +13,21 @@ export default async function VaultPage() {
       description: "Simple and privacy-focused web analytics.",
       url: "https://seline.com",
       image: "/images/seline.png",
+      tags: ["tools"],
+    },
+    {
+      title: "Mobbin",
+      description: "UI inspiration library for web and mobile apps.",
+      url: "https://creator.kiwi/tHC9ffp",
+      image: "https://mobbin.com/og_image.png",
+      tags: ["tools"],
+    },
+    {
+      title: "Nicelydone",
+      description: "Web UI inspiration library with great AI search.",
+      url: "https://creator.kiwi/9Siwon1",
+      image: "https://i.imgur.com/oKheXYV.jpeg",
+      tags: ["tools"],
     },
     {
       title: "Ghostty",
@@ -106,10 +115,10 @@ export default async function VaultPage() {
     <div className="flex flex-col gap-16">
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-medium">Vault</h1>
-        <p>
-          Links to valuable tools and resources I&apos;ve come across. More
-          added all the time.
-        </p>
+        <p>Links to valuable tools and resources I&apos;ve come across.</p>
+        <span className="text-sm">
+          I may earn a commission from some links (thank you for supporting me).
+        </span>
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
