@@ -12,6 +12,25 @@ body {
   height: 100%;
 }
 
+::selection {
+  @apply bg-primary text-high-contrast-text;
+}
+
+:where(
+    button,
+    [type="button"],
+    [type="submit"],
+    input,
+    textarea,
+    select,
+    a,
+    [tabindex]:not([tabindex="-1"])
+  ):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 kbd {
   @apply flex h-[24px] w-[24px] items-center justify-center rounded-md border border-borders-non-interactive bg-ui-component-default p-1 text-sm text-low-contrast-text;
 }
