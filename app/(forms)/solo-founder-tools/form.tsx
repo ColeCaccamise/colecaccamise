@@ -13,6 +13,7 @@ export default function SoloFounderToolsForm() {
   const productId = "3755f71e-3389-4cf8-937f-a45f7fa31f6b";
   const searchParams = useSearchParams();
   const clickId = searchParams.get("kiwi_id");
+  const thankYouUrl = "https://creator.kiwi/JOCkhAP";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,8 +23,9 @@ export default function SoloFounderToolsForm() {
     const { success, error } = await createOrder(email, productId, clickId);
 
     if (success) {
-      toast("I just sent it to you - check your email!", "success");
       setEmail("");
+
+      window.location.href = thankYouUrl;
     } else {
       toast(error || "Something went wrong", "error");
     }
