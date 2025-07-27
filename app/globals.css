@@ -130,6 +130,18 @@ li {
     @apply scroll-m-20 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
   }
 
+  .letter-content h2 {
+    @apply text-2xl;
+  }
+
+  .letter-content h3 {
+    @apply text-xl;
+  }
+
+  .letter-content h4 {
+    @apply text-lg;
+  }
+
   h3 {
     @apply scroll-m-20 text-2xl font-semibold tracking-tight;
   }
