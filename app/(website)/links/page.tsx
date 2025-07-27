@@ -17,7 +17,7 @@ import {
 import CreatorKiwiLogo from "@/public/creatorkiwi-logo.svg";
 
 export default function LinksPage() {
-  const latestVideo = "https://www.youtube.com/watch?v=QSNQ7cSA_hM";
+  const latestVideo = "https://www.youtube.com/watch?v=J2cZIWM9svM";
 
   const links = [
     {
