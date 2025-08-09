@@ -11,7 +11,7 @@ export default async function VaultPage() {
     {
       title: "Seline",
       description: "Simple and privacy-focused web analytics.",
-      url: "https://seline.com",
+      url: "https://creator.kiwi/UCIHlnZ",
       image: "/images/seline.png",
       tags: ["tools"],
     },
