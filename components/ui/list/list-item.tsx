@@ -34,7 +34,7 @@ export default function ListItem({
           <Image
             className="h-full rounded-lg object-cover"
             src={item.thumbnail_image}
-            alt={item.name || item.title}
+            alt={item.title || item.name}
             width={512}
             height={512}
           />
@@ -49,7 +49,7 @@ export default function ListItem({
           <Image
             className="h-full rounded-lg object-cover"
             src={item.thumbnail_image}
-            alt={item.name || item.title}
+            alt={item.title || item.name}
             width={512}
             height={512}
           />

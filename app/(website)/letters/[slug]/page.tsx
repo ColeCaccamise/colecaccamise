@@ -33,10 +33,10 @@ export async function generateMetadata({ params }: { params: Params }) {
   const { meta }: { meta: Letter } = await getPageContent(params.slug);
   return {
     metadataBase: new URL("https://colecaccamise.com"),
-    title: `${meta.name} | Cole Caccamise`,
+    title: `${meta.title || meta.name} | Cole Caccamise`,
     description: meta.description,
     openGraph: {
-      title: `${meta.name} | Cole Caccamise`,
+      title: `${meta.title || meta.name} | Cole Caccamise`,
       description: meta.description,
     },
   };
@@ -45,8 +45,6 @@ export async function generateMetadata({ params }: { params: Params }) {
 const Page = async ({ params }: { params: Params }) => {
   const { meta, content }: { meta: Letter; content: any } =
     await getPageContent(params.slug);
-
-  const letter = await fetchLetter(params.slug);
 
   const letters = await getAllCollectionMeta("letters", 3, meta.slug);
 
@@ -57,7 +55,9 @@ const Page = async ({ params }: { params: Params }) => {
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-1">
             <div className="flex items-center justify-between">
-              <h1 className="text-2xl">{meta.name}</h1>
+              <h1 className="text-2xl">
+                {meta.title || meta.name || "Untitled"}
+              </h1>
             </div>
             <span className="text-low-contrast-text">{meta.description}</span>
           </div>

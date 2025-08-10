@@ -17,7 +17,7 @@ import {
 import CreatorKiwiLogo from "@/public/creatorkiwi-logo.svg";
 
 export default function LinksPage() {
-  const latestVideo = "https://www.youtube.com/watch?v=J2cZIWM9svM";
+  const latestVideo = "https://youtu.be/c2LVg1Is-64";
 
   const links = [
     {
@@ -26,6 +26,20 @@ export default function LinksPage() {
       url: "/letters?via=links",
       icon: faPaperPlane,
       cta: "Read",
+    },
+    {
+      title: "GitHub",
+      description: "Building software and tools.",
+      url: "https://git.new/cole",
+      icon: faGithub,
+      cta: "Visit",
+    },
+    {
+      title: "YouTube",
+      description: "Aesthetic tech videos.",
+      url: "https://caccamise.link/youtube",
+      icon: faYoutube,
+      cta: "Subscribe",
     },
     {
       title: "Twitter / X",
@@ -40,20 +54,6 @@ export default function LinksPage() {
       url: "https://colecaccamise.com/drops?via=links",
       icon: faDroplet,
       cta: "Browse",
-    },
-    {
-      title: "YouTube",
-      description: "Aesthetic tech videos.",
-      url: "https://caccamise.link/youtube",
-      icon: faYoutube,
-      cta: "Subscribe",
-    },
-    {
-      title: "GitHub",
-      description: "Building software and tools.",
-      url: "https://git.new/cole",
-      icon: faGithub,
-      cta: "Visit",
     },
   ];
 

@@ -32,7 +32,11 @@ export type Drop = {
 
 export type Letter = {
   slug?: string;
+  /**
+   * @deprecated Use `title` instead
+   */
   name?: string;
+  title?: string;
   published?: string;
   description?: string;
   position?: number;
