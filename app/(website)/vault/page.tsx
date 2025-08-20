@@ -79,7 +79,7 @@ export default async function VaultPage() {
     {
       title: "Railway",
       description: "Easily ship backend apps/services.",
-      url: "https://caccamise.link/railway",
+      url: "https://creator.kiwi/aN7Oun3",
       image: "https://railway.app/og.png?v=2",
       tags: ["companies"],
     },
