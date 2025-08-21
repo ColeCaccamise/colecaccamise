@@ -28,7 +28,7 @@ export default function SoloFounderTools() {
         </Suspense>
       </div>
 
-      <div className="flex h-[110px] items-center justify-center gap-1">
+      <div className="flex h-[110px] items-center justify-center gap-2">
         <span className="text-sm text-low-contrast-text">Powered by</span>
         <Link href="https://creatorkiwi.com?ref=solo-founder-tools">
           <Image
