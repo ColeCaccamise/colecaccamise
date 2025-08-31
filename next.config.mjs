@@ -92,6 +92,8 @@ const nextConfig = {
       },
       {
         source: "/products/youtube-notion-template",
+        destination: "https://colecaccamise.com/drops/youtube-notion-template",
+        permanent: false,
       },
       {
         source: "/wallpapers",
