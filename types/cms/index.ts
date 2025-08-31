@@ -11,6 +11,7 @@ export type Drop = {
   old_price?: number;
   name?: string;
   lemon_squeezy_link?: string;
+  polar_link?: string;
   discount_code?: string;
   demo_link?: string;
   thumbnail_image?: string;

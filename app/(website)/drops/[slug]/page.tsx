@@ -47,10 +47,27 @@ export async function generateMetadata({ params }: { params: Params }) {
   };
 }
 
-const DropPage = async ({ params }: { params: Params }) => {
+const DropPage = async ({
+  params,
+  searchParams,
+}: {
+  params: Params;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) => {
   const { meta, content }: { meta: Drop; content: any } = await getPageContent(
     params.slug,
   );
+  const getKiwiId = async (): Promise<string> => {
+    const params = await searchParams;
+    const kiwi = params.kiwi_id;
+
+    if (Array.isArray(kiwi)) {
+      return kiwi[0];
+    }
+    return kiwi || "";
+  };
+
+  const kiwiId = await getKiwiId();
 
   const drops = await getAllCollectionMeta("drops", 3, meta.slug);
 
@@ -134,13 +151,7 @@ const DropPage = async ({ params }: { params: Params }) => {
           </div>
 
           <div className="flex flex-col gap-4">
-            <Link
-              href={`${meta.lemon_squeezy_link || ""}${meta.discount_code ? `?checkout[discount_code]=${meta.discount_code}` : ""}`}
-            >
-              <Button className="w-full font-medium">
-                {meta.cta_text || "Buy Now"}
-              </Button>
-            </Link>
+            <BuyButton meta={meta} kiwiId={kiwiId} />
 
             {meta?.demo_link && (
               <Link
@@ -195,5 +206,38 @@ const DropPage = async ({ params }: { params: Params }) => {
     </div>
   );
 };
+
+function BuyButton({ meta, kiwiId }: { meta: Drop; kiwiId?: string }) {
+  return (
+    <Link href={getBuyLink(meta, kiwiId)}>
+      <Button className="w-full font-medium">
+        {meta.cta_text || "Buy Now"}
+      </Button>
+    </Link>
+  );
+}
+
+function getBuyLink(meta: Drop, kiwiId?: string) {
+  if (meta.lemon_squeezy_link) {
+    const url = new URL(meta.lemon_squeezy_link);
+    if (meta.discount_code) {
+      url.searchParams.set("checkout[discount_code]", meta.discount_code);
+    }
+    // add custom kiwi id if provided
+    if (kiwiId) {
+      url.searchParams.set("checkout[custom][kiwi_id]", kiwiId);
+    }
+    return url.toString();
+  }
+  if (meta.polar_link) {
+    const url = new URL(meta.polar_link);
+    // add reference_id if kiwiId exists
+    if (kiwiId) {
+      url.searchParams.set("reference_id", kiwiId);
+    }
+    return url.toString();
+  }
+  return "";
+}
 
 export default DropPage;
