@@ -91,13 +91,16 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: "/products/youtube-notion-template",
+      },
+      {
         source: "/wallpapers",
         destination: "https://colecaccamise.com/drops",
         permanent: false,
       },
       {
         source: "/justcreate-wallpaper",
-        destination: "https://colecaccamise.come/drops/prism",
+        destination: "https://colecaccamise.com/drops/prism",
         permanent: false,
       },
       {
