@@ -3,6 +3,11 @@ import Image from "next/image";
 import { Suspense } from "react";
 import SoloFounderToolsForm from "./form";
 
+export const metadata = {
+  title: "Solo Founder Tools",
+  description: "30+ tools & resources to build (and finally launch) your app",
+};
+
 export default function SoloFounderTools() {
   return (
     <div className="mx-auto flex h-full max-w-lg flex-col items-center justify-center gap-12 px-4 md:px-0">
@@ -12,7 +17,7 @@ export default function SoloFounderTools() {
             Solo Founder Tools
           </span>
           <h1 className="text-2xl font-bold md:text-4xl">
-            30+ tools & resources to build (and finally launch) your SaaS
+            30+ tools & resources to build (and finally launch) your app
           </h1>
           <p className="text-base text-low-contrast-text">
             Join my free newsletter and receive the list instantly...
