@@ -31,7 +31,13 @@ export default async function VaultPage() {
       image: "/images/seline.png",
       tags: ["tools"],
     },
-
+    {
+      title: "Cubic",
+      description: "AI code review",
+      tags: ["tools"],
+      url: "https://creator.kiwi/STOFcz3",
+      image: "/images/cubic.jpg",
+    },
     {
       title: "Mobbin",
       description: "UI inspiration library for web and mobile apps.",
