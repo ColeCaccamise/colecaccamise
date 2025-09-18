@@ -54,11 +54,16 @@ export default async function Home() {
           <div className="flex flex-col gap-2">
             <span className="font-medium">About</span>
             <p>
+              I&apos;m a software engineer, primarily building for the web. My{" "}
+              <Link href="/stack/development">tech stack</Link> includes
+              Next.js, TailwindCSS, and Go.
+            </p>
+            <p>
               Helping creators become profitable entrepreneurs at{" "}
               <Link href="https://creator.kiwi/cole">Creator Kiwi</Link>.
             </p>
             <p>
-              I enjoy sharing my experiences{" "}
+              I enjoy sharing my thoughts on tech{" "}
               <Link href="https://caccamise.link/youtube">through video</Link>{" "}
               and <Link href="/letters">written word</Link>.
             </p>
