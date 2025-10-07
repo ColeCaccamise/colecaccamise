@@ -14,7 +14,6 @@ import {
   faPaperPlane,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import CreatorKiwiLogo from "@/public/creatorkiwi-logo.svg";
 
 export default function LinksPage() {
   const latestVideo = "https://youtu.be/swYWZj3Lytg";
@@ -72,16 +71,6 @@ export default function LinksPage() {
 
       <div className="flex flex-col gap-16">
         <div className="flex w-full flex-col gap-4">
-          <LinkPageItem
-            key="creatorkiwi"
-            title="Creator Kiwi"
-            description="Earn more from YouTube."
-            url="https://creatorkiwi.com/?ref=links"
-            icon={CreatorKiwiLogo}
-            cta="Get started"
-            svgIcon={true}
-          />
-
           <div className="flex flex-col gap-3 rounded-md border-2 border-ui-component-default bg-sidebar-bg p-4">
             <div className="flex items-center justify-between">
               <span>Latest Video</span>

@@ -9,14 +9,6 @@ export const metadata = {
 export default async function VaultPage() {
   const vaultItems = [
     {
-      title: "Creator Kiwi",
-      description:
-        "Easily create short links that track conversions. See which content drives leads and revenue.",
-      image: "/images/creatorkiwi.png",
-      url: "https://creator.kiwi/6c2tkYP",
-      tags: ["tools", "companies"],
-    },
-    {
       title: "Superwhisper",
       description:
         "AI-powered voice-to-text. Write 3x faster without lifting a finger.",

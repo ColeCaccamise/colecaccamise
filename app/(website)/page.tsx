@@ -18,11 +18,6 @@ export default async function Home() {
 
   const ventures = [
     {
-      name: "Creator Kiwi",
-      description: "Turn your YouTube videos into revenue.",
-      url: "https://creator.kiwi/cole",
-    },
-    {
       name: "YouTube | Cole Caccamise",
       description: "Aesthetic tech videos.",
       url: "https://youtube.com/@colecaccamise",
@@ -53,12 +48,7 @@ export default async function Home() {
           </div>
           <div className="flex flex-col gap-2">
             <span className="font-medium">About</span>
-            <p>I like building and designing things for the web.</p>
-            <p>
-              I&apos;m working on{" "}
-              <Link href="https://creator.kiwi/cole">Creator Kiwi</Link>, the
-              platform where creators become profitable entrepreneurs.
-            </p>
+            <p>I like building and designing products.</p>
             <p>
               I share my experiences with tech{" "}
               <Link href="https://caccamise.link/youtube">through video</Link>{" "}
