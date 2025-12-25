@@ -18,8 +18,6 @@ export default function Sidebar({
   useHotkeys("2", () => router.push("/letters"));
   useHotkeys("3", () => router.push("/drops"));
   useHotkeys("4", () => router.push("/stack"));
-  useHotkeys("5", () => router.push("/vault"));
-  useHotkeys("6", () => router.push("/links"));
 
   const isActive = (href: string) => {
     return href === "/" ? pathname === href : pathname.startsWith(href);
@@ -34,8 +32,10 @@ export default function Sidebar({
         <div className="flex w-full flex-col items-start gap-4 text-left">
           <Avatar />
           <div>
-            <span className="text-lg font-medium">Cole Caccamise</span>
-            <p className="whitespace-nowrap">Software Engineer</p>
+            <span className="whitespace-nowrap text-lg font-medium">
+              Cole Caccamise
+            </span>
+            <p className="whitespace-nowrap">Game Developer</p>
           </div>
         </div>
 

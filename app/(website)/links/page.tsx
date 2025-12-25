@@ -66,7 +66,7 @@ export default function LinksPage() {
       <div className="flex flex-col items-center gap-2 md:hidden">
         <Avatar />
         <h2>Cole Caccamise</h2>
-        <span>Software Engineer & Entrepreneur</span>
+        <span>Game Developer</span>
       </div>
 
       <div className="flex flex-col gap-16">

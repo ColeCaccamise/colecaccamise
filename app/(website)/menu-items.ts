@@ -9,7 +9,6 @@ export const menuItems: {
     name: "Home",
     kbd: "1",
   },
-
   {
     href: "/letters",
     name: "Letters",
@@ -24,15 +23,5 @@ export const menuItems: {
     href: "/stack",
     name: "Stack",
     kbd: "4",
-  },
-  {
-    href: "/vault",
-    name: "Vault",
-    kbd: "5",
-  },
-  {
-    href: "/links",
-    name: "Links",
-    kbd: "6",
   },
 ];

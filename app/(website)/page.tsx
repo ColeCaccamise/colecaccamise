@@ -22,6 +22,11 @@ export default async function Home() {
       description: "Aesthetic tech videos.",
       url: "https://youtube.com/@colecaccamise",
     },
+    {
+      name: "Hyperapta Studios",
+      description: "Creating narrative computer games.",
+      url: "https://hyperapta.com",
+    },
   ];
 
   const socials = [
@@ -48,32 +53,16 @@ export default async function Home() {
           </div>
           <div className="flex flex-col gap-2">
             <span className="font-medium">About</span>
-            <p>I like building and designing products.</p>
             <p>
-              I share my experiences with tech{" "}
-              <Link href="https://caccamise.link/youtube">through video</Link>{" "}
-              and <Link href="/letters">writing</Link>.
+              Welcome to my site! I like making narrative computer games and
+              sharing them on the internet.
             </p>
           </div>
         </div>
 
-        <NewsletterSignup
-          formId="5584232"
-          title="The Letter"
-          description={
-            <span>
-              Documenting the process of{" "}
-              <Link href="/letters" className="hover:opacity-90">
-                building my businesses
-              </Link>
-              . Sharing lessons I learn and interesting resources I find.
-            </span>
-          }
-        />
-
         <ListContainer
           title="Ventures"
-          description="Businesses I'm actively working on"
+          description="Projects I'm actively working on"
         >
           <Listicle collection={ventures} kind="ventures" />
         </ListContainer>
@@ -83,20 +72,6 @@ export default async function Home() {
           description="Writing about my experiences and learnings"
         >
           <Listicle collection={letters} kind="letters" />
-        </ListContainer>
-
-        <ListContainer
-          title="Featured Drops"
-          description="Premium digital products I’ve created recently"
-        >
-          <Listicle collection={drops} kind="drops" />
-        </ListContainer>
-
-        <ListContainer
-          title="Stack"
-          description="Tools and products I use daily"
-        >
-          <Listicle collection={stack} kind="stack" />
         </ListContainer>
 
         <div id="connect" className="flex flex-col gap-4">

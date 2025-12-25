@@ -9,19 +9,23 @@ import "./globals.css";
 
 const selineToken = process.env.NEXT_PUBLIC_SELINE_TOKEN;
 
+const defaultTitle = "Cole Caccamise";
+const defaultDescription =
+  "Cole Caccamise is a game developer creating atmospheric narrative experiences and sharing them on the internet.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://colecaccamise.com"),
   title: {
     template: "%s | Cole Caccamise",
-    default: "Cole Caccamise - Software Engineer & Entrepreneur",
+    default: defaultTitle,
   },
-  description: "Cole Caccamise is a software engineer and entrepreneur.",
+  description: defaultDescription,
   twitter: {
     title: {
       template: "%s | Cole Caccamise",
-      default: "Cole Caccamise - Software Engineer & Entrepreneur",
+      default: defaultTitle,
     },
-    description: "Cole Caccamise is a software engineer and entrepreneur.",
+    description: defaultDescription,
     images: [
       {
         url: "/opengraph-image.png",
@@ -32,16 +36,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: {
-      template: "%s | Cole Caccamise",
-      default: "Cole Caccamise - Software Engineer & Entrepreneur",
+      template: "%s | " + defaultTitle,
+      default: defaultTitle,
     },
-    description: "Cole Caccamise is a software engineer and entrepreneur.",
+    description: defaultDescription,
     images: [
       {
         url: "/opengraph-image.png",
         width: 800,
         height: 600,
-        alt: "Cole Caccamise",
+        alt: defaultTitle,
       },
     ],
   },

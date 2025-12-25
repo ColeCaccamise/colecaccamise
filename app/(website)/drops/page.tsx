@@ -22,17 +22,6 @@ export default async function DropsPage() {
           ))}
         </div>
       </div>
-
-      <span className="text-sm text-low-contrast-text">
-        Have an audience who&apos;d love my products?{" "}
-        <Link
-          href="https://colecaccamise.lemonsqueezy.com/affiliates"
-          className="hover:opacity-90"
-        >
-          Become an affiliate
-        </Link>
-        .
-      </span>
     </div>
   );
 }
