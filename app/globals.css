@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
 html {
   height: 100%;
   width: 100vw;
@@ -10,10 +12,27 @@ html {
 body {
   width: 100%;
   height: 100%;
+  font-family: "Tahoma", "Noto Serif", serif;
 }
 
 ::selection {
-  @apply bg-primary text-high-contrast-text;
+  background: #000080;
+  color: #ffffff;
+}
+
+/* Windows 2000 classic beveled border utility */
+.win2k-raised {
+  border-top: 2px solid var(--win-highlight);
+  border-left: 2px solid var(--win-highlight);
+  border-bottom: 2px solid var(--win-shadow);
+  border-right: 2px solid var(--win-shadow);
+}
+
+.win2k-inset {
+  border-top: 2px solid var(--win-shadow);
+  border-left: 2px solid var(--win-shadow);
+  border-bottom: 2px solid var(--win-highlight);
+  border-right: 2px solid var(--win-highlight);
 }
 
 :where(
@@ -26,25 +45,43 @@ body {
     a,
     [tabindex]:not([tabindex="-1"])
   ):focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-  border-radius: 2px;
+  outline: 1px dotted #000000;
+  outline-offset: -2px;
+  border-radius: 0px;
 }
 
 kbd {
-  @apply flex h-[24px] w-[24px] items-center justify-center rounded-md border border-borders-non-interactive bg-ui-component-default p-1 text-sm text-low-contrast-text;
+  @apply flex h-[24px] w-[24px] items-center justify-center p-1 text-sm text-low-contrast-text;
+  border-top: 2px solid var(--win-highlight);
+  border-left: 2px solid var(--win-highlight);
+  border-bottom: 2px solid var(--win-shadow);
+  border-right: 2px solid var(--win-shadow);
+  background: var(--win-silver);
+  color: #000000;
+  font-family: "Tahoma", sans-serif;
+  border-radius: 0;
 }
 
 code {
-  @apply rounded-md bg-ui-component-default p-1 text-sm text-low-contrast-text;
+  @apply p-1 text-sm;
+  background: var(--win-silver);
+  color: #000080;
+  font-family: "Courier New", monospace;
+  border: 1px solid var(--win-shadow);
 }
 
 .transition-effect {
-  @apply transition duration-200;
+  transition: none;
 }
 
 a {
-  @apply transition-effect text-high-contrast-text hover:opacity-90;
+  color: #000080;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #cc0000;
+  opacity: 1;
 }
 
 ul {
@@ -60,98 +97,108 @@ li {
 }
 
 @layer base {
-  /* TODO: create color system for B/W or an accent (for buttons etc) */
   :root {
-    --error: #e5484d;
-    --info: #0090ff;
-    --success: #30a46c;
-    --warning: #ffe629;
-    --yellow-text: #d5ae39;
-    --purple-text: #8e4ec6;
-    --orange-text: #f76b15;
+    --error: #cc0000;
+    --info: #000080;
+    --success: #008000;
+    --warning: #ffff00;
+    --yellow-text: #808000;
+    --purple-text: #800080;
+    --orange-text: #c04000;
 
-    /* hsl(234deg, 55.6%, 59.4%) */
-    /* --primary: #5e69d1; */
-    --primary: hsla(234, 56%, 59%, 1);
-    /* hsl(240deg, 6.25%, 6.27%) */
-    /* --app-bg: hsla(234, 6%, 6%, 1); */
-    /* --app-bg: hsl(0deg, 0%, 6.67%, 1) */
-    --app-bg: hsla(0, 6%, 6%, 1);
-    /* --app-bg: #111111; */
-    --sidebar-bg: #191919;
-    --ui-component-default: #222222;
-    --ui-component-hover: #2a2a2a;
-    --ui-component-pressed-selected: #313131;
-    --borders-non-interactive: #3a3a3a;
-    --subtle-borders-interactive: #484848;
-    --stronger-borders-interactive-focus-rings: #606060;
-    --solid-backgrounds: #6e6e6e;
-    --hovered-solid-backgrounds: #7b7b7b;
-    /* --low-contrast-text: #b4b4b4; */
-    --low-contrast-text: hsla(0, 0%, 58%, 1);
-    --muted-text: hsla(0, 0%, 38%, 1);
-    /* hsl(240deg, 0.952%, 58.8%, 1) */
-    /* hsl(240deg, 15.4%, 94.9%) */
-    /* --high-contrast-text: #eeeeee; */
-    --high-contrast-text: hsla(0, 15%, 95%, 1);
-    --overlay-05: hsla(0, 0%, 100%, 0.05);
-    --overlay-10: hsla(0, 0%, 100%, 0.1);
-    --overlay-15: hsla(0, 0%, 100%, 0.15);
-    --overlay-20: hsla(0, 0%, 100%, 0.2);
-    --overlay-30: hsla(0, 0%, 100%, 0.3);
-    --overlay-40: hsla(0, 0%, 100%, 0.4);
-    --overlay-50: hsla(0, 0%, 100%, 0.5);
-    --overlay-60: hsla(0, 0%, 100%, 0.6);
-    --overlay-70: hsla(0, 0%, 100%, 0.7);
-    --overlay-80: hsla(0, 0%, 100%, 0.8);
-    --overlay-90: hsla(0, 0%, 100%, 0.9);
-    --overlay-95: hsla(0, 0%, 100%, 0.95);
-    --red-bg-border: #641723;
-    --blue-bg-border: #113264;
-    --green-bg-border: #193b2d;
-    --yellow-bg-border: #473b1f;
-    --purple-bg-border: #402060;
-    --orange-bg-border: #582d1d;
-    --light-red-bg: #201314;
-    --light-blue-bg: #111927;
-    --light-green-bg: #121b17;
-    --light-yellow-bg: #1b180f;
-    --light-purple-bg: #1e1523;
-    --light-orange-bg: #121212;
+    /* Windows 2000 classic teal/blue primary */
+    --primary: #008080;
+
+    /* Classic silver desktop background */
+    --app-bg: #008080;
+
+    /* Window chrome silver */
+    --win-silver: #d4d0c8;
+    --win-highlight: #ffffff;
+    --win-shadow: #808080;
+    --win-dark-shadow: #404040;
+    --win-titlebar: #000080;
+    --win-titlebar-end: #1084d0;
+
+    --sidebar-bg: #d4d0c8;
+    --ui-component-default: #d4d0c8;
+    --ui-component-hover: #c0c0c0;
+    --ui-component-pressed-selected: #b8b4ac;
+    --borders-non-interactive: #808080;
+    --subtle-borders-interactive: #404040;
+    --stronger-borders-interactive-focus-rings: #000000;
+    --solid-backgrounds: #c0c0c0;
+    --hovered-solid-backgrounds: #b0b0b0;
+    --low-contrast-text: #444444;
+    --muted-text: #666666;
+    --high-contrast-text: #000000;
+    --overlay-05: hsla(0, 0%, 0%, 0.05);
+    --overlay-10: hsla(0, 0%, 0%, 0.1);
+    --overlay-15: hsla(0, 0%, 0%, 0.15);
+    --overlay-20: hsla(0, 0%, 0%, 0.2);
+    --overlay-30: hsla(0, 0%, 0%, 0.3);
+    --overlay-40: hsla(0, 0%, 0%, 0.4);
+    --overlay-50: hsla(0, 0%, 0%, 0.5);
+    --overlay-60: hsla(0, 0%, 0%, 0.6);
+    --overlay-70: hsla(0, 0%, 0%, 0.7);
+    --overlay-80: hsla(0, 0%, 0%, 0.8);
+    --overlay-90: hsla(0, 0%, 0%, 0.9);
+    --overlay-95: hsla(0, 0%, 0%, 0.95);
+    --red-bg-border: #cc0000;
+    --blue-bg-border: #000080;
+    --green-bg-border: #008000;
+    --yellow-bg-border: #808000;
+    --purple-bg-border: #800080;
+    --orange-bg-border: #804000;
+    --light-red-bg: #ffe0e0;
+    --light-blue-bg: #e0e0ff;
+    --light-green-bg: #e0ffe0;
+    --light-yellow-bg: #ffffe0;
+    --light-purple-bg: #f0e0ff;
+    --light-orange-bg: #fff0e0;
   }
 }
 
 @layer base {
   h1 {
-    @apply scroll-m-20 text-3xl font-medium tracking-tight text-high-contrast-text;
+    @apply scroll-m-20 text-2xl font-bold tracking-normal;
+    color: #000000;
+    font-family: "Tahoma", serif;
   }
 
   h2 {
-    @apply scroll-m-20 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+    @apply scroll-m-20 text-xl font-bold tracking-normal transition-colors first:mt-0;
+    color: #000000;
+    font-family: "Tahoma", serif;
   }
 
   .letter-content h2 {
-    @apply text-2xl;
-  }
-
-  .letter-content h3 {
     @apply text-xl;
   }
 
-  .letter-content h4 {
+  .letter-content h3 {
     @apply text-lg;
   }
 
+  .letter-content h4 {
+    @apply text-base;
+  }
+
   h3 {
-    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+    @apply scroll-m-20 text-lg font-bold tracking-normal;
+    font-family: "Tahoma", serif;
   }
 
   h4 {
-    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+    @apply scroll-m-20 text-base font-bold tracking-normal;
+    font-family: "Tahoma", serif;
   }
 
   p {
-    @apply leading-7 text-low-contrast-text;
+    @apply leading-6;
+    color: #000000;
+    font-family: "Tahoma", sans-serif;
+    font-size: 0.8125rem;
   }
 
   .muted {
@@ -160,27 +207,97 @@ li {
 }
 
 .letter-content img {
-  @apply aspect-video w-full rounded-md object-cover;
+  @apply aspect-video w-full object-cover;
+  border: 2px inset #808080;
 }
 
-/* For WebKit-based browsers */
+/* Win2K scrollbar */
 ::-webkit-scrollbar {
-  width: 12px; /* Adjust scrollbar width here */
+  width: 16px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent; /* Remove background color */
+  background: var(--win-silver);
+  border-left: 1px solid var(--win-shadow);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: darkgrey; /* Customize the scrollbar color */
-  border-radius: 10px; /* Roundness of the scrollbar */
-  border: 3px solid transparent; /* Space around the thumb */
+  background-color: var(--win-silver);
+  border-top: 2px solid var(--win-highlight);
+  border-left: 2px solid var(--win-highlight);
+  border-bottom: 2px solid var(--win-shadow);
+  border-right: 2px solid var(--win-shadow);
+  border-radius: 0;
 }
-/* For Firefox browsers */
 * {
-  scrollbar-width: thin; /* Adjust scrollbar width */
-  scrollbar-color: darkgrey transparent; /* Customize scrollbar and track color */
+  scrollbar-width: auto;
+  scrollbar-color: #c0c0c0 #d4d0c8;
 }
 
 li > :not([hidden]) ~ :not([hidden]) {
   @apply m-0;
+}
+
+/* Win2K window panel */
+.win2k-window {
+  background: var(--win-silver);
+  border-top: 2px solid var(--win-highlight);
+  border-left: 2px solid var(--win-highlight);
+  border-bottom: 2px solid var(--win-shadow);
+  border-right: 2px solid var(--win-shadow);
+  box-shadow: 1px 1px 0 var(--win-dark-shadow);
+}
+
+/* Win2K title bar */
+.win2k-titlebar {
+  background: linear-gradient(to right, var(--win-titlebar), var(--win-titlebar-end));
+  color: #ffffff;
+  font-family: "Tahoma", sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  user-select: none;
+}
+
+/* Win2K button */
+.win2k-btn {
+  background: var(--win-silver);
+  color: #000000;
+  font-family: "Tahoma", sans-serif;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-top: 2px solid var(--win-highlight);
+  border-left: 2px solid var(--win-highlight);
+  border-bottom: 2px solid var(--win-shadow);
+  border-right: 2px solid var(--win-shadow);
+  cursor: pointer;
+  border-radius: 0;
+  min-width: 75px;
+  text-align: center;
+}
+
+.win2k-btn:hover {
+  background: var(--win-silver);
+}
+
+.win2k-btn:active {
+  border-top: 2px solid var(--win-shadow);
+  border-left: 2px solid var(--win-shadow);
+  border-bottom: 2px solid var(--win-highlight);
+  border-right: 2px solid var(--win-highlight);
+}
+
+/* Win2K section group box */
+.win2k-groupbox {
+  background: var(--win-silver);
+  border: 2px inset #c0c0c0;
+  padding: 12px;
+}
+
+/* Win2K nav link active */
+.win2k-nav-active {
+  background: #000080;
+  color: #ffffff !important;
+  font-weight: bold;
 }

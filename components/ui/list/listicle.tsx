@@ -16,8 +16,8 @@ export default function Listicle({
   const valid = kind !== "ventures" && collection.length > 0;
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="transition-effect flex flex-col">
+    <div className="flex flex-col gap-2">
+      <div className="flex flex-col">
         {collection.map((item: any, i: number) => (
           <ListItem key={i} item={item} kind={kind} />
         ))}
@@ -26,12 +26,11 @@ export default function Listicle({
       {valid && (
         <Link
           href={`/${kind}`}
-          className="group flex items-center gap-1 text-low-contrast-text transition-all duration-300 ease-in-out hover:text-high-contrast-text"
+          className="win2k-btn mt-1 inline-flex w-fit items-center gap-1 no-underline"
+          style={{ color: "#000000", textDecoration: "none", fontSize: "0.75rem" }}
         >
-          View all
-          <span className="transition-transform group-hover:translate-x-1">
-            <ArrowRightIcon />
-          </span>{" "}
+          View all {kind}
+          <ArrowRightIcon />
         </Link>
       )}
     </div>

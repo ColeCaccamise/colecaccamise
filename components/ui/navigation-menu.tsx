@@ -1,7 +1,5 @@
 "use client";
 
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import SidebarLink from "./sidebar-link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -18,51 +16,98 @@ export default function NavigationMenu({
     setMenuOpen(false);
   }, [pathname]);
 
+  // Desktop menu bar (always shown inside the window chrome)
   return (
-    <nav
-      className="block w-full border-b border-borders-non-interactive px-8 py-4 md:hidden"
-      aria-label="Mobile navigation"
-    >
-      <div className="flex w-full items-center justify-between">
-        <Link href="/" className="flex select-none flex-col hover:opacity-90">
-          <span>Cole Caccamise</span>
-          <span className="text-low-contrast-text">Software Engineer</span>
-        </Link>
-
-        <button
-          className="pointer-cursor z-1 flex h-12 w-12 items-center justify-center rounded-md border border-borders-non-interactive bg-sidebar-bg text-low-contrast-text transition-all hover:border-subtle-borders-interactive hover:bg-ui-component-default hover:text-high-contrast-text"
-          onClick={() => setMenuOpen((prev) => !prev)}
-        >
-          <HamburgerMenuIcon width={20} height={20} />
-        </button>
+    <>
+      {/* Desktop menu bar */}
+      <div
+        className="hidden items-center gap-0 px-2 py-0.5 md:flex"
+        style={{
+          background: "#d4d0c8",
+          borderBottom: "1px solid #808080",
+          fontSize: "0.75rem",
+        }}
+      >
+        {["File", "Edit", "View", "Favorites", "Tools", "Help"].map((item) => (
+          <button
+            key={item}
+            className="px-3 py-0.5 text-xs text-black hover:bg-[#000080] hover:text-white"
+            style={{ background: "transparent", border: "none", cursor: "default" }}
+          >
+            {item}
+          </button>
+        ))}
+        <div className="mx-1 h-4 w-px" style={{ background: "#808080" }} />
+        {menuLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`px-3 py-0.5 text-xs no-underline ${
+              (link.href === "/" ? pathname === link.href : pathname.startsWith(link.href))
+                ? "bg-[#000080] text-white"
+                : "text-black hover:bg-[#000080] hover:text-white"
+            }`}
+            style={{ textDecoration: "none" }}
+          >
+            {link.name}
+          </Link>
+        ))}
       </div>
 
-      <ul
-        className={`absolute left-0 top-[81px] z-10 flex w-full list-none flex-col items-center gap-4 bg-app-bg py-4 ${
-          menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        }`}
-        style={{ overflow: "hidden" }}
+      {/* Mobile nav */}
+      <nav
+        className="block w-full md:hidden"
+        style={{
+          background: "#d4d0c8",
+          borderBottom: "2px solid #808080",
+        }}
+        aria-label="Mobile navigation"
       >
-        {menuLinks.map((link) => (
-          <li
-            key={link.href}
-            className={`delay-50 transition-opacity duration-300 ease-in-out ${
-              menuOpen ? "opacity-100" : "opacity-0"
-            }`}
+        <div className="flex w-full items-center justify-between px-3 py-2">
+          <Link
+            href="/"
+            className="flex select-none flex-col"
+            style={{ textDecoration: "none", color: "#000000" }}
           >
-            <SidebarLink
-              href={link.href}
-              active={
-                link.href === "/"
-                  ? pathname === link.href
-                  : pathname.startsWith(link.href)
-              }
-            >
-              <span>{link.name}</span>
-            </SidebarLink>
-          </li>
-        ))}
-      </ul>
-    </nav>
+            <span className="text-sm font-bold">Cole Caccamise</span>
+            <span className="text-xs" style={{ color: "#444444" }}>
+              Game Developer
+            </span>
+          </Link>
+
+          <button
+            className="win2k-btn text-xs"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            style={{ padding: "2px 8px" }}
+          >
+            ☰ Menu
+          </button>
+        </div>
+
+        {menuOpen && (
+          <ul
+            className="list-none border-t"
+            style={{ borderTop: "1px solid #808080" }}
+          >
+            {menuLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`block px-4 py-2 text-sm no-underline ${
+                    (link.href === "/" ? pathname === link.href : pathname.startsWith(link.href))
+                      ? "bg-[#000080] text-white font-bold"
+                      : "text-black hover:bg-[#b8d4e8]"
+                  }`}
+                  style={{ textDecoration: "none" }}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </nav>
+    </>
   );
 }
+

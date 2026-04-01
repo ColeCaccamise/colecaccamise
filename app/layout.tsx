@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import PlausibleProvider from "next-plausible";
-import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import { Toaster } from "sonner";
@@ -67,7 +66,8 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${GeistMono.className} dark:dark overflow-x-hidden bg-app-bg text-high-contrast-text`}
+        className={`overflow-x-hidden bg-app-bg text-high-contrast-text`}
+        style={{ fontFamily: "'Tahoma', 'MS Sans Serif', Arial, sans-serif" }}
       >
         <Toaster
           toastOptions={{
