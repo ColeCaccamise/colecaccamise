@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedButton from "@/components/ui/animated-button";
+import Button from "@/components/ui/button";
 import Input from "@/components/ui/input";
 import toast from "@/utils/toast";
 import { createOrder } from "../actions";
@@ -50,14 +50,14 @@ export default function SoloFounderToolsForm() {
           autoFocus
         />
 
-        <AnimatedButton
+        <Button
           type="submit"
           loading={formSubmitting}
           disabled={!email}
           className="md:h-[48px] md:w-[147px]"
         >
           Get the list
-        </AnimatedButton>
+        </Button>
       </form>
     </div>
   );

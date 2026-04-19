@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import ListItem from "./list-item";
 import Link from "next/link";
 
@@ -29,9 +29,8 @@ export default function Listicle({
           className="group flex items-center gap-1 text-low-contrast-text transition-all duration-300 ease-in-out hover:text-high-contrast-text"
         >
           View all
-          <span className="transition-transform group-hover:translate-x-1">
-            <ArrowRightIcon />
-          </span>{" "}
+
+          <ArrowUpRightIcon size={18} />
         </Link>
       )}
     </div>

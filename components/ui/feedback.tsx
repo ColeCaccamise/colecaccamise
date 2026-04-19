@@ -4,7 +4,6 @@ import Input from "./input";
 import Button from "./button";
 import { useState } from "react";
 import toast from "@/utils/toast";
-import AnimatedButton from "./animated-button";
 
 export default function Feedback({
   stack = "Stack",
@@ -61,7 +60,7 @@ export default function Feedback({
           }}
         />
 
-        <AnimatedButton
+        <Button
           className="md:h-[48px] md:w-[101px]"
           type="submit"
           disabled={!feedback}
@@ -69,7 +68,7 @@ export default function Feedback({
           handleClick={handleSubmit}
         >
           Submit
-        </AnimatedButton>
+        </Button>
       </div>
     </form>
   );

@@ -43,14 +43,18 @@ export default function Button({
       <button
         type={type}
         disabled={loading || disabled}
-        className={`btn btn-destructive whitespace-nowrap ${
+        aria-busy={loading}
+        className={`btn btn-destructive relative whitespace-nowrap ${
           (loading || disabled) && "btn-disabled"
         }`}
         onClick={handleClick}
       >
-        {loading && <Spinner />}
-
-        {children}
+        <span className={loading ? "invisible" : undefined}>{children}</span>
+        {loading && (
+          <span className="absolute inset-0 flex items-center justify-center">
+            <Spinner />
+          </span>
+        )}
       </button>
     );
   }
@@ -76,16 +80,18 @@ export default function Button({
     <button
       type={type}
       disabled={loading || disabled}
-      className={`${className} btn btn-primary whitespace-nowrap ${
+      aria-busy={loading}
+      className={`${className} btn btn-primary relative whitespace-nowrap ${
         (loading || disabled) && "btn-disabled"
-      } group flex items-center`}
+      }`}
       onClick={handleClick}
     >
-      <span className={loading ? "pr-2" : ""}>
-        {loading && <Spinner variant="light" />}
-      </span>
-
-      {children}
+      <span className={loading ? "invisible" : undefined}>{children}</span>
+      {loading && (
+        <span className="absolute inset-0 flex items-center justify-center">
+          <Spinner variant="light" />
+        </span>
+      )}
     </button>
   );
 }

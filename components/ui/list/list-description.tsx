@@ -1,5 +1,6 @@
 import { formatDate } from "@/lib/string";
-import { ArrowTopRightIcon, DotFilledIcon } from "@radix-ui/react-icons";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
+import { DotFilledIcon } from "@radix-ui/react-icons";
 
 type AllowedKinds = "drops" | "letters" | "stack" | "ventures" | "jobs";
 
@@ -49,7 +50,7 @@ export default function ListDescription({
     return (
       <div className="flex flex-col gap-1">
         <span className="flex items-center gap-1">
-          {item.name} {isNonRelativePath ? <ArrowTopRightIcon /> : ""}
+          {item.name} {isNonRelativePath ? <ArrowUpRightIcon size={18} /> : ""}
         </span>
         <span className="font-regular text-low-contrast-text">
           {item.description}

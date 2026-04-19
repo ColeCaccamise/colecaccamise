@@ -7,7 +7,6 @@ import toast from "@/utils/toast";
 import { isValidEmail } from "@/lib/validation";
 import { subscribeToForm } from "@/lib/convertkit";
 import { usePlausible } from "next-plausible";
-import AnimatedButton from "./animated-button";
 
 export default function NewsletterSignup({
   title,
@@ -15,7 +14,7 @@ export default function NewsletterSignup({
   description,
   cta = "Join For Free",
   location = "Home",
-  placeholder = "peter.parker@gmail.com",
+  placeholder = "Your email, for updates",
   lemonSqueezySignup = false,
 }: {
   title?: string;
@@ -28,7 +27,7 @@ export default function NewsletterSignup({
 }) {
   const [email, setEmail] = useState("");
   const [formSubmitting, setFormSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [, setSuccess] = useState(false);
   const plausible = usePlausible();
 
   // TODO: add customers to lemon squeezy discount form, then use resend to send them a programatically gnerated discount code -- implement convertkit unsubscribes
@@ -91,7 +90,7 @@ export default function NewsletterSignup({
           required
         />
 
-        <AnimatedButton
+        <Button
           type="submit"
           handleClick={handleSignup}
           loading={formSubmitting}
@@ -99,7 +98,7 @@ export default function NewsletterSignup({
           className="md:h-[48px] md:w-[147px]"
         >
           {cta}
-        </AnimatedButton>
+        </Button>
       </form>
     </div>
   );

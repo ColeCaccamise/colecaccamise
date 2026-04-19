@@ -10,7 +10,8 @@ export default async function LettersPage() {
     <div className="flex flex-col gap-16">
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-medium leading-10">Letters</h1>
-        {/* <NewsletterSignup formId="5584232" location="Letters" /> */}
+        <p>I share lessons learned on my journey to becoming a full-time indie game developer.</p>
+        <NewsletterSignup formId="5584232" location="Letters page" />
       </div>
 
       <div className="flex flex-col gap-4">
