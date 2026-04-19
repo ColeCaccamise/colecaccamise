@@ -1,17 +1,27 @@
-import nextMDX from "@next/mdx";
+import nextra from "nextra";
 import { withAxiom } from "next-axiom";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeExternalLinks from "rehype-external-links";
+import remarkGfm from "remark-gfm";
+import remarkNumberedFootnoteLabels from "remark-numbered-footnote-labels";
 
-const withMDX = nextMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
+const withNextra = nextra({
+  search: false,
+  staticImage: true,
+  mdxOptions: {
+    remarkPlugins: [remarkGfm, remarkNumberedFootnoteLabels],
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, { behavior: "wrap" }],
+      [rehypeExternalLinks, { target: "_blank", rel: ["nofollow", "noopener", "noreferrer"] }],
+    ],
   },
 });
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  pageExtensions: ["js", "jsx", "ts", "tsx"],
 
   async redirects() {
     return [
@@ -203,4 +213,4 @@ const nextConfig = {
   },
 };
 
-export default withAxiom(withMDX(nextConfig));
+export default withAxiom(withNextra(nextConfig));

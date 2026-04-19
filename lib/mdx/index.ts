@@ -1,63 +1,59 @@
-"use server";
-
-import fs from "fs";
-import path from "path";
-import { compileMDX } from "next-mdx-remote/rsc";
-import VideoPlayer from "@/components/ui/video";
-import CustomImage from "@/components/ui/image";
-import Link from "next/link";
+import { createElement } from "react";
 import { notFound } from "next/navigation";
-import { Drop, Letter, Stack, Job } from "@/types/cms";
-import Button from "@/components/ui/button";
+import { importPage } from "nextra/pages";
+import { getPageMap } from "nextra/page-map";
+import type { MdxFile, PageMapItem } from "nextra";
+import type { Drop, Letter, Stack, Job } from "@/types/cms";
 
 type Frontmatter = Drop | Letter | Stack | Job;
 
-const getItemsArray = (collection: string) => {
-  if (collection === "drops") {
-    return [] as Drop[];
-  } else if (collection === "letters") {
-    return [] as Letter[];
-  } else if (collection === "stack") {
-    return [] as Stack[];
-  } else if (collection === "jobs") {
-    return [] as Job[];
-  } else {
-    return [];
+const isMdxFile = (item: PageMapItem): item is MdxFile =>
+  "name" in item && "frontMatter" in item && !("children" in item);
+
+const applyDraftLabel = <T extends Frontmatter>(frontmatter: T): T => {
+  if (frontmatter.status !== "draft") return frontmatter;
+  const next: Record<string, unknown> = { ...frontmatter };
+  if (typeof next.name === "string") {
+    next.name = `${next.name} (DRAFT)`;
   }
+  if (typeof next.title === "string") {
+    next.title = `${next.title} (DRAFT)`;
+  }
+  return next as T;
 };
 
-// helpers
+const sortItems = <T extends Frontmatter>(items: T[], collection: string): T[] => {
+  if (collection === "letters" || collection === "jobs") {
+    items.sort((a, b) => {
+      const aDate = (a as Letter | Job).published;
+      const bDate = (b as Letter | Job).published;
+      const dateA = aDate ? new Date(aDate).getTime() : 0;
+      const dateB = bDate ? new Date(bDate).getTime() : 0;
+      return dateB - dateA;
+    });
+  }
+
+  items.sort((a, b) => {
+    const posA = a.position ?? Infinity;
+    const posB = b.position ?? Infinity;
+    return posA - posB;
+  });
+
+  return items;
+};
+
 export const getCollectionBySlug = async (slug: string, collection: string) => {
-  "use server";
+  const realSlug = slug.replace(/\.mdx$/, "");
 
   try {
-    const realSlug = slug.replace(/\.mdx$/, "");
+    const { default: MDXContent, metadata } = await importPage([collection, realSlug]);
+    const frontmatter = applyDraftLabel((metadata ?? {}) as Frontmatter);
 
-    const rootDirectory = path.join(process.cwd(), "content", collection);
-
-    const filePath = path.join(rootDirectory, `${realSlug}.mdx`);
-
-    const fileContent = fs.readFileSync(filePath, { encoding: "utf8" });
-
-    const { frontmatter, content }: { frontmatter: Frontmatter; content: any } =
-      await compileMDX({
-        source: fileContent,
-        options: { parseFrontmatter: true },
-        components: { VideoPlayer, Link, CustomImage, Button },
-      });
-
-    if (frontmatter.status === "draft") {
-      if ("name" in frontmatter) {
-        frontmatter.name = frontmatter.name + " (DRAFT)";
-      }
-
-      if ("title" in frontmatter) {
-        frontmatter.title = frontmatter.title + " (DRAFT)";
-      }
-    }
-
-    return { meta: { ...frontmatter, slug: realSlug }, content };
-  } catch (error) {
+    return {
+      meta: { ...frontmatter, slug: realSlug },
+      content: createElement(MDXContent),
+    };
+  } catch {
     return notFound();
   }
 };
@@ -68,60 +64,31 @@ export const getAllCollectionMeta = async <T extends Frontmatter>(
   exclude?: string,
 ): Promise<T[]> => {
   try {
-    const rootDirectory = path.join(process.cwd(), "content", collection);
+    const pageMap = await getPageMap(`/${collection}`);
 
-    const files = fs.readdirSync(rootDirectory);
+    let items: Frontmatter[] = pageMap
+      .filter(isMdxFile)
+      .filter((file) => file.name !== "index")
+      .map((file) => ({
+        ...(file.frontMatter ?? {}),
+        slug: file.name,
+      })) as Frontmatter[];
 
-    let items: Drop[] | Stack[] | Letter[] | Job[] = getItemsArray(collection);
+    items = sortItems(items, collection);
 
-    for (let i = 0; i < files.length; i++) {
-      const file = path.parse(files[i]).name;
-
-      const { meta }: { meta: Drop | Letter | Stack } =
-        await getCollectionBySlug(`${file}`, collection);
-      items.push(meta as any);
-    }
-
-    if (collection === "letters") {
-      items.sort((a: Letter, b: Letter) => {
-        const dateA = a.published ? new Date(a.published).getTime() : 0;
-        const dateB = b.published ? new Date(b.published).getTime() : 0;
-        return dateB - dateA;
-      });
-    } else if (collection === "jobs") {
-      items.sort((a: Job, b: Job) => {
-        const dateA = a.published ? new Date(a.published).getTime() : 0;
-        const dateB = b.published ? new Date(b.published).getTime() : 0;
-        return dateB - dateA;
-      });
-    }
-
-    items.sort((a, b) => {
-      // If a.position is undefined, push it to the end by setting it to a higher value (e.g., Infinity)
-      const posA = a.position !== undefined ? a.position : Infinity;
-      // If b.position is undefined, push it to the end by setting it to a higher value (e.g., Infinity)
-      const posB = b.position !== undefined ? b.position : Infinity;
-
-      return posA - posB;
-    });
-
-    // Filter out the excluded item
     if (exclude) {
       items = items.filter((item) => item.slug !== exclude);
     }
 
-    if (items.some((item) => item.status === "draft")) {
-      if (process.env.NODE_ENV !== "development") {
-        items = items.filter((item) => item.status !== "draft");
-      }
+    if (process.env.NODE_ENV !== "development") {
+      items = items.filter((item) => item.status !== "draft");
     }
 
-    // Apply the limit
     const effectiveLimit = limit ?? items.length;
     items = items.slice(0, effectiveLimit);
 
     return items as T[];
-  } catch (error) {
+  } catch {
     return notFound();
   }
 };
