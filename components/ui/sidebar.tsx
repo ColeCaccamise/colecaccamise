@@ -18,6 +18,7 @@ export default function Sidebar({
   useHotkeys("2", () => router.push("/letters"));
   useHotkeys("3", () => router.push("/drops"));
   useHotkeys("4", () => router.push("/stack"));
+  useHotkeys("5", () => router.push("/jobs"));
 
   const isActive = (href: string) => {
     return href === "/" ? pathname === href : pathname.startsWith(href);
