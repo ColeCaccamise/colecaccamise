@@ -29,7 +29,7 @@ export default async function JobsPage() {
               I don&apos;t have any open positions at the moment, but I&apos;m
               always happy to connect with talented people. Feel free to reach
               me at{" "}
-              <a href="mailto:cole@colecaccamise.com">cole@colecaccamise.com</a>
+              <a href="mailto:cole@caccamedia.com">cole@caccamedia.com</a>
               .
             </p>
           )}

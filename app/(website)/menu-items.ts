@@ -24,4 +24,9 @@ export const menuItems: {
     name: "Stack",
     kbd: "4",
   },
+  {
+    href: "/jobs",
+    name: "Jobs",
+    kbd: "5",
+  },
 ];
